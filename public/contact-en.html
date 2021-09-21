@@ -258,7 +258,7 @@ axios.post('/email-en', data)
   div.classList.add('alert-alert-danger');
   div.innerHTML = `<p>${err.data}</p>`;
   const st_div = document.getElementById('back-message');
-  // st_div.appendChild(div);
+  st_div.appendChild(div);
 })
 
 });
