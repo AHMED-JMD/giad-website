@@ -3,7 +3,9 @@ const app = express();
 const sendMail = require('./mail');
 const path = require('path');
 require('dotenv').config();
-const Verifier = require('email-verifier');
+var quickemailverification = require('quickemailverification').client(process.env.VERIFIER_KEY).quickemailverification(); 
+
+const xssFilter = require('xss-filters');
 
 //middlewares
 app.use(express.static(path.join(__dirname, './public')))
@@ -48,20 +50,25 @@ app.get('/contact-en', (req,res) =>{
 
 //post rout
 app.post('/email-en', async (req, res,next) =>{
-    const {name,email, subject, text, phoneNum} = req.body;
+    let {name,email, subject, text, phoneNum} = req.body;
     
     if(!name || !email || !subject || !text || !phoneNum){
-        return res.status(400).json({msg:'please enter all feilds'});
+        return res.status(400).send({msg:'please enter all feilds'});
     }
-console.log(name, email, subject, text, phoneNum);
+//filter input feilds 
+name = xssFilter.inHTMLData(name),
+email = xssFilter.inHTMLData(email),
+subject = xssFilter.inHTMLData(subject),
+text = xssFilter.inHTMLData(text),
+phoneNum = xssFilter.inHTMLData(phoneNum)
+    
+   
     //verify email address
-//  let verifier = new Verifier(process.env.VERIFIER_KEY);
-//   verifier.verify(email, (err, data) =>{
-//       if(err) console.log(err);
-//       console.log(data);
-//   })
+quickemailverification.verify(email, (err, response) =>{
+    console.log(response.body)
+})
 
-    sendMail(name,email, subject,text,phoneNum, (err, data) =>{            
+    sendMail(name, email, subject, text, phoneNum, (err, data) =>{            
         if(err){
             res.status(500).json({err: 'internal error', error:err.data})
         }else{
@@ -75,19 +82,25 @@ console.log(name, email, subject, text, phoneNum);
 });
 //post 
 app.post('/email', async (req, res,next) =>{
-    const {name,email, subject, text, phoneNum} = req.body;
+    let {name,email, subject, text, phoneNum} = req.body;
     
     if(!name || !email || !subject || !text || !phoneNum){
         return res.status(400).json({msg:'please enter all feilds'});
     }
-    console.log(name, email, subject, text, phoneNum);
-
+//filter input feilds 
+name = xssFilter.inHTMLData(name),
+email = xssFilter.inHTMLData(email),
+subject = xssFilter.inHTMLData(subject),
+text = xssFilter.inHTMLData(text),
+phoneNum = xssFilter.inHTMLData(phoneNum)
+    
+  
     //verify email address
- let verifier = new Verifier(process.env.VERIFIER_KEY);
-  verifier.verify(email, (err, data) =>{
-      if(err) console.log(err);
-      console.log(data);
-  })
+//  let verifier = new Verifier(process.env.VERIFIER_KEY);
+//   verifier.verify(email, (err, data) =>{
+//       if(err) console.log(err);
+//       console.log(data);
+//   })
 
     sendMail(name, email, subject, text, phoneNum, (err, data) =>{
                     

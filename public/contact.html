@@ -106,16 +106,21 @@
                               <div id="back-message" class="back-message"></div>
        <div class="row" data-aos="fade-left" class="aos-init">
      <div class="col-lg-6 col-sm-12">
-         <input type="name" class="form-control" id="name" placeholder="الإسم" required>
+       <label>الاسم :</label>
+         <input type="name" class="form-control" id="name" placeholder="   !!! الاسم مطلوب " required>
      </div>
            <div class="col-lg-6 col-sm-12">
-               <input type="phone" class="form-control" id="phoneNum" placeholder="الهاتف" id="phoneNum" required></div>
+             <label>الهاتف: </label>
+               <input type="phone" class="form-control" id="phoneNum" placeholder="   !!! الهاتف مطلوب" id="phoneNum" required ></div>
         <div class="col-lg-6 col-sm-12">
-            <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني" required></div>
+          <label>البريد الالكتروني :</label>
+            <input type="email" class="form-control" id="email" placeholder="" ></div>
             <div class="col-lg-6 col-sm-12">
-            <input type="name" class="form-control" id="subject" placeholder="الجهة"></div>
+              <label>الجهة :</label>
+            <input type="name" class="form-control" id="subject" placeholder=""></div>
             <div class="col-12">
-             <textarea class="form-control" rows="3" id="textarea" placeholder="الرسالة" required></textarea></div>
+              <label>الرسالة :</label>
+             <textarea class="form-control" rows="3" id="textarea" placeholder="   !!! الرسالة مطلوبة" required ></textarea></div>
       <button class="btn contact-btn btn-effect">إرسال</button>
        </div>
            </form>  
@@ -223,15 +228,19 @@ form.addEventListener('submit', (e) =>{
 e.preventDefault();
 const name = document.getElementById('name').value;
 const phoneNum = document.getElementById('phoneNum').value;
-const email = document.getElementById('email').value;
-const subject = document.getElementById('subject').value;
+let email = document.getElementById('email').value;
+let subject = document.getElementById('subject').value;
 const text = document.getElementById('textarea').value;
 
-if (subject == undefined || subject == null){
-  subject = '';
+//validate subject and email
+if (subject == '' ){
+  subject = 'no subject';
+}
+if(email == '' ){
+  email = 'ahmdbirthday@gmail.com';
 }
 
-const data = {
+let data = {
 name,
 email,
 subject,
@@ -243,19 +252,18 @@ console.log(data);
 axios.post('/email', data)
 .then(res =>{
   //adding message to the dom
-  console.log(res);
   const div = document.createElement('div');
-  div.classList.add('alert-alert-success');
-  consol.log(res.data);
-  div.innerText = `${res.data}`;
+  div.classList.add('success');
+  div.innerHTML = `<p>${res.data}</p>`;
+  console.log(res.data);
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
 }).catch(err =>{
    //adding message to the dom
-   console.log(err);
+   console.log(err.data);
    const div = document.createElement('div');
-  div.classList.add('alert-alert-danger');
-  div.innerText = `<p>${err.data}</p>`;
+  div.classList.add('failure');
+  div.innerHTML = `<p>${err.data}</p>`;
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
 })

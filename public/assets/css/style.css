@@ -1804,8 +1804,20 @@ footer a:hover{
 }
 .back-message{
   width: 100%;
-  padding: 10px;
-  color: lightgreen;
-  margin-bottom: 10px;
-  border-radius: 20px;
+}
+.success{
+    width: 100%;
+    padding: 10px;
+    background-color: lightgreen;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.failure{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(221, 26, 26);
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
