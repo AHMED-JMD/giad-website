@@ -106,6 +106,7 @@
                 <div class="text-center mb-3"><img src="assets/images/wheel.png" width="70px" alt=""></div>
                 <h2 class="main-header text-center mb-5"><span>Get In</span> Touch</h2>
                             <form class="form" id="contact-form">
+                            <div id="back-message" class="back-message"></div>  
        <div class="row" data-aos="fade-right" class="aos-init">
      <div class="col-lg-6 col-sm-12">
          <input type="name" class="form-control" id="name" placeholder="Name" required>
@@ -247,7 +248,7 @@ axios.post('/email-en', data)
   //adding message to the dom
   const div = document.createElement('div');
   div.classList.add('alert-alert-success');
-  div.innerText = `${res.data}`;
+  div.innerHTML = `<p>${res.data} </p>`;
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
 }).catch(err =>{
@@ -255,7 +256,7 @@ axios.post('/email-en', data)
    
    const div = document.createElement('div');
   div.classList.add('alert-alert-danger');
-  div.innerText = `<p>${err.data}</p>`;
+  div.innerHTML = `<p>${err.data}</p>`;
   const st_div = document.getElementById('back-message');
   // st_div.appendChild(div);
 })

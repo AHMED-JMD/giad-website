@@ -53,18 +53,17 @@ app.post('/email-en', async (req, res,next) =>{
     if(!name || !email || !subject || !text || !phoneNum){
         return res.status(400).json({msg:'please enter all feilds'});
     }
-
+console.log(name, email, subject, text, phoneNum);
     //verify email address
- let verifier = new Verifier(process.env.VERIFIER_KEY);
-  verifier.verify(email, (err, data) =>{
-      if(err) console.log(err);
-      console.log(data);
-  })
+//  let verifier = new Verifier(process.env.VERIFIER_KEY);
+//   verifier.verify(email, (err, data) =>{
+//       if(err) console.log(err);
+//       console.log(data);
+//   })
 
-    sendMail(name,email, subject,text,phoneNum, (err, data) =>{
-                    
+    sendMail(name,email, subject,text,phoneNum, (err, data) =>{            
         if(err){
-            res.status(500).json({err: 'internal error', error:err})
+            res.status(500).json({err: 'internal error', error:err.data})
         }else{
             res.json('Message Sent , We Will be in touch soon');
         }
@@ -90,7 +89,7 @@ app.post('/email', async (req, res,next) =>{
       console.log(data);
   })
 
-    sendMail(name,email, subject,text,phoneNum, (err, data) =>{
+    sendMail(name, email, subject, text, phoneNum, (err, data) =>{
                     
         if(err){
             res.status(500).json({err: 'internal error', error:err})

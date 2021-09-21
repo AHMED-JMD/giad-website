@@ -1805,3 +1805,11 @@ footer a:hover{
     color: 606060;
 }
 }
+.back-message{
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: lightgreen;
+  border-radius: 20px;
+}

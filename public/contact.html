@@ -103,7 +103,7 @@
                <div class="text-center mb-3"><img src="assets/images/wheel.png" width="70px" alt=""></div>
                 <h2 class="main-header text-center mb-5"><span>كن على</span> إتصال</h2>
                             <form class="form" id="contact-form">
-                              <div id="back-message"></div>
+                              <div id="back-message" class="back-message"></div>
        <div class="row" data-aos="fade-left" class="aos-init">
      <div class="col-lg-6 col-sm-12">
          <input type="name" class="form-control" id="name" placeholder="الإسم" required>
@@ -254,7 +254,7 @@ axios.post('/email', data)
    console.log(err);
    const div = document.createElement('div');
   div.classList.add('alert-alert-danger');
-  div.innerText = `<p>${err.data}</p>`;
+  div.innerText = `<p>${err.response.data}</p>`;
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
 })
