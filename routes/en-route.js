@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 var quickemailverification = require('quickemailverification').client(process.env.VERIFIER_KEY).quickemailverification(); 
 const xssFilter = require('xss-filters');
+const sendMail = require('../mail');
 
 //english pages goes here
 router.get('/', (req,res) =>{
@@ -35,11 +36,10 @@ subject = xssFilter.inHTMLData(subject),
 text = xssFilter.inHTMLData(text),
 phoneNum = xssFilter.inHTMLData(phoneNum)
     
-   
     //verify email address
-quickemailverification.verify(email, (err, response) =>{
-    console.log(response.body)
-})
+// quickemailverification.verify(email, (err, response) =>{
+//     console.log(response.body)
+// })
 
     sendMail(name, email, subject, text, phoneNum, (err, data) =>{            
         if(err){
