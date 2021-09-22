@@ -1821,3 +1821,6 @@ footer a:hover{
     margin-bottom: 10px;
     border-radius: 20px;
 }
+::placeholder { 
+  color: red;
+}
