@@ -40,15 +40,18 @@ phoneNum = xssFilter.inHTMLData(phoneNum)
 // quickemailverification.verify(email, (err, response) =>{
 //     console.log(response.body)
 // })
-
+try{
     sendMail(name, email, subject, text, phoneNum, (err, data) =>{            
         if(err){
+            console.log(err)
             res.status(500).json({err: 'internal error', error:err.data})
         }else{
-            res.json('Message Sent , We Will be in touch soon');
+            res.json('Message Sent successfully , We Will be in touch soon');
         }
 });
-   
+} catch(e){
+    console.log(e);
+}   
 });
 
 router.use( (req, res, next) =>{

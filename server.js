@@ -30,11 +30,7 @@ app.get('/contact', (req,res) =>{
 });
 
 
-
-
 //post rout
-
-//post 
 app.post('/email', async (req, res,next) =>{
     let {name,email, subject, text, phoneNum} = req.body;
     
@@ -55,17 +51,22 @@ phoneNum = xssFilter.inHTMLData(phoneNum)
 //       if(err) console.log(err);
 //       console.log(data);
 //   })
-
+try{
     sendMail(name, email, subject, text, phoneNum, (err, data) =>{
                     
         if(err){
-            res.status(500).json({err: 'internal error', error:err})
+            console.log(err);
+            res.status(500).json({err1: 'internal error'})
         }else{
             res.json('تم ارسال الرسالة بنجاح, سيتم التواصل قي اقرب وقت ممكن ');
         }
                
-});
-   
+}); 
+
+}catch(e){
+  console.log('error in mailgun ', e);
+} 
+
 });
 
 
@@ -75,5 +76,5 @@ app.use( (req, res, next) =>{
     res.status(404).sendFile(path.join(__dirname, './public/404.html'));
 });
 //listening to port
-const port = process.env.PORT || 7894;
+const port = process.env.PORT || 7892;
 app.listen(port, ()=> console.log(`server running on port ${port}`));

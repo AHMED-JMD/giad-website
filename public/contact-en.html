@@ -21,7 +21,18 @@
     </head>
     <body class="sticky-header mx-auto">
             <div class="contain">
-                 <!-- Loader -->
+                                  <!-- Loader -->
+                <div class="loader">
+                    <div class="wheel">
+                        <img src="/assets/images/giad-wheel.png" alt="">
+                    </div>
+                     <div class="icon">
+              <img src="/assets/images/giad-motor-services-icon.png">
+          </div>
+               <div class="caption">
+                   <img src="/assets/images/giad-motor-services-caption.png">
+               </div>
+                </div>
 
                   <!-- SCROLL TOP -->
         <a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button"><i class="fa fa-arrow-up icon"></i></a>
@@ -106,15 +117,14 @@
                 <div class="text-center mb-3"><img src="/assets/images/wheel.png" width="70px" alt=""></div>
                 <h2 class="main-header text-center mb-5"><span>Get In</span> Touch</h2>
                             <form class="form" id="contact-form">
-                            <div id="back-message" class="back-message"></div>  
        <div class="row" data-aos="fade-right" class="aos-init">
      <div class="col-lg-6 col-sm-12">
-       <label>Name :</label>
-         <input type="name" class="form-control" id="name" placeholder="name is Required !!!" required>
+       <label><span>*</span>Name :</label>
+         <input type="name" class="form-control" id="name" required>
      </div>
            <div class="col-lg-6 col-sm-12">
-             <label>Phone :</label>
-               <input type="phone" class="form-control" id="phoneNum" placeholder="phone is Required !!!" id="phoneNum" required></div>
+             <label><span>*</span>Phone :</label>
+               <input type="phone" class="form-control" id="phoneNum" id="phoneNum" required></div>
         <div class="col-lg-6 col-sm-12">
           <label>Email : </label>
             <input type="email" class="form-control" id="email"  ></div>
@@ -122,49 +132,50 @@
               <label>Party :</label>
             <input type="name" class="form-control" id="subject"  ></div>
             <div class="col-12">
-              <label>Message :</label>
-             <textarea class="form-control" rows="3" id="textarea" placeholder="message is Required !!!" required></textarea></div>
+              <label><span>*</span>Message :</label>
+             <textarea class="form-control" rows="3" id="textarea" required></textarea></div>
       <button class="btn contact-btn btn-effect">Send</button>
        </div>
+       <div id="back-message" class="back-message text-center"></div>
            </form>  
         </div>
            <div class="contact-methods mb-5 ">
               <div class="row mx-auto" data-aos="fade-left" class="aos-init">
-               <div class="col-lg-3 col-sm-6 col-xs-12 mb-3 d-flex">
+               <div class="col-md-6 col-sm-12 mb-3 d-flex">
                 <div class="">
                     <i class="fas fa-phone"></i>
                 </div>
                  <div>
                      <h4> Phone Number</h4>
-                     <a href="tel:00249183463543"> 2605 </a>
+                     <p>2605</p>
                  </div>
                </div>
-               <div class="col-lg-3 col-sm-6 col-xs-12 mb-3 d-flex">
+               <div class="col-md-6 col-sm-12 mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-fax"></i>
                 </div>
                   <div>
                         <h4>Fax</h4>
-                       <a href="#">1831476981</a>
+                      <p>1831476981</p>
                   </div>
                   
                </div>
-                  <div class="col-lg-3 col-sm-6 col-xs-12 mx mb-3 d-flex">
+                  <div class="col-md-6 col-sm-12 mx mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-envelope"></i>
                 </div>
                   <div>
                         <h4>Email</h4>
-                   <a href="mailto:">info@mail.com</a>
+                   <p>info@giadmotorservices.com</p>
                   </div>
                </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 mx mb-3 d-flex">
+                <div class="col-md-6 col-sm-12 mx mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-home"></i>
                 </div>
                   <div>
                         <h4>Location</h4>
-                   <a href="#">Khartoum, Sudan</a>
+                  <p>Khartoum, Sudan</p>
                   </div>
                </div>
                </div>
@@ -187,11 +198,11 @@
             <p><a href="/en/services-centers">Services Centers</a></p>
             <p><a href="/en/contact">Contact</a></p>
          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
+           <div class="col-lg-4 col-sm-6 col-xs-12">
             <h2>Contact</h2>
-             <p>Phone: <a href="tel:00249183463543"> 2605 </a></p>
-               <p>Fax: <a href="#">1831476981</a></p>
-                <p>Email: <a href="mailto:info@mail.com">info@giadmotorservices.com</a></p>
+             <p>Phone: 2605</p>
+               <p>Fax: 1831476981</p>
+              <p>Email: <a href="mailto:info@giadmotorservices.com">info@giadmotorservices.com</a></p>
               <p>Khartoum, Southwest of the horse racing area.</p>
           </div>
            <div class="col-lg-4 col-sm-6 col-xs-12">
@@ -224,33 +235,33 @@
             
              <!-- JS LINKS -->
                                    <!-- backend with contact -->
+<script src="https://cdn.jsdelivr.net/npm/xss-filters@1.2.7/dist/xss-filters.1.2.7.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 const form  = document.getElementById('contact-form');
 form.addEventListener('submit', (e) =>{
 e.preventDefault();
-const name = document.getElementById('name').value;
-const phoneNum = document.getElementById('phoneNum').value;
+let name = document.getElementById('name').value;
+let phoneNum = document.getElementById('phoneNum').value;
 let email = document.getElementById('email').value;
 let subject = document.getElementById('subject').value;
-const text = document.getElementById('textarea').value;
+let text = document.getElementById('textarea').value;
 
 //validate email and subject
 if (subject == ''){
-  subject = 'no subject';
+  subject = 'individuals';
 }
 if(email == ''){
-  email = 'ahmdbirthday@gmail.com';
+  email = 'contact@giadmotorservices.com';
 }
 
 let data = {
-name,
-email,
-subject,
-text,
-phoneNum
+name : xssFilters.inHTMLData(name),
+email : xssFilters.inHTMLData(email),
+subject: xssFilters.inHTMLData(subject),
+text : xssFilters.inHTMLData(text),
+phoneNum :  xssFilters.inHTMLData(phoneNum)
 }
-console.log(data);
 
 axios.post('/en/email', data)
 .then(res =>{
@@ -261,6 +272,9 @@ axios.post('/en/email', data)
   console.log(res.data);
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
+  div.classList.add('back-message-anim');
+  st_div.appendChild(div);
+
 }).catch(err =>{
    //adding message to the dom
    
@@ -269,10 +283,13 @@ axios.post('/en/email', data)
   div.innerHTML = `<p>${err.data}</p>`;
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
-})
+  div.classList.add('back-message-anim');
+  st_div.appendChild(div);
+});
 
 });
 </script>
+        <!-- JS LINKS -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

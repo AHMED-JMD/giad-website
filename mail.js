@@ -1,34 +1,27 @@
-const nodemailer = require('nodemailer');
-const mailgun = require('nodemailer-mailgun-transport');
-// process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
-require('dotenv').config();
-
-
-const auth = {
-  auth:{
-    domain: process.env.DOMAIN,
-    api_key: process.env.API_KEY
-
-  }
-}
-
-const transporter = nodemailer.createTransport(mailgun(auth));
+// // process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
+ require('dotenv').config();  
+var api_key = process.env.API_KEY;
+var domain = process.env.DOMAIN;
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 const sendMail = (name, email, subject, text, phoneNum,cb) =>{
-  const data = {
-   from: email,
-   to: 'ahmedjmd0@gmail.com',
-   subject: ` ${name} | ${subject}  `,
-   text: `${text} phone numer is ${phoneNum}` ,
-  
-  };
-  transporter.sendMail(data, (err, data)=>{
-    if(err){
-     cb(err, null);
-    }else{
-     cb(null, data);
-    }
-  });
-};
+   try{
+   const data = {
+    from: email,
+    to: 'contact.giadms@gmail.com',
+    subject: ` Message From The Website `,
+    text: ` name is ${name} \n party is ${subject} \n message is ${text} \n phone number is ${phoneNum}` ,
+   };
 
-module.exports = sendMail;
+   mailgun.messages().send(data, function (error, body) {
+     if(error){
+       cb(err, null)
+     }else{
+       cb(null, data)
+    console.log(body);
+     } 
+  });
+
+ } catch(e){ console.log(e)};
+ };
+ module.exports = sendMail;

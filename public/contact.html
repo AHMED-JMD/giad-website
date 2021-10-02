@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/style-ar.css">
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css" integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="assets/fonts/flaticon.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -22,7 +21,18 @@
     </head>
     <body class="sticky-header mx-auto">
             <div class="contain">
-                 <!-- Loader -->
+                                <!-- Loader -->
+                <div class="loader">
+                    <div class="wheel">
+                        <img src="assets/images/giad-wheel.png" alt="">
+                    </div>
+                     <div class="icon">
+              <img src="assets/images/giad-motor-services-icon.png">
+          </div>
+               <div class="caption">
+                   <img src="assets/images/giad-motor-services-caption.png">
+               </div>
+                </div>
 
                   <!-- SCROLL TOP -->
         <a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button"><i class="fa fa-arrow-up icon"></i></a>
@@ -103,15 +113,14 @@
                <div class="text-center mb-3"><img src="assets/images/wheel.png" width="70px" alt=""></div>
                 <h2 class="main-header text-center mb-5"><span>كن على</span> إتصال</h2>
                             <form class="form" id="contact-form">
-                              <div id="back-message" class="back-message"></div>
        <div class="row" data-aos="fade-left" class="aos-init">
      <div class="col-lg-6 col-sm-12">
-       <label>الاسم :</label>
-         <input type="name" class="form-control" id="name" placeholder="الاسم مطلوب!!!" required>
+       <label><span>*</span>الاسم:</label>
+         <input type="name" class="form-control" id="name" required>
      </div>
            <div class="col-lg-6 col-sm-12">
-             <label>الهاتف: </label>
-               <input type="phone" class="form-control" id="phoneNum" placeholder="الهاتف مطلوب!!!" id="phoneNum" required ></div>
+             <label><span>*</span>الهاتف: </label>
+               <input type="phone" class="form-control" id="phoneNum" id="phoneNum" required ></div>
         <div class="col-lg-6 col-sm-12">
           <label>البريد الالكتروني :</label>
             <input type="email" class="form-control" id="email"  ></div>
@@ -119,49 +128,50 @@
               <label>الجهة :</label>
             <input type="name" class="form-control" id="subject" ></div>
             <div class="col-12">
-              <label>الرسالة :</label>
-             <textarea class="form-control" rows="3" id="textarea" placeholder="الرسالة مطلوبة  !!!" required ></textarea></div>
+              <label><span>*</span>الرسالة :</label>
+             <textarea class="form-control" rows="3" id="textarea" required ></textarea></div>
       <button class="btn contact-btn btn-effect">إرسال</button>
        </div>
+       <div id="back-message" class="back-message text-center"></div>
            </form>  
         </div>
            <div class="contact-methods mb-5 ">
               <div class="row mx-auto" data-aos="fade-right" class="aos-init">
-               <div class="col-lg-3 col-sm-6 col-xs-12 mb-3 d-flex">
+               <div class="col-md-6 col-sm-12 mb-3 d-flex">
                 <div class="">
                     <i class="fas fa-phone mr-2"></i>
                 </div>
                  <div>
                      <h4>رقم الهاتف</h4>
-                     <a href="tel:00249183463543">2605</a>
+                     <p>2605</p>
                  </div>
                </div>
-               <div class="col-lg-3 col-sm-6 col-xs-12 mb-3 d-flex">
+               <div class="col-md-6 col-sm-12 mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-fax mr-2"></i>
                 </div>
                   <div>
                         <h4>الفاكس</h4>
-                       <a href="#">1831476981</a>
+                      <p>1831476981</p>
                   </div>
                   
                </div>
-                  <div class="col-lg-3 col-sm-6 col-xs-12 mx mb-3 d-flex">
+                  <div class="col-md-6 col-sm-12 mx mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-envelope mr-2"></i>
                 </div>
                   <div>
                         <h4>البريد الإلكتروني</h4>
-                   <a href="mailto:">info@mail.com</a>
+                  <p>info@giadmotorservices.com</p>
                   </div>
                </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 mx mb-3 d-flex">
+                <div class="col-md-6 col-sm-12 mx mb-3 d-flex">
                   <div class="">
                     <i class="fas fa-home mr-2"></i>
                 </div>
                   <div>
                         <h4>الموقع</h4>
-                   <a href="#">الخرطوم، السودان</a>
+                  <p>الخرطوم، السودان</p>
                   </div>
                </div>
                </div>
@@ -186,8 +196,8 @@
          </div>
           <div class="col-lg-4 col-sm-6 col-xs-12">
             <h2>التواصل</h2>
-             <p>الهاتف : <a href="tel:00249183463543">2605</a></p>
-               <p>فاكس: <a href="#">1831476981</a></p>
+             <p>الهاتف :  2605</p>
+               <p>فاكس: 1831476981</p>
                 <p>البريد الإلكتروني: <a href="mailto:info@mail.com">info@giadmotorservices.com</a></p>
               <p>الخرطوم, جنوب غرب سباق الخيل.</p>
           </div>
@@ -221,33 +231,33 @@
             
              <!-- JS LINKS -->
                           <!-- backend with contact -->
+<script src="https://cdn.jsdelivr.net/npm/xss-filters@1.2.7/dist/xss-filters.1.2.7.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 const form  = document.getElementById('contact-form');
 form.addEventListener('submit', (e) =>{
 e.preventDefault();
-const name = document.getElementById('name').value;
-const phoneNum = document.getElementById('phoneNum').value;
+let name = document.getElementById('name').value;
+let phoneNum = document.getElementById('phoneNum').value;
 let email = document.getElementById('email').value;
 let subject = document.getElementById('subject').value;
-const text = document.getElementById('textarea').value;
+let text = document.getElementById('textarea').value;
 
 //validate subject and email
 if (subject == '' ){
-  subject = 'no subject';
+  subject = 'افراد';
 }
 if(email == '' ){
-  email = 'ahmdbirthday@gmail.com';
+  email = 'contact@giadmotorservices.com';
 }
 
 let data = {
-name,
-email,
-subject,
-text,
-phoneNum
+name : xssFilters.inHTMLData(name),
+email : xssFilters.inHTMLData(email),
+subject: xssFilters.inHTMLData(subject),
+text : xssFilters.inHTMLData(text),
+phoneNum :  xssFilters.inHTMLData(phoneNum)
 }
-console.log(data);
 
 axios.post('/email', data)
 .then(res =>{
@@ -258,6 +268,9 @@ axios.post('/email', data)
   console.log(res.data);
   const st_div = document.getElementById('back-message');
   st_div.appendChild(div);
+  div.classList.add('back-message-anim');
+  st_div.appendChild(div);
+  
 }).catch(err =>{
    //adding message to the dom
    console.log(err.data);
@@ -265,6 +278,8 @@ axios.post('/email', data)
   div.classList.add('failure');
   div.innerHTML = `<p>${err.data}</p>`;
   const st_div = document.getElementById('back-message');
+  st_div.appendChild(div);
+  div.classList.add('back-message-anim');
   st_div.appendChild(div);
 })
 });

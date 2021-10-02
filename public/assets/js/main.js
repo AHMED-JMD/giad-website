@@ -3,6 +3,17 @@
     "use strict";
 
     /*-------------------------------------
+    Loader
+    -------------------------------------*/  
+     $(function(){ 
+      $(window).on("load",function(){
+         $(".loader").fadeOut("slow");
+         $("body").css("overflow-y", "auto");
+      });
+      });
+    
+    
+    /*-------------------------------------
     On Scroll 
     -------------------------------------*/
     $(window).on('scroll', function () {
