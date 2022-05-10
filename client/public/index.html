@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+<!-- LINKS START HERE -->
+<link rel="shortcut icon" href="assets/images/logo.png">
+<link rel="stylesheet" href="assets/css/style-ar.css">
+<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css" integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/vendor/css/nivo-slider.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>  
+
+    <title>React App</title>
+  </head>
+  <body class="sticky-header mx-auto">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+                                 <!-- Loader -->
+    <div class="loader">
+      <div class="wheel">
+          <img src="assets/images/giad-wheel.png" alt="">
+      </div>
+       <div class="icon">
+<img src="assets/images/giad-motor-services-icon.png">
+</div>
+ <div class="caption">
+     <img src="assets/images/giad-motor-services-caption.png">
+ </div>
+  </div>
+
+                    <!-- SCROLL TOP -->
+    <a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button"><i class="fa fa-arrow-up icon"></i></a>
+
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+            <!-- JS LINKS -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+              <script src="assets/js/owl.carousel.min.js"></script>
+              <script src="assets/js/jquery.counterup.min.js"></script>
+              <script src="assets/js/waypoint.js"></script>               
+               <script src="assets/js/scrolling-nav.js"></script>       
+              <script src="assets/js/jquery.easing.min.js"></script>
+                       <script src="assets/vendor/js/jquery.nivo.slider.js"></script>            
+      <script src="assets/vendor/home.js"></script>
+      <script src="assets/js/jquery.counterup.min.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+             <script>
+              $(document).ready(function(){
+          /* Get iframe src attribute value i.e. YouTube video url
+          and store it in a variable */
+          var url = $("#cartoonVideo").attr('src');
+          
+          /* Assign empty url value to the iframe src attribute when
+          modal hide, which stop the video playing */
+          $("#myModal").on('hide.bs.modal', function(){
+              $("#cartoonVideo").attr('src', '');
+          });
+          
+          /* Assign the initially stored url back to the iframe src
+          attribute when modal is displayed again */
+          $("#myModal").on('show.bs.modal', function(){
+              $("#cartoonVideo").attr('src', url);
+          });
+      });
+              </script>
+
+  </body>
+</html>
