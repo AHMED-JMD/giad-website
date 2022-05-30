@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Languages } from "../../context/languages";
 
 const HomeAbout = () => {
   return (
@@ -46,25 +47,23 @@ const HomeAbout = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
-          <span>من</span> نحن؟{" "}
+          <span> {Languages.Ar.Home.HomeAbout.header[0]}</span>{" "}
+          {Languages.Ar.Home.HomeAbout.header[1]}{" "}
         </h2>
         <p className="main-text text-center mb-5">
-          اعرف المزيد عن جياد لخدمات السيارات
+          {Languages.Ar.Home.HomeAbout.header[2]}{" "}
         </p>
         <div className="container-fluid row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
-              <span className="bold">شركة جياد لخدمات السيارات المحدودة، </span>
-              شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع ،
-              وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان -
-              تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق
-              الخيل كما أن لها وكلاء بمختلف المدن.
+              <span className="bold">
+                {" "}
+                {Languages.Ar.Home.HomeAbout.body[0]}{" "}
+              </span>
             </p>
             <p className="extra-info">
-              تمتلك الشركة في مقرها الرئيس ورشاً متطورة لأعمال الصيانة
-              الميكانيكية وكهرباء السيارات ،كما تمتلك ورشة لأعمال السمكرة
-              والطلاء والتي تقوم بتقديم خدمات تكاملية للسيارات ، بالإضافة لورشة
-              متكاملة لخدمات الصيانة الدورية والنظافة وغيار الزيت والفلاتر .
+              {" "}
+              {Languages.Ar.Home.HomeAbout.body[1]}{" "}
             </p>
           </div>
           <div
@@ -94,7 +93,7 @@ const HomeAbout = () => {
             </div>
           </div>
           <Link className="btn main-btn mt-5" to="/about">
-            عرض المزيد
+            {Languages.Ar.Home.HomeAbout.AboutBtn}{" "}
           </Link>
         </div>
       </div>

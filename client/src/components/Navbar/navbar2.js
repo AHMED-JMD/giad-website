@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
+
 const Navbar2 = () => {
+  const { language, setLanguage } = useContext(LangContext);
+
   return (
-    <nav className="navbar navbar-2 navbar-expand-md" id="header-menu">
+    <nav
+      dir={`${Languages.Ar.dir}`}
+      className="navbar navbar-2 navbar-expand-md"
+      id="header-menu"
+    >
       <Link className="navbar-brand ml-5" to="/">
         <img
           src="./assets/images/white-logo.png"
@@ -35,33 +44,34 @@ const Navbar2 = () => {
         <ul className="navbar-nav">
           <li className="nav-item ">
             <Link className="nav-link active" to="/">
-              الرئيسية
+              {Languages.Ar.Navbar.content[1]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/about">
-              من نحن
+              {Languages.Ar.Navbar.content[2]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/products">
-              المنتجات
+              {Languages.Ar.Navbar.content[3]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/services-centers">
-              <span className="mr-1">مراكز</span>الخدمات
+              <span className="mr-1">{Languages.Ar.Navbar.content[4]}</span>
+              {Languages.Ar.Navbar.content[5]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">
-              التواصل
+              {Languages.Ar.Navbar.content[6]}
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link english-btn" href="/en">
-              English
-            </a>
+            <Link className="nav-link english-btn" to="#">
+              {Languages.Ar.Navbar.content[7]}
+            </Link>
           </li>
         </ul>
       </div>

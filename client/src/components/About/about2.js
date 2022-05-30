@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const About2 = () => {
   return (
@@ -10,48 +11,49 @@ const About2 = () => {
             data-aos="fade-left"
           >
             <h2>
-              <i className="fas fa-check-circle mr-2"></i>الرؤية
+              <i className="fas fa-check-circle mr-2"></i>
+              {Languages.Ar.About.body2.vision[0]}
             </h2>
-            <p>
-              أن نكون الرواد إقليميا في تقديم خدمات الصيانة للمركبات بمعايير
-              عالمية.
-            </p>
+            <p>{Languages.Ar.About.body2.vision[1]}</p>
           </div>
           <div
             className="aos-init col-lg-6 col-sm-12 mb-3"
             data-aos="fade-right"
           >
             <h2>
-              <i className="fas fa-check-circle mr-2"></i>الرسالة
+              <i className="fas fa-check-circle mr-2"></i>{" "}
+              {Languages.Ar.About.body2.message[0]}
             </h2>
-            <p>
-              تقديم خدمات الصيانة بمعايير عالمية مستعينين بكوادرنا المؤهلة
-              واستخدام أحدث الأنظمة مع توفير وتوطين بعض قطع الغيار بأسعار منافسة
-              وعمل شراكات متميزة.
-            </p>
+            <p>{Languages.Ar.About.body2.message[1]}</p>
           </div>
           <div
             className="aos-init col-lg-6 col-sm-12 mb-3"
             data-aos="fade-left"
           >
             <h2>
-              <i className="fas fa-check-circle mr-2"></i>القيم
+              <i className="fas fa-check-circle mr-2"></i>{" "}
+              {Languages.Ar.About.body2.values[0]}
             </h2>
             <ul>
               <li>
-                <i className="fa"></i>قيادة ملهمة.
+                <i className="fa"></i>
+                {Languages.Ar.About.body2.values[1]}
               </li>
               <li>
-                <i className="fa"></i>العمل بروح الفريق.
+                <i className="fa"></i>
+                {Languages.Ar.About.body2.values[2]}{" "}
               </li>
               <li>
-                <i className="fa"></i>الإلتزام.
+                <i className="fa"></i>
+                {Languages.Ar.About.body2.values[3]}.
               </li>
               <li>
-                <i className="fa"></i>صداقة مع البيئة.
+                <i className="fa"></i>
+                {Languages.Ar.About.body2.values[4]}.
               </li>
               <li>
-                <i className="fa"></i>الإبداع والابتكار.
+                <i className="fa"></i>
+                {Languages.Ar.About.body2.values[5]} .
               </li>
             </ul>
           </div>
@@ -62,40 +64,27 @@ const About2 = () => {
             data-aos="fade-right"
           >
             <h2>
-              <i className="fas fa-check-circle mr-2"></i>المميزات والشهادات
+              <i className="fas fa-check-circle mr-2"></i>{" "}
+              {Languages.Ar.About.body2.certificates[0]}
             </h2>
             <ul>
-              <li>تقوم الشركة بعمل كورسات لتأهيل العاملين بها. </li>
-              <li>للعاملين بها سوق تعاوني بأسعار مدعومة .</li>
-              <li>حصلت الشركة على شهادة ال ISO في العام 2006.</li>
-              <li>
-                حصلت على التوكيل الحصري والأقليمي لزيوت MAKINA LUBE في العام
-                2020.
-              </li>
+              <li> {Languages.Ar.About.body2.certificates[1]}</li>
+              <li> {Languages.Ar.About.body2.certificates[2]}</li>
+              <li> {Languages.Ar.About.body2.certificates[3]}.</li>
+              <li>{Languages.Ar.About.body2.certificates[4]}</li>
             </ul>
           </div>
           {/* <!--    --> */}
 
           <div className="aos-init col-12 mb-3" data-aos="fade-top">
             <h2>
-              <i className="fas fa-check-circle mr-2"></i>الإنجازات
+              <i className="fas fa-check-circle mr-2"></i>{" "}
+              {Languages.Ar.About.body2.accomplishments[0]}
             </h2>
             <ul>
-              <li>
-                قامت الشركة بشراكات ذكية مع MAN الألمانية و RENAULT الفرنسية
-                وشركات سيارات مثل هونداي و BYD الصينية.{" "}
-              </li>
-              <li>
-                لشركة جياد شراكات تشغيلية واستثمارية مع القوات المسلحة في ورشة
-                الشجرة لصيانة الشاحنات العسكرية وإعادة تأهيل عربات الدفع
-                الرباعي، وورشة كافوري لصيانة العربات القيادية والوظيفية ، وأيضا
-                هنالك شراكة استثمارية بشركة NTC لصيانة السيارات مع القوات
-                المسلحة.
-              </li>
-              <li>
-                ساهمت في دعم الأسر الفقيرة وتأهيل البنية التحتية ودعم النوادي
-                والمنتديات الثقافية في محيط الشركة.
-              </li>
+              <li>{Languages.Ar.About.body2.accomplishments[1]}</li>
+              <li>{Languages.Ar.About.body2.accomplishments[2]}</li>
+              <li>{Languages.Ar.About.body2.accomplishments[3]}</li>
             </ul>
           </div>
         </div>

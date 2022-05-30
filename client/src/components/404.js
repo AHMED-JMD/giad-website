@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Languages } from "../context/languages";
 
 const ErrorPage = () => {
   return (
@@ -10,7 +11,9 @@ const ErrorPage = () => {
           <div className="wt-bnr-inr-entry">
             <div className="banner-title-outer">
               <div className="banner-title-name">
-                <h2 className="site-text-white">404</h2>
+                <h2 className="site-text-white">
+                  {Languages.Ar.Page404.content[0]}
+                </h2>
               </div>
             </div>
             {/* <!-- BREADCRUMB ROW -->                             */}
@@ -18,9 +21,9 @@ const ErrorPage = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">الرئيسية</Link>
+                  <Link to="/">{Languages.Ar.Page404.content[1]}</Link>
                 </li>
-                <li>404</li>
+                <li>{Languages.Ar.Page404.content[0]}</li>
               </ul>
             </div>
 
@@ -33,12 +36,14 @@ const ErrorPage = () => {
         <div className="error-section text-center mx-auto my-5">
           <img src="/assets/images/wheel.png" width="100px" alt="" />
           <h2>
-            <span className="dot"></span>خطأ<span class="dot"></span>
+            <span className="dot"></span>
+            {Languages.Ar.Page404.content[2]}
+            <span class="dot"></span>
           </h2>
-          <h1>404</h1>
-          <p className="mb-3">الصفحة غير موجودة</p>
+          <h1>{Languages.Ar.Page404.content[0]}</h1>
+          <p className="mb-3">{Languages.Ar.Page404.content[3]}</p>
           <a href="/" class="btn main-btn">
-            الرجوع إلى الرئيسية
+            {Languages.Ar.Page404.content[4]}
           </a>
         </div>
       </div>

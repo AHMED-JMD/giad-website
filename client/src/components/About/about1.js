@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const About1 = () => {
   return (
@@ -45,26 +46,18 @@ const About1 = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
-          <span>من</span> نحن؟{" "}
+          <span> {Languages.Ar.About.body1.header[0]}</span>{" "}
+          {Languages.Ar.About.body1.header[1]}{" "}
         </h2>
         <p className="main-text text-center mb-5">
-          اعرف المزيد عن جياد لخدمات السيارات
+          {Languages.Ar.About.body1.header[2]}{" "}
         </p>
         <div className="container-fluid row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
-              <span className="bold">شركة جياد لخدمات السيارات المحدودة، </span>
-              شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع ،
-              وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان -
-              تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق
-              الخيل كما أن لها وكلاء بمختلف المدن.
+              <span className="bold">{Languages.Ar.About.body1.body[0]} </span>
             </p>
-            <p>
-              تمتلك الشركة في مقرها الرئيس ورشاً متطورة لأعمال الصيانة
-              الميكانيكية وكهرباء السيارات ،كما تمتلك ورشة لأعمال السمكرة
-              والطلاء والتي تقوم بتقديم خدمات تكاملية للسيارات ، بالإضافة لورشة
-              متكاملة لخدمات الصيانة الدورية والنظافة وغيار الزيت والفلاتر .
-            </p>
+            <p>{Languages.Ar.About.body1.body[1]} </p>
           </div>
           <div className="col-lg-6 col-md-12 mx-auto text-center img-container">
             <div className="img-bg"></div>

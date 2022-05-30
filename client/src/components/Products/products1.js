@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const Products1 = () => {
   return (
@@ -9,22 +10,18 @@ const Products1 = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center mb-5">
-          <span>منتجاتنا</span> المميزة
+          <span>{Languages.Ar.Products.body.header[0]}</span>{" "}
+          {Languages.Ar.Products.body.header[1]}
         </h2>
 
         <h4 className="aos-init side-header" data-aos="fade-left">
-          زيوت MAKKINALUBE:
+          {Languages.Ar.Products.body.oils.title[0]}
         </h4>
         <p data-aos="fade-left" className="aos-init">
-          زيوت ماكينة هي زيوت وشحوم معدنية في الشارقة دولة الإمارات المتحدة،
-          الوكيل الحصري في السودان شركة جياد لخدمات السيارات المحدودة 2020، وهي
-          زيوت ذات جودة عالية بتقنية إنجلزية ومواءمة لأجواء السودان تناسب
-          المواصفات العالمية والمواصفات السودانية خصيصاً.
+          {Languages.Ar.Products.body.oils.title[1]}
         </p>
         <p data-aos="fade-left" className="aos-init">
-          يمكنك الحصول على كل هذه المنتجات من خلال المقر الرئيسي لجياد أو
-          موزعيها في الخرطوم أو الولايات المتحدة كما يتضمن خدمات التوصيل
-          لزبائننا الكرام.
+          {Languages.Ar.Products.body.oils.title[2]}
         </p>
         <div className="row mx-auto">
           <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
@@ -55,7 +52,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">زيوت محركات البنزين</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[0]}
+                </h4>
               </div>
             </div>
           </div>
@@ -87,7 +86,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">زيوت محركات الديزل</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[1]}
+                </h4>
               </div>
             </div>
           </div>
@@ -116,7 +117,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">زيوت التروس</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[2]}
+                </h4>
               </div>
             </div>
           </div>
@@ -138,7 +141,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">سوائل التبريد</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[3]}
+                </h4>
               </div>
             </div>
           </div>
@@ -160,7 +165,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">زيت الهايدروليك</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[4]}
+                </h4>
               </div>
             </div>
           </div>
@@ -193,7 +200,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">زيت الفرامل</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[5]}
+                </h4>
               </div>
             </div>
           </div>
@@ -226,14 +235,16 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">الشحوم</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.oils.oil[6]}
+                </h4>
               </div>
             </div>
           </div>
         </div>
         <hr className="my-5" />
         <h4 className="aos-init side-header" data-aos="fade-left">
-          فلاتر:
+          {Languages.Ar.Products.body.filters[0]}
         </h4>
         <div className="row mx-auto">
           <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
@@ -244,7 +255,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت شاحنة تراكتور</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[1]}
+                </h4>
               </div>
             </div>
           </div>
@@ -256,7 +269,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت بوكسي ريتش</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[2]}
+                </h4>
               </div>
             </div>
           </div>
@@ -268,7 +283,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت شاحنة ٣ طن </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[3]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -280,7 +297,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت نيسان باترول </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[4]}
+                </h4>
               </div>
             </div>
           </div>
@@ -292,7 +311,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت Hyundai i10</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[5]}
+                </h4>
               </div>
             </div>
           </div>
@@ -304,7 +325,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت بكاسي</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[6]}
+                </h4>
               </div>
             </div>
           </div>
@@ -316,7 +339,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر ميتسوبيشي لاندروفر جاز </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[7]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -328,7 +353,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت هيونداي سينتافي </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[8]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -340,7 +367,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت BYD</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[9]}
+                </h4>
               </div>
             </div>
           </div>
@@ -352,7 +381,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت شاحنة بتفورد</h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[10]}
+                </h4>
               </div>
             </div>
           </div>
@@ -364,7 +395,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر شاحنة بتفورد جاز </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[11]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -376,7 +409,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت BYD S7 جاز </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[12]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -388,7 +423,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت بوكسي ريتش </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[13]}{" "}
+                </h4>
               </div>
             </div>
           </div>
@@ -400,7 +437,9 @@ const Products1 = () => {
                 className="card-img-top mx-auto"
               />
               <div className="card-body text-center">
-                <h4 className="card-title">فلتر زيت ميتسوبيشي لاندروفر </h4>
+                <h4 className="card-title">
+                  {Languages.Ar.Products.body.filters[14]}{" "}
+                </h4>
               </div>
             </div>
           </div>

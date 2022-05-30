@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const HomeWhyUs = () => {
   return (
@@ -10,10 +11,11 @@ const HomeWhyUs = () => {
             <img src="assets/images/wheel.png" width="70px" alt="" />
           </div>
           <h2 className="main-header mx-auto text-center">
-            <span>لماذا</span> جياد لخدمات السيارات<span>؟</span>
+            <span> {Languages.Ar.Home.HomeWhyUs.header[0]} </span>{" "}
+            {Languages.Ar.Home.HomeWhyUs.header[1]} <span>؟</span>
           </h2>
           <p className="main-text text-center mb-5">
-            إليك الأسباب التي ستجعلك عميلا لدينا
+            {Languages.Ar.Home.HomeWhyUs.header[2]}{" "}
           </p>
           <div className="row gutters-3">
             <div className="col-lg-4 mb-4">
@@ -25,11 +27,10 @@ const HomeWhyUs = () => {
                   <i className="fas fa-check"></i>
                 </div>
                 <div className="item-content">
-                  <h3 className="item-title">عمال موثوقين</h3>
-                  <p>
-                    لنا عاملين موثوقين، مثابرين، وينجزون أعمالهم في أقل فترة
-                    ممكنة، يتم عمل ورش تأهيلية لهم مما يجعلهم أكفاء.
-                  </p>
+                  <h3 className="item-title">
+                    {Languages.Ar.Home.HomeWhyUs.body.reason1[0]}
+                  </h3>
+                  <p> {Languages.Ar.Home.HomeWhyUs.body.reason1[1]}</p>
                 </div>
               </div>
             </div>
@@ -42,11 +43,11 @@ const HomeWhyUs = () => {
                   <i className="fas fa-check"></i>
                 </div>
                 <div className="item-content">
-                  <h3 className="item-title">فعالية من حيث التكلفة</h3>
-                  <p>
-                    خدمات متوفرة، جودة عالية، التزام في التنفيذ، ودقة في العمل،
-                    كل هذا بأقل تكلفة ممكنة.
-                  </p>
+                  <h3 className="item-title">
+                    {" "}
+                    {Languages.Ar.Home.HomeWhyUs.body.reason2[0]}
+                  </h3>
+                  <p>{Languages.Ar.Home.HomeWhyUs.body.reason2[1]}</p>
                 </div>
               </div>
             </div>
@@ -59,11 +60,11 @@ const HomeWhyUs = () => {
                   <i className="fas fa-check"></i>
                 </div>
                 <div className="item-content">
-                  <h3 className="item-title">إرضاء 100%</h3>
-                  <p>
-                    جميع الخدمات المقدمة تخضع لأعلى معايير الجودة والسلامة مما
-                    يجعلها الخيار الأول لتحقيق سعادة عملائنا.
-                  </p>
+                  <h3 className="item-title">
+                    {" "}
+                    {Languages.Ar.Home.HomeWhyUs.body.reason3[0]}
+                  </h3>
+                  <p> {Languages.Ar.Home.HomeWhyUs.body.reason3[1]}</p>
                 </div>
               </div>
             </div>

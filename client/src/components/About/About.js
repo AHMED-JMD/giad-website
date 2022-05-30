@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../footer";
 import About1 from "./about1";
 import About2 from "./about2";
+import { Languages } from "../../context/languages";
 
 const About = () => {
   return (
@@ -14,7 +15,10 @@ const About = () => {
           <div className="wt-bnr-inr-entry">
             <div className="banner-title-outer">
               <div className="banner-title-name">
-                <h2 className="site-text-white">من نحن</h2>
+                <h2 className="site-text-white">
+                  {" "}
+                  {Languages.Ar.About.header[0]}
+                </h2>
               </div>
             </div>
             {/* <!-- BREADCRUMB ROW -->                             */}
@@ -22,9 +26,9 @@ const About = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">الرئيسية</Link>
+                  <Link to="/"> {Languages.Ar.About.header[1]}</Link>
                 </li>
-                <li>من نحن</li>
+                <li> {Languages.Ar.About.header[0]} </li>
               </ul>
             </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const HomeQuestions = () => {
   return (
@@ -9,7 +10,8 @@ const HomeQuestions = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center">
-          <span>الأسئلة </span>الشائعة
+          <span>{Languages.Ar.Home.HomeQuestions.header[0]} </span>
+          {Languages.Ar.Home.HomeQuestions.header[1]}
         </h2>
         <div className="faq-box">
           <div id="accordion" className="accordion">
@@ -22,7 +24,7 @@ const HomeQuestions = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  ما هي الخدمات والمنتجات التي تقدمها شركة جياد لخدمات السيارات
+                  {Languages.Ar.Home.HomeQuestions.body.quest1[0]}{" "}
                 </h5>
               </div>
               <div
@@ -33,13 +35,10 @@ const HomeQuestions = () => {
               >
                 <div className="card-body">
                   <ul>
-                    <li>
-                      خدمة الضمان والصيانة لمنتجات جياد لخدمات السيارات وجياد
-                      للشاحنات.{" "}
-                    </li>
-                    <li>خدمة الصيانة</li>
-                    <li>مبيعات قطع الغيار</li>
-                    <li>مبيعات الزيوت والشحوم</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[1]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[2]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[3]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[4]}</li>
                   </ul>
                 </div>
               </div>
@@ -53,7 +52,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  من هم وكلاء الصيانة لدينا{" "}
+                  {Languages.Ar.Home.HomeQuestions.body.quest2[0]}{" "}
                 </h5>
               </div>
               <div
@@ -63,13 +62,13 @@ const HomeQuestions = () => {
                 data-parent="#accordion"
               >
                 <div className="card-body">
-                  يوجد 5 وكلاء بالولايات الآتية:
+                  {Languages.Ar.Home.HomeQuestions.body.quest2[1]}{" "}
                   <ul>
-                    <li>بورتسودان</li>
-                    <li>الأبيض</li>
-                    <li>مدني</li>
-                    <li>القضارف</li>
-                    <li>كوستي</li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[2]} </li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[3]} </li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[4]} </li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[5]} </li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[6]} </li>
                   </ul>
                 </div>
               </div>
@@ -83,7 +82,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  ما هى أنواع الإسبيرات المتوفرة لدى الشركة
+                  {Languages.Ar.Home.HomeQuestions.body.quest3[0]}{" "}
                 </h5>
               </div>
               <div
@@ -94,12 +93,12 @@ const HomeQuestions = () => {
               >
                 <div className="card-body">
                   <ul>
-                    <li>هونداي</li>
-                    <li>BYD</li>
-                    <li>سانق يونق</li>
-                    <li>هاو</li>
-                    <li>دونق فينق</li>
-                    <li>شيري</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[1]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[2]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[3]} </li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[4]}</li>
+                    <li> {Languages.Ar.Home.HomeQuestions.body.quest3[5]}</li>
+                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[6]}</li>
                   </ul>
                 </div>
               </div>
@@ -113,7 +112,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseFour"
                 >
-                  ما هى أنواع الزيوت المتوفرة من ماكينة لوب
+                  {Languages.Ar.Home.HomeQuestions.body.quest4[0]}{" "}
                 </h5>
               </div>
               <div
@@ -123,12 +122,7 @@ const HomeQuestions = () => {
                 data-parent="#accordion"
               >
                 <div className="card-body">
-                  <p>
-                    {" "}
-                    زيوت محركات البنزين - زيوت الديزل - زيوت التروس - زيوت
-                    هايدرولك - شحوم - زيوت الفرامل - سوائل تبريد - اي زيوت خاصة
-                    اخرى
-                  </p>
+                  <p> {Languages.Ar.Home.HomeQuestions.body.quest4[1]}</p>
                 </div>
               </div>
             </div>

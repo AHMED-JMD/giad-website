@@ -1,4 +1,5 @@
 import React from "react";
+import { Languages } from "../../context/languages";
 
 const Contact1 = () => {
   return (
@@ -9,19 +10,22 @@ const Contact1 = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center mb-5">
-          <span>كن على</span> إتصال
+          <span> {Languages.Ar.Contact.header[2]}</span>{" "}
+          {Languages.Ar.Contact.header[3]}
         </h2>
         <form className="form" id="contact-form">
           <div className="aos-init row" data-aos="fade-left">
             <div className="col-lg-6 col-sm-12">
               <label>
-                <span>*</span>الاسم:
+                <span>*</span>
+                {Languages.Ar.Contact.body.form[0]}
               </label>
               <input type="name" className="form-control" id="name" required />
             </div>
             <div className="col-lg-6 col-sm-12">
               <label>
-                <span>*</span>الهاتف:{" "}
+                <span>*</span>
+                {Languages.Ar.Contact.body.form[1]}
               </label>
               <input
                 type="phone"
@@ -31,16 +35,17 @@ const Contact1 = () => {
               />
             </div>
             <div className="col-lg-6 col-sm-12">
-              <label>البريد الالكتروني :</label>
+              <label> {Languages.Ar.Contact.body.form[2]}</label>
               <input type="email" className="form-control" id="email" />
             </div>
             <div className="col-lg-6 col-sm-12">
-              <label>الجهة :</label>
+              <label>{Languages.Ar.Contact.body.form[3]}</label>
               <input type="name" className="form-control" id="subject" />
             </div>
             <div className="col-12">
               <label>
-                <span>*</span>الرسالة :
+                <span>*</span>
+                {Languages.Ar.Contact.body.form[4]}
               </label>
               <textarea
                 className="form-control"
@@ -49,7 +54,9 @@ const Contact1 = () => {
                 required
               ></textarea>
             </div>
-            <button className="btn contact-btn btn-effect">إرسال</button>
+            <button className="btn contact-btn btn-effect">
+              {Languages.Ar.Contact.body.form[5]}
+            </button>
           </div>
           <div id="back-message" className="back-message text-center"></div>
         </form>
@@ -61,7 +68,7 @@ const Contact1 = () => {
               <i className="fas fa-phone mr-2"></i>
             </div>
             <div>
-              <h4>رقم الهاتف</h4>
+              <h4>{Languages.Ar.Contact.body.info[0]}</h4>
               <p>2605</p>
             </div>
           </div>
@@ -70,7 +77,7 @@ const Contact1 = () => {
               <i className="fas fa-fax mr-2"></i>
             </div>
             <div>
-              <h4>الفاكس</h4>
+              <h4>{Languages.Ar.Contact.body.info[1]}</h4>
               <p>1831476981</p>
             </div>
           </div>
@@ -79,7 +86,7 @@ const Contact1 = () => {
               <i className="fas fa-envelope mr-2"></i>
             </div>
             <div>
-              <h4>البريد الإلكتروني</h4>
+              <h4>{Languages.Ar.Contact.body.info[2]}</h4>
               <p>info@giadmotorservices.com</p>
             </div>
           </div>
@@ -88,8 +95,8 @@ const Contact1 = () => {
               <i className="fas fa-home mr-2"></i>
             </div>
             <div>
-              <h4>الموقع</h4>
-              <p>الخرطوم، السودان</p>
+              <h4>{Languages.Ar.Contact.body.info[3]}</h4>
+              <p>{Languages.Ar.Contact.body.info[4]}</p>
             </div>
           </div>
         </div>

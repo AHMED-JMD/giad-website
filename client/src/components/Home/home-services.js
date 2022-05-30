@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Languages } from "../../context/languages";
 const HomeServices = () => {
   return (
     <div className="home-services">
@@ -9,10 +9,11 @@ const HomeServices = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
-          <span>باقة</span> خدماتنا
+          <span> {Languages.Ar.Home.HomeServices.header[0]} </span>{" "}
+          {Languages.Ar.Home.HomeServices.header[1]}{" "}
         </h2>
         <p className="main-text text-center mb-5">
-          تشكيلة من بعض الخدمات التي نقدمها
+          {Languages.Ar.Home.HomeServices.header[2]}{" "}
         </p>
         <div className="row container-fluid mx-auto">
           <div
@@ -31,10 +32,10 @@ const HomeServices = () => {
                     <div className="card-icon">
                       <img src="assets/images/selling.png" alt="" />
                     </div>
-                    البيع المباشر
+                    {Languages.Ar.Home.HomeServices.body.service1[0]}{" "}
                   </h4>
                   <p className="card-text">
-                    خدمات البيع المباشر بمقر الشركة ومعارضها المختلفة.
+                    {Languages.Ar.Home.HomeServices.body.service1[1]}{" "}
                   </p>
                 </div>
               </div>
@@ -57,11 +58,10 @@ const HomeServices = () => {
                     <div className="card-icon">
                       <img src="assets/images/spare-part.png" alt="" />
                     </div>
-                    قطع الغيار الأصلية
+                    {Languages.Ar.Home.HomeServices.body.service2[0]}{" "}
                   </h4>
                   <p className="card-text">
-                    توفير قطع الغيار الأصلية (نيسان ، BYD ،هونداي، شاحنات سينو،
-                    شيري وهاو).
+                    {Languages.Ar.Home.HomeServices.body.service2[1]}{" "}
                   </p>
                 </div>
               </div>
@@ -84,11 +84,10 @@ const HomeServices = () => {
                     <div className="card-icon">
                       <img src="assets/images/oil-bottle.png" alt="" />
                     </div>
-                    زيوت ماكينة لوب
+                    {Languages.Ar.Home.HomeServices.body.service3[0]}{" "}
                   </h4>
                   <p className="card-text">
-                    توفير زيوت MAKINALUBE وكل متعلقاتها (تروس، فرامل، شحوم
-                    وجربوكس).
+                    {Languages.Ar.Home.HomeServices.body.service3[1]}{" "}
                   </p>
                 </div>
               </div>
@@ -111,11 +110,10 @@ const HomeServices = () => {
                     <div className="card-icon">
                       <img src="assets/images/warranty.png" alt="" />
                     </div>
-                    خدمات الضمان
+                    {Languages.Ar.Home.HomeServices.body.service4[0]}{" "}
                   </h4>
                   <p className="card-text">
-                    توفير خدمات الضمان لكل منتجات جياد من السيارات والشاحنات
-                    وفقا لشروط الضمان الخاصة بالمنتج المعني.
+                    {Languages.Ar.Home.HomeServices.body.service4[1]}{" "}
                   </p>
                 </div>
               </div>
@@ -137,11 +135,10 @@ const HomeServices = () => {
                     <div className="card-icon">
                       <img src="assets/images/maintenance.png" alt="" />
                     </div>
-                    الصيانة
+                    {Languages.Ar.Home.HomeServices.body.service5[0]}{" "}
                   </h4>
                   <p className="card-text">
-                    الصيانة بمعايير عالية الجودة ومتوافقة مع شهادات ال ISO ويتم
-                    ذلك بواسطة الورش المتخصصة.
+                    {Languages.Ar.Home.HomeServices.body.service5[1]}{" "}
                   </p>
                 </div>
               </div>

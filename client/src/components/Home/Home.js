@@ -6,7 +6,7 @@ import HomeProgress from "./home-progress";
 import HomeQuestions from "./home-quest";
 import HomeServices from "./home-services";
 import HomeWhyUs from "./home-whyUs";
-
+import { Languages } from "../../context/languages";
 const Home = () => {
   return (
     <div className="home">
@@ -95,13 +95,13 @@ const Home = () => {
             width="120px"
             alt=""
           />
-          <h2>خدمات عالية الجودة</h2>
+          <h2> {Languages.Ar.Home.HomeBanner.Text[0]}</h2>
           <p>
             ISO <span>9001:2015</span> | <span>14001:2015</span> |{" "}
             <span>14001:2018</span> | <span>45001:2018</span>
           </p>
           <Link to="/contact" className="btn main-btn">
-            كن على تواصل
+            {Languages.Ar.Home.HomeBanner.Text[1]}{" "}
           </Link>
         </div>
       </section>
@@ -116,11 +116,11 @@ const Home = () => {
             className="aos-init col-lg-5 col-md-12 mb-5"
             data-aos="fade-left"
           >
-            <h4>وكلائنا المعتمدون موجودون في جميع انحاء السودان</h4>
+            <h4> {Languages.Ar.Home.HomeClients[0]} </h4>
           </div>
           <div className="aos-init col-lg-7 col-md-12" data-aos="fade-right">
             <Link to="/services-centers" className="btn mr-5">
-              ابحث عن وكيل
+              {Languages.Ar.Home.HomeClients[1]}
             </Link>
             <img src="assets/images/sami.png" width="220px" alt="" />
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../footer";
 import Products1 from "./products1";
+import { Languages } from "../../context/languages";
 
 const Products = () => {
   return (
@@ -12,7 +13,9 @@ const Products = () => {
           <div className="wt-bnr-inr-entry">
             <div className="banner-title-outer">
               <div className="banner-title-name">
-                <h2 className="site-text-white">المنتجات</h2>
+                <h2 className="site-text-white">
+                  {Languages.Ar.Products.header[0]}
+                </h2>
               </div>
             </div>
             {/* <!-- BREADCRUMB ROW -->                             */}
@@ -20,9 +23,9 @@ const Products = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">الرئيسية</Link>
+                  <Link to="/">{Languages.Ar.Products.header[1]}</Link>
                 </li>
-                <li>المنتجات</li>
+                <li>{Languages.Ar.Products.header[0]}</li>
               </ul>
             </div>
 

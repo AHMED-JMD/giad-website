@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../footer";
 import ServicesCenter1 from "./services-center1";
+import { Languages } from "../../context/languages";
 
 const ServicesCenter = () => {
   return (
@@ -13,7 +14,9 @@ const ServicesCenter = () => {
           <div className="wt-bnr-inr-entry">
             <div className="banner-title-outer">
               <div className="banner-title-name">
-                <h2 className="site-text-white">مراكز الخدمات</h2>
+                <h2 className="site-text-white">
+                  {Languages.Ar.ServicesCenter.header[0]}
+                </h2>
               </div>
             </div>
             {/* <!-- BREADCRUMB ROW -->                             */}
@@ -21,9 +24,9 @@ const ServicesCenter = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">الرئيسية</Link>
+                  <Link to="/">{Languages.Ar.ServicesCenter.header[1]}</Link>
                 </li>
-                <li>مراكز الخدمات</li>
+                <li>{Languages.Ar.ServicesCenter.header[0]}</li>
               </ul>
             </div>
 

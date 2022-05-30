@@ -1,3 +1,6 @@
+import React from "react";
+import { Languages } from "../../context/languages";
+
 const Navbar1 = () => {
   return (
     <div className="contain">
@@ -12,7 +15,8 @@ const Navbar1 = () => {
         </a>
         <ul name="navbar-nav ml-auto align-items-center">
           <a className="btn main-btn" href="tel:00249183463543">
-            <i className="fas fa-phone mr-1"></i>الإتصال السريع
+            <i className="fas fa-phone mr-1"></i>{" "}
+            {Languages.Ar.Navbar.content[0]}
           </a>
         </ul>
       </nav>
