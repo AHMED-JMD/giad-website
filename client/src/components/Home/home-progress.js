@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LangContext } from "../../context/langContext";
 
 const HomeProgress = () => {
+  const { language } = useContext(LangContext);
+
   return (
     <div className="home-progress">
       {/* <!-- Progress Area Start Here --> */}

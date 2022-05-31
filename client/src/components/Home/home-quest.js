@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const HomeQuestions = () => {
+  const { language } = useContext(LangContext);
+
   return (
     <div className="home-questions">
       {/* <!-- Frequently asked questions starts Here --> */}
-      <section className="service-faq py-5">
+      <section className="service-faq py-5" dir={`${Languages[language].dir}`}>
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center">
-          <span>{Languages.Ar.Home.HomeQuestions.header[0]} </span>
-          {Languages.Ar.Home.HomeQuestions.header[1]}
+          <span>{Languages[language].Home.HomeQuestions.header[0]} </span>
+          {Languages[language].Home.HomeQuestions.header[1]}
         </h2>
         <div className="faq-box">
           <div id="accordion" className="accordion">
@@ -24,7 +27,7 @@ const HomeQuestions = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  {Languages.Ar.Home.HomeQuestions.body.quest1[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest1[0]}{" "}
                 </h5>
               </div>
               <div
@@ -35,10 +38,18 @@ const HomeQuestions = () => {
               >
                 <div className="card-body">
                   <ul>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[1]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[2]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[3]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest1[4]}</li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest1[1]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest1[2]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest1[3]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest1[4]}
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -52,7 +63,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  {Languages.Ar.Home.HomeQuestions.body.quest2[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest2[0]}{" "}
                 </h5>
               </div>
               <div
@@ -62,13 +73,38 @@ const HomeQuestions = () => {
                 data-parent="#accordion"
               >
                 <div className="card-body">
-                  {Languages.Ar.Home.HomeQuestions.body.quest2[1]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest2[1]}{" "}
                   <ul>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[2]} </li>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[3]} </li>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[4]} </li>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[5]} </li>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest2[6]} </li>
+                    <li>
+                      {" "}
+                      {
+                        Languages[language].Home.HomeQuestions.body.quest2[2]
+                      }{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      {
+                        Languages[language].Home.HomeQuestions.body.quest2[3]
+                      }{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      {
+                        Languages[language].Home.HomeQuestions.body.quest2[4]
+                      }{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      {
+                        Languages[language].Home.HomeQuestions.body.quest2[5]
+                      }{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      {
+                        Languages[language].Home.HomeQuestions.body.quest2[6]
+                      }{" "}
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -82,7 +118,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  {Languages.Ar.Home.HomeQuestions.body.quest3[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest3[0]}{" "}
                 </h5>
               </div>
               <div
@@ -93,12 +129,25 @@ const HomeQuestions = () => {
               >
                 <div className="card-body">
                   <ul>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[1]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[2]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[3]} </li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[4]}</li>
-                    <li> {Languages.Ar.Home.HomeQuestions.body.quest3[5]}</li>
-                    <li>{Languages.Ar.Home.HomeQuestions.body.quest3[6]}</li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest3[1]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest3[2]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest3[3]}{" "}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest3[4]}
+                    </li>
+                    <li>
+                      {" "}
+                      {Languages[language].Home.HomeQuestions.body.quest3[5]}
+                    </li>
+                    <li>
+                      {Languages[language].Home.HomeQuestions.body.quest3[6]}
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -112,7 +161,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseFour"
                 >
-                  {Languages.Ar.Home.HomeQuestions.body.quest4[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest4[0]}{" "}
                 </h5>
               </div>
               <div
@@ -122,7 +171,10 @@ const HomeQuestions = () => {
                 data-parent="#accordion"
               >
                 <div className="card-body">
-                  <p> {Languages.Ar.Home.HomeQuestions.body.quest4[1]}</p>
+                  <p>
+                    {" "}
+                    {Languages[language].Home.HomeQuestions.body.quest4[1]}
+                  </p>
                 </div>
               </div>
             </div>

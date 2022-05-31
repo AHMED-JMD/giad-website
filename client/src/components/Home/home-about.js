@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const HomeAbout = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="home-about">
+    <div className="home-about" dir={`${Languages[language].dir}`}>
       {/* <!-- Modal --> */}
       <div
         className="modal fade"
@@ -47,23 +50,23 @@ const HomeAbout = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
-          <span> {Languages.Ar.Home.HomeAbout.header[0]}</span>{" "}
-          {Languages.Ar.Home.HomeAbout.header[1]}{" "}
+          <span> {Languages[language].Home.HomeAbout.header[0]}</span>{" "}
+          {Languages[language].Home.HomeAbout.header[1]}{" "}
         </h2>
         <p className="main-text text-center mb-5">
-          {Languages.Ar.Home.HomeAbout.header[2]}{" "}
+          {Languages[language].Home.HomeAbout.header[2]}{" "}
         </p>
         <div className="container-fluid row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
               <span className="bold">
                 {" "}
-                {Languages.Ar.Home.HomeAbout.body[0]}{" "}
+                {Languages[language].Home.HomeAbout.body[0]}{" "}
               </span>
             </p>
             <p className="extra-info">
               {" "}
-              {Languages.Ar.Home.HomeAbout.body[1]}{" "}
+              {Languages[language].Home.HomeAbout.body[1]}{" "}
             </p>
           </div>
           <div
@@ -93,7 +96,7 @@ const HomeAbout = () => {
             </div>
           </div>
           <Link className="btn main-btn mt-5" to="/about">
-            {Languages.Ar.Home.HomeAbout.AboutBtn}{" "}
+            {Languages[language].Home.HomeAbout.AboutBtn}{" "}
           </Link>
         </div>
       </div>

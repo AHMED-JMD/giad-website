@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const Contact1 = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="contact1">
+    <div className="contact1" dir={`${Languages[language].dir}`}>
       {/* <!-- CONTACT US SECTION --> */}
       <div className="contactus-section container-fluid py-5">
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center mb-5">
-          <span> {Languages.Ar.Contact.header[2]}</span>{" "}
-          {Languages.Ar.Contact.header[3]}
+          <span> {Languages[language].Contact.header[2]}</span>{" "}
+          {Languages[language].Contact.header[3]}
         </h2>
         <form className="form" id="contact-form">
           <div className="aos-init row" data-aos="fade-left">
             <div className="col-lg-6 col-sm-12">
               <label>
                 <span>*</span>
-                {Languages.Ar.Contact.body.form[0]}
+                {Languages[language].Contact.body.form[0]}
               </label>
               <input type="name" className="form-control" id="name" required />
             </div>
             <div className="col-lg-6 col-sm-12">
               <label>
                 <span>*</span>
-                {Languages.Ar.Contact.body.form[1]}
+                {Languages[language].Contact.body.form[1]}
               </label>
               <input
                 type="phone"
@@ -35,17 +38,17 @@ const Contact1 = () => {
               />
             </div>
             <div className="col-lg-6 col-sm-12">
-              <label> {Languages.Ar.Contact.body.form[2]}</label>
+              <label> {Languages[language].Contact.body.form[2]}</label>
               <input type="email" className="form-control" id="email" />
             </div>
             <div className="col-lg-6 col-sm-12">
-              <label>{Languages.Ar.Contact.body.form[3]}</label>
+              <label>{Languages[language].Contact.body.form[3]}</label>
               <input type="name" className="form-control" id="subject" />
             </div>
             <div className="col-12">
               <label>
                 <span>*</span>
-                {Languages.Ar.Contact.body.form[4]}
+                {Languages[language].Contact.body.form[4]}
               </label>
               <textarea
                 className="form-control"
@@ -55,7 +58,7 @@ const Contact1 = () => {
               ></textarea>
             </div>
             <button className="btn contact-btn btn-effect">
-              {Languages.Ar.Contact.body.form[5]}
+              {Languages[language].Contact.body.form[5]}
             </button>
           </div>
           <div id="back-message" className="back-message text-center"></div>
@@ -68,7 +71,7 @@ const Contact1 = () => {
               <i className="fas fa-phone mr-2"></i>
             </div>
             <div>
-              <h4>{Languages.Ar.Contact.body.info[0]}</h4>
+              <h4>{Languages[language].Contact.body.info[0]}</h4>
               <p>2605</p>
             </div>
           </div>
@@ -77,7 +80,7 @@ const Contact1 = () => {
               <i className="fas fa-fax mr-2"></i>
             </div>
             <div>
-              <h4>{Languages.Ar.Contact.body.info[1]}</h4>
+              <h4>{Languages[language].Contact.body.info[1]}</h4>
               <p>1831476981</p>
             </div>
           </div>
@@ -86,7 +89,7 @@ const Contact1 = () => {
               <i className="fas fa-envelope mr-2"></i>
             </div>
             <div>
-              <h4>{Languages.Ar.Contact.body.info[2]}</h4>
+              <h4>{Languages[language].Contact.body.info[2]}</h4>
               <p>info@giadmotorservices.com</p>
             </div>
           </div>
@@ -95,8 +98,8 @@ const Contact1 = () => {
               <i className="fas fa-home mr-2"></i>
             </div>
             <div>
-              <h4>{Languages.Ar.Contact.body.info[3]}</h4>
-              <p>{Languages.Ar.Contact.body.info[4]}</p>
+              <h4>{Languages[language].Contact.body.info[3]}</h4>
+              <p>{Languages[language].Contact.body.info[4]}</p>
             </div>
           </div>
         </div>

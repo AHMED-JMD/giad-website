@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const Navbar1 = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="contain">
+    <div className="contain" dir={`${Languages[language].dir}`}>
       <nav className="navbar navbar-1 navbar-expand-md" id="header-topbar">
         <a className="navbar-brand ml-5" href="/">
           <img
@@ -16,7 +19,7 @@ const Navbar1 = () => {
         <ul name="navbar-nav ml-auto align-items-center">
           <a className="btn main-btn" href="tel:00249183463543">
             <i className="fas fa-phone mr-1"></i>{" "}
-            {Languages.Ar.Navbar.content[0]}
+            {Languages[language].Navbar.content[0]}
           </a>
         </ul>
       </nav>

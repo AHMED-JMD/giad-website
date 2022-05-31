@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const About1 = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="about1">
+    <div className="about1" dir={`${Languages[language].dir}`}>
       {/* <!-- Modal --> */}
       <div
         className="modal fade"
@@ -46,18 +49,20 @@ const About1 = () => {
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
-          <span> {Languages.Ar.About.body1.header[0]}</span>{" "}
-          {Languages.Ar.About.body1.header[1]}{" "}
+          <span> {Languages[language].About.body1.header[0]}</span>{" "}
+          {Languages[language].About.body1.header[1]}{" "}
         </h2>
         <p className="main-text text-center mb-5">
-          {Languages.Ar.About.body1.header[2]}{" "}
+          {Languages[language].About.body1.header[2]}{" "}
         </p>
         <div className="container-fluid row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
-              <span className="bold">{Languages.Ar.About.body1.body[0]} </span>
+              <span className="bold">
+                {Languages[language].About.body1.body[0]}{" "}
+              </span>
             </p>
-            <p>{Languages.Ar.About.body1.body[1]} </p>
+            <p>{Languages[language].About.body1.body[1]} </p>
           </div>
           <div className="col-lg-6 col-md-12 mx-auto text-center img-container">
             <div className="img-bg"></div>

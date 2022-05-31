@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../footer";
 import Contact1 from "./contact1";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const Contact = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="contact">
+    <div className="contact" dir={`${Languages[language].dir}`}>
       {/* <!-- INNER PAGE BANNER --> */}
       <div className="wt-bnr-inr overlay-wraper bg-center">
         <div className="overlay-main site-bg-primary opacity-09"></div>
@@ -16,7 +19,7 @@ const Contact = () => {
               <div className="banner-title-name">
                 <h2 className="site-text-white">
                   {" "}
-                  {Languages.Ar.Contact.header[0]}
+                  {Languages[language].Contact.header[0]}
                 </h2>
               </div>
             </div>
@@ -25,9 +28,9 @@ const Contact = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">{Languages.Ar.Contact.header[1]}</Link>
+                  <Link to="/">{Languages[language].Contact.header[1]}</Link>
                 </li>
-                <li> {Languages.Ar.Contact.header[0]}</li>
+                <li> {Languages[language].Contact.header[0]}</li>
               </ul>
             </div>
 

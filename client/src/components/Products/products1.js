@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const Products1 = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="product1">
+    <div className="product1" dir={`${Languages[language].dir}`}>
       {/* <!-- Products SECTION --> */}
       <div className="products-section container-fluid py-5">
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header text-center mb-5">
-          <span>{Languages.Ar.Products.body.header[0]}</span>{" "}
-          {Languages.Ar.Products.body.header[1]}
+          <span>{Languages[language].Products.body.header[0]}</span>{" "}
+          {Languages[language].Products.body.header[1]}
         </h2>
 
         <h4 className="aos-init side-header" data-aos="fade-left">
-          {Languages.Ar.Products.body.oils.title[0]}
+          {Languages[language].Products.body.oils.title[0]}
         </h4>
         <p data-aos="fade-left" className="aos-init">
-          {Languages.Ar.Products.body.oils.title[1]}
+          {Languages[language].Products.body.oils.title[1]}
         </p>
         <p data-aos="fade-left" className="aos-init">
-          {Languages.Ar.Products.body.oils.title[2]}
+          {Languages[language].Products.body.oils.title[2]}
         </p>
         <div className="row mx-auto">
           <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
@@ -53,7 +56,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[0]}
+                  {Languages[language].Products.body.oils.oil[0]}
                 </h4>
               </div>
             </div>
@@ -87,7 +90,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[1]}
+                  {Languages[language].Products.body.oils.oil[1]}
                 </h4>
               </div>
             </div>
@@ -118,7 +121,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[2]}
+                  {Languages[language].Products.body.oils.oil[2]}
                 </h4>
               </div>
             </div>
@@ -142,7 +145,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[3]}
+                  {Languages[language].Products.body.oils.oil[3]}
                 </h4>
               </div>
             </div>
@@ -166,7 +169,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[4]}
+                  {Languages[language].Products.body.oils.oil[4]}
                 </h4>
               </div>
             </div>
@@ -201,7 +204,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[5]}
+                  {Languages[language].Products.body.oils.oil[5]}
                 </h4>
               </div>
             </div>
@@ -236,7 +239,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.oils.oil[6]}
+                  {Languages[language].Products.body.oils.oil[6]}
                 </h4>
               </div>
             </div>
@@ -244,7 +247,7 @@ const Products1 = () => {
         </div>
         <hr className="my-5" />
         <h4 className="aos-init side-header" data-aos="fade-left">
-          {Languages.Ar.Products.body.filters[0]}
+          {Languages[language].Products.body.filters[0]}
         </h4>
         <div className="row mx-auto">
           <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
@@ -256,7 +259,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[1]}
+                  {Languages[language].Products.body.filters[1]}
                 </h4>
               </div>
             </div>
@@ -270,7 +273,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[2]}
+                  {Languages[language].Products.body.filters[2]}
                 </h4>
               </div>
             </div>
@@ -284,7 +287,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[3]}{" "}
+                  {Languages[language].Products.body.filters[3]}{" "}
                 </h4>
               </div>
             </div>
@@ -298,7 +301,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[4]}
+                  {Languages[language].Products.body.filters[4]}
                 </h4>
               </div>
             </div>
@@ -312,7 +315,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[5]}
+                  {Languages[language].Products.body.filters[5]}
                 </h4>
               </div>
             </div>
@@ -326,7 +329,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[6]}
+                  {Languages[language].Products.body.filters[6]}
                 </h4>
               </div>
             </div>
@@ -340,7 +343,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[7]}{" "}
+                  {Languages[language].Products.body.filters[7]}{" "}
                 </h4>
               </div>
             </div>
@@ -354,7 +357,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[8]}{" "}
+                  {Languages[language].Products.body.filters[8]}{" "}
                 </h4>
               </div>
             </div>
@@ -368,7 +371,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[9]}
+                  {Languages[language].Products.body.filters[9]}
                 </h4>
               </div>
             </div>
@@ -382,7 +385,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[10]}
+                  {Languages[language].Products.body.filters[10]}
                 </h4>
               </div>
             </div>
@@ -396,7 +399,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[11]}{" "}
+                  {Languages[language].Products.body.filters[11]}{" "}
                 </h4>
               </div>
             </div>
@@ -410,7 +413,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[12]}{" "}
+                  {Languages[language].Products.body.filters[12]}{" "}
                 </h4>
               </div>
             </div>
@@ -424,7 +427,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[13]}{" "}
+                  {Languages[language].Products.body.filters[13]}{" "}
                 </h4>
               </div>
             </div>
@@ -438,7 +441,7 @@ const Products1 = () => {
               />
               <div className="card-body text-center">
                 <h4 className="card-title">
-                  {Languages.Ar.Products.body.filters[14]}{" "}
+                  {Languages[language].Products.body.filters[14]}{" "}
                 </h4>
               </div>
             </div>

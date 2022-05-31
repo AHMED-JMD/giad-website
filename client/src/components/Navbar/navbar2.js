@@ -6,9 +6,14 @@ import { LangContext } from "../../context/langContext";
 const Navbar2 = () => {
   const { language, setLanguage } = useContext(LangContext);
 
+  //function to change the language of the App
+  const HandleLanguage = (lang) => {
+    lang === "Ar" ? setLanguage("En") : setLanguage("Ar");
+  };
+
   return (
     <nav
-      dir={`${Languages.Ar.dir}`}
+      dir={`${Languages[language].dir}`}
       className="navbar navbar-2 navbar-expand-md"
       id="header-menu"
     >
@@ -44,34 +49,41 @@ const Navbar2 = () => {
         <ul className="navbar-nav">
           <li className="nav-item ">
             <Link className="nav-link active" to="/">
-              {Languages.Ar.Navbar.content[1]}
+              {Languages[language].Navbar.content[1]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/about">
-              {Languages.Ar.Navbar.content[2]}
+              {Languages[language].Navbar.content[2]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/products">
-              {Languages.Ar.Navbar.content[3]}
+              {Languages[language].Navbar.content[3]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/services-centers">
-              <span className="mr-1">{Languages.Ar.Navbar.content[4]}</span>
-              {Languages.Ar.Navbar.content[5]}
+              <span className="mr-1">
+                {" "}
+                {Languages[language].Navbar.content[4]}
+              </span>
+              {Languages[language].Navbar.content[5]}
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">
-              {Languages.Ar.Navbar.content[6]}
+              {Languages[language].Navbar.content[6]}
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link english-btn" to="#">
-              {Languages.Ar.Navbar.content[7]}
-            </Link>
+            <a
+              className="nav-link english-btn"
+              href="#"
+              onClick={() => HandleLanguage(language)}
+            >
+              {Languages[language].Navbar.content[7]}
+            </a>
           </li>
         </ul>
       </div>

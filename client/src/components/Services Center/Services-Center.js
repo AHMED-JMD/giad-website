@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../footer";
 import ServicesCenter1 from "./services-center1";
 import { Languages } from "../../context/languages";
+import { LangContext } from "../../context/langContext";
 
 const ServicesCenter = () => {
+  const { language } = useContext(LangContext);
+
   return (
-    <div className="services-center">
+    <div className="services-center" dir={`${Languages[language].dir}`}>
       {/* <!-- INNER PAGE BANNER --> */}
       <div className="wt-bnr-inr overlay-wraper bg-center">
         <div className="overlay-main site-bg-primary opacity-09"></div>
@@ -15,7 +18,7 @@ const ServicesCenter = () => {
             <div className="banner-title-outer">
               <div className="banner-title-name">
                 <h2 className="site-text-white">
-                  {Languages.Ar.ServicesCenter.header[0]}
+                  {Languages[language].ServicesCenter.header[0]}
                 </h2>
               </div>
             </div>
@@ -26,7 +29,7 @@ const ServicesCenter = () => {
                 <li>
                   <Link to="/">{Languages.Ar.ServicesCenter.header[1]}</Link>
                 </li>
-                <li>{Languages.Ar.ServicesCenter.header[0]}</li>
+                <li>{Languages[language].ServicesCenter.header[0]}</li>
               </ul>
             </div>
 
