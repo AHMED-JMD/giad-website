@@ -14,10 +14,60 @@ const Navbar2 = () => {
   return (
     <nav
       dir={`${Languages[language].dir}`}
-      className="navbar navbar-2 navbar-expand-md"
-      id="header-menu"
-    >
-      <Link className="navbar-brand ml-5" to="/">
+      className="navbar navbar-2 justify-content-between navbar-expand-md">
+          <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+          <img
+            src="assets/images/logo.png"
+            className="white-logo"
+            width="80px"
+            alt="logo"
+          />
+        </a>
+        <div className="nav-links">
+        <ul className="navbar-nav">
+          <li className="nav-item ">
+            <Link className="nav-link active" to="/">
+              {Languages[language].Navbar.content[1]}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
+              {Languages[language].Navbar.content[2]}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/products">
+              {Languages[language].Navbar.content[3]}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/services-centers">
+              <span className="mr-1">
+                {" "}
+                {Languages[language].Navbar.content[4]}
+              </span>
+              {Languages[language].Navbar.content[5]}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">
+              {Languages[language].Navbar.content[6]}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <a
+              className="nav-link english-btn"
+              href="#"
+              onClick={() => HandleLanguage(language)}
+            >
+              {Languages[language].Navbar.content[7]}
+            </a>
+          </li>
+        </ul>
+        </div>
+          </div>
+      {/* <Link className="navbar-brand ml-5" to="/">
         <img
           src="./assets/images/white-logo.png"
           className="white-logo"
@@ -98,7 +148,7 @@ const Navbar2 = () => {
             </li>
           </ul>
         </div>
-      </li>
+      </li> */}
     </nav>
   );
 };

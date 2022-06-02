@@ -9,6 +9,7 @@ Main Colors:
 ==========================
 */
 @import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+
 body{
     font-family: 'Poppins', sans-serif !important;
     overflow-y: hidden;
@@ -23,63 +24,16 @@ p, li, a, i{
     font-size: 17px;
 }
 
-.loader{
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 30;
-}
-
-.loader .icon{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background-color: transparent; 
-}
-.loader .icon img{
-    animation: logo-rotation 2000ms infinite linear;
-    width: 100px;
-    padding-bottom: 100px;
-}
-@keyframes logo-rotation{
-    from{
-        transform: rotateY(0);
-    }
-    to{
-        transform: rotateY(360deg);
-    }
-}
-
-.loader .caption{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-.loader .caption img{
-    width: 120px;
-    padding-top: 20px;
-}
-.loader .wheel{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    padding-top: 100px;
-    transform: translate(-50%,-50%);
-}
-.loader .wheel img{
-    width: 30px;
-    animation: wheel-rotation 2000ms infinite linear;
-}
-@keyframes wheel-rotation{
-    from{
-        transform: rotateZ(0);
-    }
-    to{
-        transform: rotateZ(360deg);
-    }
+.loader-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: 100 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: none;
 }
 .main-header{
     color: #00aece;

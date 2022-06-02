@@ -7,7 +7,7 @@ const Navbar1 = () => {
 
   return (
     <div className="contain" dir={`${Languages[language].dir}`}>
-      <nav className="navbar navbar-1 navbar-expand-md" id="header-topbar">
+      {/* <nav className="navbar navbar-1 navbar-expand-md" id="header-topbar">
         <a className="navbar-brand ml-5" href="/">
           <img
             src="assets/images/logo.png"
@@ -22,7 +22,7 @@ const Navbar1 = () => {
             {Languages[language].Navbar.content[0]}
           </a>
         </ul>
-      </nav>
+      </nav> */}
     </div>
   );
 };

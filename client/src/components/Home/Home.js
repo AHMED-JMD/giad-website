@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="home" dir={`${Languages[language].dir}`}>
       {/* <!-- Slider Area Start Here --> */}
-      <div className="slider-area slider-layout1">
+      {/* <div className="slider-area slider-layout1">
         <div className="bend niceties preview-1">
           <div id="ensign-nivoslider-4" className="slides">
             <img
@@ -82,7 +82,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* inside section */}
       <HomeAbout />
       <HomeServices />
