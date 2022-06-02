@@ -12,10 +12,6 @@
   "dependencies": {
     "@mui/icons-material": "^5.8.2",
     "@mui/material": "^5.8.2",
-    "@types/jest": "^28.1.0",
-    "@types/node": "^17.0.38",
-    "@types/react": "^18.0.10",
-    "@types/react-dom": "^18.0.5",
     "config": "^3.3.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

@@ -16,7 +16,7 @@ function App() {
   window.onload = (event) => {
     setTimeout(()=>{
       setLoading(false);
-    }, )
+    }, 4000)
   }
   if (isLoading) {
     return <Loader />;
