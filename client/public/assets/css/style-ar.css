@@ -36,6 +36,7 @@ body {
 }
 
 .App {
+  font-family: "poppins", "kufi";
   overflow-x: hidden !important;
   position: relative;
   margin: auto;
@@ -64,12 +65,12 @@ i {
   font-family: "bkufi";
   color: var(--light-color);
   position: relative;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 @media (max-width: 574px) {
   .main-header {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 .main-header span {
@@ -164,67 +165,7 @@ li.social-media ul a:hover {
   color: #00aece;
   margin-right: 10px;
 }
-@keyframes trans {
-  from {
-    left: 0;
-  }
-  to {
-    left: 20px;
-  }
-}
-.navbar-1 {
-  height: 120px;
-  border-top: 5px solid #00aece;
-  max-width: 1920px;
-  margin: auto;
-}
-.navbar-1 .main-btn {
-  color: #fff !important;
-  background-color: #00aece;
-  border: 0 !important;
-}
-.navbar-1 .main-btn:hover {
-  background-color: #1a1e22 !important;
-}
-@media (max-width: 399px) {
-  .navbar-1 {
-    display: none !important;
-  }
-  .navbar-2 {
-    position: relative !important;
-    border-top: 5px solid #00aece;
-    height: 90px !important;
-    background-color: #fff !important;
-    margin: auto;
-    text-align: center;
-  }
-  .navbar-2 .navbar-collapse {
-    margin-top: 1px;
-  }
-  .navbar-2 .fa-bars {
-    padding-top: 6px !important;
-    margin-right: 10px;
-  }
-  .navbar-2 .fa-bars,
-  .navbar-2 .fa-phone {
-    color: #fff;
-    background-color: #001d5c;
-    width: 35px;
-    height: 35px;
-  }
-  .navbar-2 .tel-icon {
-    display: block !important;
-  }
-  .navbar-2 .navbar-brand .colored-logo {
-    display: block;
-  }
-  .navbar-2 .navbar-brand .white-logo {
-    display: none;
-  }
-  .rt-sticky {
-    display: none !important;
-  }
-}
+
 /* SECOND NAVBAR STARTS HERE */
 .navbar-2 {
   background-color: #fcfcfc;
@@ -262,11 +203,37 @@ li.social-media ul a:hover {
   background-color: var(--black-color);
 }
 
+@media(max-width: 767px){
+  .navbar-2 ul{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    padding-top: 33px;
+    background-color: var(--black-color);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 100;
+  }
+  .navbar-2 ul.toggled{
+    left: 0;
+  }
+  .navbar-2 ul .nav-link{
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .navbar-2 ul .bxs.menu{
+    display: block;
+  }
+}
+
 /* ABOUTUS SECTION */
 .aboutus-section {
-  max-width: 1920px;
-  margin: auto;
-  position: relative;
+  /* background-image: url('../images/services-bg.svg');
+  background-size: cover; */
 }
 .aboutus-section .row {
   max-width: 1920px;
@@ -312,13 +279,13 @@ li.social-media ul a:hover {
 .aboutus-section .aboutus-img .video-icon i:hover {
   color: #1a1e22;
 }
-.aboutus-section p {
+/* .aboutus-section p {
   line-height: 60px;
-}
+} */
 @media (max-width: 1150px) {
-  .aboutus-section p {
+  /* .aboutus-section p {
     line-height: 55px;
-  }
+  } */
   .aboutus-section .aboutus-img .video-icon i {
     font-size: 50px;
   }
@@ -331,9 +298,9 @@ li.social-media ul a:hover {
   .aboutus-section .aboutus-img {
     max-width: 990px;
   }
-  .aboutus-section p {
+  /* .aboutus-section p {
     line-height: 40px;
-  }
+  } */
   .aboutus-section .aboutus-img .video-icon {
     position: absolute;
     bottom: 0;
@@ -390,59 +357,21 @@ li.social-media ul a:hover {
 }
 /* SERVICES SECTON STARTS HERE 00ccfd*/
 .services-section {
-  max-width: 1920px;
-  position: relative;
-  margin: auto;
-  background-color: #ffffff;
+  /* background-color: rgb(246, 249, 254); */
+  background-color: #fbfbfb;
 }
-.services-section img.g-4 {
-  width: 170px;
-  position: absolute;
-  right: -85px;
-  top: 10%;
-}
-.services-section img.g-6 {
-  width: 100px;
-  position: absolute;
-  left: 0;
-  top: 60%;
-}
-.services-section .row {
-  max-width: 1920px;
-  padding: 0 !important;
-}
-.services-section .row .col-md-4 {
-  padding: 5px !important;
-}
-.card-container {
-  position: relative;
-  margin-bottom: 30px;
-}
+
 .services-card {
-  position: relative;
-  z-index: 1;
+  max-width: 450px;
+  min-height: 150px;
   border: 0 !important;
-  overflow: hidden;
-  max-width: 350px;
-  margin: auto;
-  border-radius: 0 !important;
-}
-.services-card:hover .card-body {
-  bottom: 0;
-}
-.services-card .card-img-top {
-  height: 340px;
-  width: 100%;
-  padding-bottom: 60px;
+  border-radius: 8px;
 }
 .services-section .card-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -144px;
-  background-color: #1a1e22;
-  padding: 0;
-  height: 220px;
+  border-radius: 8px;
+  position: relative;
+  padding-top: 50px;
+  background-color: #fff;
   -webkit-transition: all 0.5s ease-in-out !important;
   -moz-transition: all 0.5s ease-in-out !important;
   -ms-transition: all 0.5s ease-in-out !important;
@@ -451,50 +380,39 @@ li.social-media ul a:hover {
 }
 
 .services-section .services-card .card-title {
-  position: relative;
-  color: #ffffff;
+  color: var(--dark-color);
+  font-family: 'poppins', 'bkufi';
   transition: color 0.5s;
   font-size: 18px;
-  font-weight: 700;
-  background-color: #2964b4;
-  margin: 0 !important;
-  padding: 10px;
-  padding-top: 45px;
 }
 .services-section .services-card .card-title .card-icon {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  width: 75px;
-  height: 75px;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-color);
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
 }
-.services-section .services-card .card-title .card-icon img {
-  width: 50px;
-  padding-top: 15px;
+.services-section .services-card .card-title .card-icon i {
+  color: #fff;
+  font-size: 25px;
 }
 .services-section .services-card .card-text {
-  color: #fff;
-  transition: color 0.5s;
-  font-size: 16px;
-  text-align: right;
-  width: 100%;
-  padding: 30px 15px;
+  text-align: center;
 }
-@media (max-width: 400px) {
-  .services-section .row {
-    padding: 0 !important;
-  }
-}
+
 /*------------------- 5.12 Progress -------------------*/
 .progress-wrap-layout1 {
   margin: auto;
   background: linear-gradient(
       -90deg,
-      rgba(0, 0, 0, 0.54) 50%,
-      rgba(0, 0, 0, 0.54) 50%
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.7) 50%
     ),
     url("../images/workers2.png");
   background-repeat: no-repeat;
@@ -511,6 +429,7 @@ li.social-media ul a:hover {
 .progress-box-layout1 {
   background-color: rgba(0, 174, 206, 0.62);
   padding: 5.5rem 7rem 6.5rem;
+  height: 500px;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
@@ -524,77 +443,14 @@ li.social-media ul a:hover {
   }
 }
 .progress-box-layout1 .item-title {
-  font-weight: 600;
-  margin-bottom: 10rem;
   color: #fff;
+  font-family: 'kufi', 'poppins';
+  font-size: 25px;
 }
-.progress-box-layout1 .item-content .counter-item {
-  position: relative;
-  z-index: 2;
-}
-@media only screen and (max-width: 575px) {
-  .progress-box-layout1 .item-content .counter-item {
-    margin-bottom: 12rem;
-  }
-  .progress-box-layout1
-    .item-content
-    .counter-item
-    [class^="col-"]
-    .counter-item:last-child {
-    margin-bottom: 0;
-  }
-}
-.progress-box-layout1 .item-content .counter-item .count-number {
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
-}
-@media only screen and (max-width: 575px) {
-  .progress-box-layout1 .item-content .counter-item .count-number {
-    font-size: 45px;
-    margin-bottom: 10px;
-  }
-}
-.progress-box-layout1 .item-content .counter-item .count-title {
-  font-size: 18px;
-  font-weight: 500;
-}
-.progress-box-layout1 .item-content .counter-item .bg-icon {
-  position: absolute;
-  top: -55px;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  color: rgba(255, 255, 255, 0.21);
-}
-.progress-box-layout1 .item-content .counter-item .bg-icon i {
-  font-size: 150px;
-}
-@media only screen and (max-width: 575px) {
-  .progress-box-layout1 .item-content .counter-item .bg-icon i {
-    font-size: 130px;
-  }
-}
+
 /*------------------- 5.18 Why Choose Us -------------------*/
 .whygiad-section {
-  max-width: 1920px;
-  margin: auto;
   position: relative;
-  background-color: #ffffff;
-}
-.whygiad-section .g-3 {
-  width: 170px;
-  position: absolute;
-  right: 0;
-  top: 20%;
-}
-.whygiad-section .g-5 {
-  width: 80px;
-  position: absolute;
-  left: -2px;
-  top: 50%;
-  opacity: 0.4;
 }
 .why-choose-box-layout2 {
   background-color: #2964b4;
@@ -606,6 +462,7 @@ li.social-media ul a:hover {
   -ms-transition: all 0.5s ease-out !important;
   -o-transition: all 0.5s ease-out !important;
   transition: all 0.5s ease-out !important;
+  cursor: pointer;
 }
 .why-choose-box-layout2 .item-icon {
   height: 60px;
@@ -615,20 +472,21 @@ li.social-media ul a:hover {
   border-radius: 50%;
   color: #2964b4;
   margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  padding-top: 20px;
 }
 .why-choose-box-layout2 .item-icon i {
-  font-size: 20px;
+  font-size: 25px;
 }
 .why-choose-box-layout2 .item-content .item-title {
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
-  font-weight: 600;
   margin-bottom: 14px;
 }
 .why-choose-box-layout2 .item-content p {
@@ -721,19 +579,12 @@ li.social-media ul a:hover {
   padding: 5rem;
 }
 .service-faq .item-title {
-  font-size: 24px;
+  font-size: 20px !important;
 }
-@media only screen and (max-width: 991px) {
-  .service-faq .item-title {
-    font-size: 22px;
-  }
-}
+
 @media only screen and (max-width: 575px) {
   .service-faq {
     padding: 0rem !important;
-  }
-  .service-faq .item-title {
-    font-size: 20px;
   }
 }
 .service-faq .faq-box {
@@ -755,7 +606,7 @@ li.social-media ul a:hover {
   border-radius: 4px;
   margin-bottom: 0;
   padding: 22px 50px 18px 25px;
-  font-weight: 500;
+  font-size: 18px;
   color: #ffffff;
   background-color: #2964b4;
   -webkit-transition: all 0.3s ease-out;
@@ -819,8 +670,7 @@ li.social-media ul a:hover {
 }
 .agents-bannar h4 {
   color: #fff;
-  margin-top: 110px;
-  font-size: 30px;
+  font-size: 25px;
 }
 .agents-bannar .btn {
   color: #fff;

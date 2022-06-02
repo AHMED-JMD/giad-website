@@ -116,7 +116,7 @@ const Home = () => {
       <section className="agents-bannar text-center">
         <div className="row">
           <div
-            className="aos-init col-lg-5 col-md-12 mb-5"
+            className="aos-init col-lg-5 col-md-12 mb-5 d-flex align-items-center justify-content-center pt-5"
             data-aos="fade-left"
           >
             <h4> {Languages[language].Home.HomeClients[0]} </h4>

@@ -45,7 +45,7 @@ const HomeAbout = () => {
       </div>
 
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
-      <div className="aboutus-section py-5" id="aboutus-section">
+      <div className="aboutus-section container-fluid py-5" id="aboutus-section">
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
@@ -63,6 +63,14 @@ const HomeAbout = () => {
                 {" "}
                 {Languages[language].Home.HomeAbout.body[0]}{" "}
               </span>
+            </p>
+            <p className="extra-info">
+              {" "}
+              {Languages[language].Home.HomeAbout.body[1]}{" "}
+            </p>
+            <p className="extra-info">
+              {" "}
+              {Languages[language].Home.HomeAbout.body[1]}{" "}
             </p>
             <p className="extra-info">
               {" "}
@@ -99,9 +107,6 @@ const HomeAbout = () => {
             {Languages[language].Home.HomeAbout.AboutBtn}{" "}
           </Link>
         </div>
-      </div>
-      <div className="text-center">
-        <img src="assets/images/divider.png" width="100%" alt="" />
       </div>
     </div>
   );

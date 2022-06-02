@@ -12,38 +12,13 @@ const HomeProgress = () => {
           <div className="row">
             <div className="col-xl-6 col-lg-8 col-12">
               <div
-                className="aos-init progress-box-layout1"
+                className="aos-init progress-box-layout1 d-flex align-items-center flex-column justify-content-center"
                 data-aos="fade-left"
               >
+                <div><i style={{fontSize: '50px'}} className='bx bx-hard-hat'></i></div>
                 <h2 className="item-title">
                   كل المتخصصين لدينا يمتلكون أعلى درجات الخبرة والتدريب
                 </h2>
-                <div className="item-content">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="counter-item">
-                        <div className="counter count-number" data-num="29572">
-                          +29572
-                        </div>
-                        <div className="count-title">مشروع منجز</div>
-                        <div className="bg-icon">
-                          <i className="far fa-thumbs-up"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="counter-item">
-                        <div className="counter count-number" data-num="14384">
-                          +14384
-                        </div>
-                        <div className="count-title">عميل متفائل</div>
-                        <div className="bg-icon">
-                          <i className="far fa-smile"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
