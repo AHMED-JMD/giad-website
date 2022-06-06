@@ -41,7 +41,9 @@ body {
   position: relative;
   margin: auto;
 }
-
+.en{
+  text-align: left;
+}
 p,
 li,
 a,
@@ -62,7 +64,7 @@ i {
   overflow: none;
 }
 .main-header {
-  font-family: "bkufi";
+  font-family: "bkufi", 'poppins';
   color: var(--light-color);
   position: relative;
   font-size: 25px;
@@ -127,17 +129,13 @@ li.social-media {
   list-style-type: none;
 }
 li.social-media ul {
-  display: flex;
-  padding-top: 20px;
+  padding: 0;
 }
 li.social-media ul li {
   list-style-type: none;
 }
-li.social-media ul li:last-child {
-  margin-right: 0;
-}
+
 li.social-media ul a {
-  margin-left: 20px;
   position: relative;
   padding: 10px 15px;
   bottom: 4px;
@@ -165,6 +163,15 @@ li.social-media ul a:hover {
   color: #00aece;
   margin-right: 10px;
 }
+
+.navbar-1 {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+.navbar-1 small{
+  color: #fff !important;
+}
+
 
 /* SECOND NAVBAR STARTS HERE */
 .navbar-2 {
@@ -230,6 +237,39 @@ li.social-media ul a:hover {
   }
 }
 
+/* SLIDER SECTION */
+.slide{
+  background-color: #001d5c;
+  position: relative;
+}
+.slide img{
+  width: 100%;
+  min-height: 600px;
+}
+
+.slide .caption{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0%,-50%);
+  height: 100%;
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.slide .caption h2{
+  color: #fff;
+}
+
+.slide .caption p{
+  color: rgb(227, 227, 227);
+}
+
 /* ABOUTUS SECTION */
 .aboutus-section {
   /* background-image: url('../images/services-bg.svg');
@@ -251,56 +291,42 @@ li.social-media ul a:hover {
 
 .aboutus-section .aboutus-img {
   position: relative;
-  padding: 0 !important;
-  margin: 0 !important;
   width: 100%;
 }
 .aboutus-section .aboutus-img img {
-  margin: auto;
-  padding: 0;
-  max-width: 620px;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 12;
 }
-.aboutus-section .aboutus-img .video-icon {
+.aboutus-section .aboutus-img .video-icon{
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  background-color: rgba(255, 255, 255, 0.62);
-  padding: 7px;
-  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
 }
 
 .aboutus-section .aboutus-img .video-icon i {
   font-size: 70px;
-  color: #2964b4;
+  color: rgb(4, 4, 4);
   cursor: pointer;
   transition: all 0.3s ease !important;
 }
 .aboutus-section .aboutus-img .video-icon i:hover {
   color: #1a1e22;
 }
-/* .aboutus-section p {
-  line-height: 60px;
-} */
-@media (max-width: 1150px) {
-  /* .aboutus-section p {
-    line-height: 55px;
-  } */
   .aboutus-section .aboutus-img .video-icon i {
     font-size: 50px;
   }
   .aboutus-section p.extra-info {
     display: none;
   }
-}
 
-@media (max-width: 990px) {
-  .aboutus-section .aboutus-img {
-    max-width: 990px;
-  }
-  /* .aboutus-section p {
-    line-height: 40px;
-  } */
   .aboutus-section .aboutus-img .video-icon {
     position: absolute;
     bottom: 0;
@@ -310,7 +336,6 @@ li.social-media ul a:hover {
     padding: 7px;
     border-radius: 100%;
   }
-}
 
 /* Modal Area*/
 .modal {
@@ -362,21 +387,46 @@ li.social-media ul a:hover {
 }
 
 .services-card {
+  position: relative;
   max-width: 450px;
   min-height: 150px;
   border: 0 !important;
   border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
 }
+
+.services-card:before{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  width: 100%;
+  background-color: var(--dark-color);
+  -webkit-transition: all 0.4s ease !important;
+  -moz-transition: all 0.4s ease !important;
+  -ms-transition: all 0.4s ease !important;
+  -o-transition: all 0.4s ease !important;
+  transition: all 0.4s ease !important;
+  z-index: -1;
+}
+
+.services-card:hover:before{
+  height: 100%;
+}
+.services-card:hover .card-title{
+  color: #fff !important;
+}
+
+.services-card:hover .card-text{
+  color: rgb(235, 235, 235) !important;
+}
+
 .services-section .card-body {
-  border-radius: 8px;
-  position: relative;
   padding-top: 50px;
-  background-color: #fff;
-  -webkit-transition: all 0.5s ease-in-out !important;
-  -moz-transition: all 0.5s ease-in-out !important;
-  -ms-transition: all 0.5s ease-in-out !important;
-  -o-transition: all 0.5s ease-in-out !important;
-  transition: all 0.5s ease-in-out !important;
 }
 
 .services-section .services-card .card-title {
@@ -453,7 +503,7 @@ li.social-media ul a:hover {
   position: relative;
 }
 .why-choose-box-layout2 {
-  background-color: #2964b4;
+  background-color: var(--dark-color);
   padding: 6rem 2rem 1rem;
   min-height: 380px;
   text-align: center;
@@ -497,7 +547,7 @@ li.social-media ul a:hover {
   background-color: #00aece;
 }
 .why-choose-box-layout2:hover .item-icon {
-  background-color: #2a2a2a;
+  background-color: var(--black-color);
   color: #00aece;
 }
 @media only screen and (max-width: 1199px) {
@@ -615,6 +665,10 @@ li.social-media ul a:hover {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+.en .service-faq .faq-box .accordion .card .card-header .heading-title {
+  text-align: left;
+   padding: 22px 25px 18px 50px;
+}
 .service-faq .faq-box .accordion .card .card-header .heading-title:before {
   content: "\f107";
   font-family: "Font Awesome 5 Free";
@@ -631,6 +685,10 @@ li.social-media ul a:hover {
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+.en .service-faq .faq-box .accordion .card .card-header .heading-title:before {
+  right: calc(100% - 40px);
+  margin-right: 10px;
 }
 .service-faq .faq-box .accordion .card .card-header .heading-title.collapsed {
   background-color: #f8f8f8;
@@ -649,6 +707,9 @@ li.social-media ul a:hover {
   padding: 25px 50px;
   position: relative;
 }
+.en .service-faq .faq-box .accordion .card .card-body {
+  text-align: left;
+}
 .service-faq .faq-box .accordion .card .card-body:after {
   content: "";
   height: 80%;
@@ -658,6 +719,9 @@ li.social-media ul a:hover {
   top: 50%;
   right: 25px;
   transform: translateY(-50%);
+}
+.en .service-faq .faq-box .accordion .card .card-body:after{
+  right: calc(100% - 25px);
 }
 /* Agents bannar starts here */
 .agents-bannar {
@@ -763,6 +827,9 @@ li.social-media ul a:hover {
 .upper-footer .row .col-lg-4 {
   text-align: right;
 }
+.en .upper-footer .row .col-lg-4 {
+  text-align: left;
+}
 .upper-footer p,
 .upper-footer a,
 .upper-footer .opening-hour {
@@ -783,10 +850,14 @@ li.social-media ul a:hover {
   color: #fff;
   text-decoration: underline;
 }
-.upper-footer .social-media a {
+/* .upper-footer .social-media a {
   position: relative;
   right: -40px;
 }
+.en .upper-footer .social-media a {
+  position: relative;
+  left: 0px;
+} */
 .upper-footer .btn {
   border-radius: 0;
   width: 140px;
@@ -806,15 +877,6 @@ li.social-media ul a:hover {
     text-align: center;
     margin: auto;
   }
-  .upper-footer ul {
-    padding: 0;
-  }
-  .upper-footer ul li {
-    margin: 0 auto !important;
-  }
-  .upper-footer .social-media a {
-    right: 5px;
-  }
 }
 
 footer {
@@ -833,6 +895,7 @@ footer a {
   margin: 0;
   color: #ffffff;
 }
+
 footer a:hover {
   color: #ffffff;
 }
@@ -847,40 +910,6 @@ footer a:hover {
   .upper-footer {
     padding: 10px !important;
     padding-top: 50px !important;
-  }
-}
-@media (max-width: 767px) {
-  .navbar-2 {
-    margin: 0 !important;
-    padding: 8px 0 !important;
-  }
-  .navbar-collapse {
-    background-color: #ffffff;
-    margin: auto;
-    margin-top: 8px;
-    width: 100% !important;
-    z-index: 20;
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.55);
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.55);
-  }
-  .navbar-collapse .active {
-    color: #fff !important;
-  }
-  .navbar-collapse .nav-link {
-    margin: auto;
-    color: #1a1e22;
-    border-bottom: 1px solid #ddd;
-  }
-  .rt-sticky {
-    height: 63px;
-  }
-  .rt-sticky .navbar-collapse {
-    margin-top: -3px !important;
-  }
-
-  .navbar-collapse li {
-    width: 100% !important;
-    float: right;
   }
 }
 

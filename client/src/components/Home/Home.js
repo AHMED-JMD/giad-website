@@ -8,11 +8,68 @@ import HomeServices from "./home-services";
 import HomeWhyUs from "./home-whyUs";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
+import Slider from "react-slick";
 
 const Home = () => {
   const { language } = useContext(LangContext);
+
+  // const afterChange = (index) => {
+  //   let element = document.querySelector('.caption');
+  //   element.style.css.backgroundColor = '#fff';
+  // };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    // afterChange,
+    autoplaySpeed: 3000,
+
+  };
   return (
     <div className="home" dir={`${Languages[language].dir}`}>
+       <Slider {...settings}>
+            <div className="slide">
+                  <img
+                    src="assets/images/slider1.png"
+                    className="mx-auto"
+                    width={'100%'}
+                    alt="video"
+                  />
+                  <div className="caption">
+                    <h2>جياد لخدمات السيارات</h2>
+                    <p>خدمات إحترافية بجودة عالية</p>
+                    <a
+                      href="#services-section"
+                      className="btn btn-outline-primary page-scroll"
+                    >
+                      <i className="fa fa-angle-left"></i>
+                      تعرف على خدماتنا
+                    </a>
+                  </div>
+            </div>
+            <div className="slide">
+                  <img
+                    src="assets/images/slider1.png"
+                    className="mx-auto"
+                    width={'100%'}
+                    alt="video"
+                  />
+                  <div className="caption">
+                    <h2>جياد لخدمات السيارات</h2>
+                    <p>خدمات إحترافية بجودة عالية</p>
+                    <a
+                      href="#services-section"
+                      className="btn btn-outline-primary page-scroll"
+                    >
+                      <i className="fa fa-angle-left"></i>
+                      تعرف على خدماتنا
+                    </a>
+                  </div>
+            </div>
+        </Slider>
       {/* <!-- Slider Area Start Here --> */}
       {/* <div className="slider-area slider-layout1">
         <div className="bend niceties preview-1">

@@ -20,6 +20,7 @@
     "nodemon": "^2.0.12",
     "quickemailverification": "^1.0.3",
     "react-material-ui-carousel": "^3.4.2",
+    "react-slick": "^0.29.0",
     "xss-filters": "^1.2.7"
   },
   "engines": {

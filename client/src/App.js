@@ -9,20 +9,25 @@ import Navbar1 from "./components/Navbar/navbar1";
 import Navbar2 from "./components/Navbar/navbar2";
 import Products from "./components/Products/Products";
 import ServicesCenter from "./components/Services Center/Services-Center";
+import { LangContext } from "./context/langContext";
+import { useContext } from 'react';
 
 function App() {
+  const {language} = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
   window.onload = (event) => {
     setTimeout(()=>{
       setLoading(false);
-    }, 4000)
+    }, )
   }
   if (isLoading) {
     return <Loader />;
   }
+
   return (
-    <div className="App">
+    
+    <div className={language === 'Ar'? "App" : "App en"}>
       <Navbar1 />
       <Navbar2 />
       <Routes>

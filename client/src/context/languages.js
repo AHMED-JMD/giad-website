@@ -11,6 +11,8 @@ export const Languages = {
         "الخدمات",
         "التواصل",
         "English",
+        "الخرطوم, جنوب غرب سباق الخيل",
+        "الأحد - الخميس: 3pm - 7am"
       ],
     },
     Home: {
@@ -287,6 +289,8 @@ export const Languages = {
         "Centers",
         "Contact",
         "العربية",
+        "Khartoum, Southwest of the horse racing area",
+        "Sun - Thu: 7am - 3pm",
       ],
     },
     Home: {

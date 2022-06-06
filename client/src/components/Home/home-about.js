@@ -45,7 +45,7 @@ const HomeAbout = () => {
       </div>
 
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
-      <div className="aboutus-section container-fluid py-5" id="aboutus-section">
+      <div className="aboutus-section py-5" id="aboutus-section">
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
@@ -76,14 +76,14 @@ const HomeAbout = () => {
               {" "}
               {Languages[language].Home.HomeAbout.body[1]}{" "}
             </p>
+            <Link className="btn main-btn mt-5" to="/about">
+            {Languages[language].Home.HomeAbout.AboutBtn}{" "}
+          </Link>
           </div>
           <div
-            className="aos-init col-lg-6 col-md-12 mx-auto text-center img-container"
+            className="aos-init col-lg-6 col-md-12 px-0 mx-auto text-center"
             data-aos="fade-right"
           >
-            <div className="img-bg">
-              <img src="assets/images/g-8.png" alt="" />
-            </div>
             <div className="aboutus-img">
               <img
                 className="aboutus-img"
@@ -103,9 +103,6 @@ const HomeAbout = () => {
               </div>
             </div>
           </div>
-          <Link className="btn main-btn mt-5" to="/about">
-            {Languages[language].Home.HomeAbout.AboutBtn}{" "}
-          </Link>
         </div>
       </div>
     </div>
