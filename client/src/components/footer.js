@@ -60,7 +60,7 @@ const Footer = () => {
             </li>
             <a className="btn btn-effect mb-4" href="/contact">
               {Languages[language].Footer.content[12]}
-            </a>{" "}
+            </a>
             <li className="nav-item opening-hour ">
               <i className="far fa-clock mr-0"></i>
               <span>{Languages[language].Footer.content[13]} </span>

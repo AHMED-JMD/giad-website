@@ -25,7 +25,7 @@ const Home = () => {
     slidesToScroll: 1,
     autoplay: true,
     // afterChange,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
 
   };
   return (
@@ -156,10 +156,10 @@ const Home = () => {
             alt=""
           />
           <h2> {Languages[language].Home.HomeBanner.Text[0]}</h2>
-          <p>
-            ISO <span>9001:2015</span> | <span>14001:2015</span> |{" "}
-            <span>14001:2018</span> | <span>45001:2018</span>
-          </p>
+          <div className="iso">
+            <p className="ms-1">ISO 9001:2015</p> <p className="ms-1">ISO 14001:2015</p> 
+            <p className="ms-1">ISO 14001:2018</p> <p className="ms-1">ISO 45001:2018</p>
+          </div>
           <Link to="/contact" className="btn main-btn">
             {Languages[language].Home.HomeBanner.Text[1]}{" "}
           </Link>
