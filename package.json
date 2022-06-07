@@ -10,6 +10,8 @@
   "author": "jmd",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/style": "^0.8.0",
     "@mui/icons-material": "^5.8.2",
     "@mui/material": "^5.8.2",
     "config": "^3.3.6",

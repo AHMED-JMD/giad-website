@@ -42,8 +42,8 @@ const Footer = () => {
             <p> {Languages[language].Footer.content[7]}</p>
             <p>{Languages[language].Footer.content[8]}</p>
             <p>
-              {Languages[language].Footer.content[9]}
-              <a href="mailto:info@mail.com">info@giadmotorservices.com</a>
+              {Languages[language].Footer.content[9]}:
+              info@giadmotorservices.com
             </p>
             <p>{Languages[language].Footer.content[10]}</p>
           </div>

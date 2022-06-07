@@ -19,7 +19,7 @@ const HomeServices = () => {
         <p className="main-text text-center mb-5">
           {Languages[language].Home.HomeServices.header[2]}{" "}
         </p>
-        <div className="row container-fluid mx-auto pt-4">
+        <div className="row container mx-auto pt-4">
           <div
             className="aos-init col-lg-4 col-md-6 col-xs-12 mb-5"
             data-aos="fade-left"

@@ -12,7 +12,6 @@ import Slider from "react-slick";
 
 const Home = () => {
   const { language } = useContext(LangContext);
-
   // const afterChange = (index) => {
   //   let element = document.querySelector('.caption');
   //   element.style.css.backgroundColor = '#fff';

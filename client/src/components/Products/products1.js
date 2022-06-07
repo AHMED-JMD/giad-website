@@ -6,7 +6,7 @@ const Products1 = () => {
   const { language } = useContext(LangContext);
 
   return (
-    <div className="product1" dir={`${Languages[language].dir}`}>
+    <div className="product1 container-fluid" dir={`${Languages[language].dir}`}>
       {/* <!-- Products SECTION --> */}
       <div className="products-section container-fluid py-5">
         <div className="text-center mb-3">
@@ -17,13 +17,13 @@ const Products1 = () => {
           {Languages[language].Products.body.header[1]}
         </h2>
 
-        <h4 className="aos-init side-header" data-aos="fade-left">
+        <h4 className="aos-init side-header text-center" data-aos="fade-left">
           {Languages[language].Products.body.oils.title[0]}
         </h4>
-        <p data-aos="fade-left" className="aos-init">
+        <p data-aos="fade-left" className="aos-init p-0 m-0 text-center">
           {Languages[language].Products.body.oils.title[1]}
         </p>
-        <p data-aos="fade-left" className="aos-init">
+        <p data-aos="fade-left" className="aos-init text-center">
           {Languages[language].Products.body.oils.title[2]}
         </p>
         <div className="row mx-auto">

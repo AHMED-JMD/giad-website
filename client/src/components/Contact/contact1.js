@@ -64,7 +64,7 @@ const Contact1 = () => {
           <div id="back-message" className="back-message text-center"></div>
         </form>
       </div>
-      <div className="contact-methods mb-5 ">
+      <div className="contact-methods">
         <div className="aos-init row mx-auto" data-aos="fade-right">
           <div className="col-md-6 col-sm-12 mb-3 d-flex">
             <div className="">

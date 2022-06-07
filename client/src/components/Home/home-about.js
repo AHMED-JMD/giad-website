@@ -9,43 +9,10 @@ const HomeAbout = () => {
   return (
     <div className="home-about" dir={`${Languages[language].dir}`}>
       {/* <!-- Modal --> */}
-      <div
-        className="modal fade"
-        id="myModal"
-        tabIndex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-body">
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-              {/* <!-- 16:9 aspect ratio --> */}
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-                  className="embed-responsive-item"
-                  title="video-player"
-                  src=""
-                  id="video"
-                  allowscriptaccess="always"
-                  allow="autoplay"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
-      <div className="aboutus-section container-fluid py-5" id="aboutus-section">
+      <div className="aboutus-section container py-5" id="aboutus-section">
         <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
@@ -60,15 +27,17 @@ const HomeAbout = () => {
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
               <span>
-                {Languages[language].Home.HomeAbout.body[0]}.
+                {Languages[language].Home.HomeAbout.body[0]}
               </span>
             </p>
             <p>
-              {Languages[language].Home.HomeAbout.body[1]}.
+              {Languages[language].Home.HomeAbout.body[1]}
             </p>
-          <Link to="/about" className="btn btn-effect mb-4" href="/contact">
+        <div className="text-center">
+        <Link to="/about" className="btn btn-effect mx-auto text-center mb-4" href="/contact">
           {Languages[language].Home.HomeAbout.AboutBtn}
             </Link>
+        </div>
           </div>
           <div
             className="aos-init col-lg-6 col-md-12 px-0 mx-auto text-center"
