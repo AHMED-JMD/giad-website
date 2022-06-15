@@ -12,7 +12,7 @@ export const Languages = {
         "التواصل",
         "English",
         "الخرطوم, جنوب غرب سباق الخيل",
-        "الأحد - الخميس: 3pm - 7am"
+        "الأحد - الخميس: 3pm - 7am",
       ],
     },
     Home: {
@@ -26,6 +26,7 @@ export const Languages = {
         "نعمل بتفاني .. لإرضاء عملائنا",
         "عرض المزيد",
       ],
+      HomeProgress: ["كل المتخصصين لدينا يمتلكون أعلى درجات الخبرة والتدريب"],
       HomeAbout: {
         header: ["من", "نحن؟", "اعرف المزيد عن جياد لخدمات السيارات"],
         body: [
@@ -304,6 +305,7 @@ export const Languages = {
         "We work efficiently to satisfy you",
         "Learn more",
       ],
+      HomeProgress: ["All of Our specialists ar fully trained and equiped"],
       HomeAbout: {
         header: ["Who Are", "ًWe?", "Learn more about Giad Motor Services"],
         body: [

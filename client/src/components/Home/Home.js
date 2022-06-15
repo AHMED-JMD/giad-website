@@ -25,120 +25,49 @@ const Home = () => {
     autoplay: true,
     // afterChange,
     autoplaySpeed: 3500,
-
   };
   return (
     <div className="home" dir={`${Languages[language].dir}`}>
-       <Slider {...settings}>
-            <div className="slide">
-                  <img
-                    src="assets/images/slider1.png"
-                    className="mx-auto"
-                    width={'100%'}
-                    alt="video"
-                  />
-                  <div className="caption">
-                    <h2>جياد لخدمات السيارات</h2>
-                    <p>خدمات إحترافية بجودة عالية</p>
-                    <a
-                      href="#services-section"
-                      className="btn btn-outline-primary page-scroll"
-                    >
-                      <i className="fa fa-angle-left"></i>
-                      تعرف على خدماتنا
-                    </a>
-                  </div>
-            </div>
-            <div className="slide">
-                  <img
-                    src="assets/images/slider1.png"
-                    className="mx-auto"
-                    width={'100%'}
-                    alt="video"
-                  />
-                  <div className="caption">
-                    <h2>جياد لخدمات السيارات</h2>
-                    <p>خدمات إحترافية بجودة عالية</p>
-                    <a
-                      href="#services-section"
-                      className="btn btn-outline-primary page-scroll"
-                    >
-                      <i className="fa fa-angle-left"></i>
-                      تعرف على خدماتنا
-                    </a>
-                  </div>
-            </div>
-        </Slider>
-      {/* <!-- Slider Area Start Here --> */}
-      {/* <div className="slider-area slider-layout1">
-        <div className="bend niceties preview-1">
-          <div id="ensign-nivoslider-4" className="slides">
-            <img
-              src="assets/images/slider1.png"
-              alt="slider"
-              title="#slider-direction-1"
-            />
-            <img
-              src="assets/images/slider2.png"
-              alt="slider"
-              title="#slider-direction-2"
-            />
-          </div>
-          <div id="slider-direction-1" className="t-cn slider-direction">
-            <div className="slider-content s-tb slide-1">
-              <div className="text-right title-container s-tb-c">
-                <div className="container">
-                  <div className="slider-big-text">
-                    <h1>
-                      <div className="contain"></div>
-                      جياد لخدمات السيارات
-                    </h1>
-                  </div>
-                  <div className="slider-paragraph">
-                    خدمات إحترافية بجودة عالية
-                  </div>
-                  <div className="slider-btn-area">
-                    <a
-                      href="#services-section"
-                      className="item-btn-fill page-scroll"
-                    >
-                      تعرف على خدماتنا
-                      <i className="fa fa-angle-left"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="slider-direction-2" className="t-cn slider-direction">
-            <div className="slider-content s-tb slide-2">
-              <div className="text-right title-container s-tb-c">
-                <div className="container">
-                  <div className="contain"></div>
-                  <div className="slider-big-text">
-                    <h1>
-                      <div className="contain"></div>
-                      جياد لخدمات السيارات
-                    </h1>
-                  </div>
-                  <div className="slider-paragraph">
-                    نعمل بتفاني .. لإرضاء عملائنا
-                  </div>
-                  <div className="slider-btn-area">
-                    <a
-                      href="#aboutus-section"
-                      className="item-btn-fill page-scroll"
-                    >
-                      عرض المزيد
-                      <i className="fa fa-angle-left"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <Slider {...settings}>
+        <div className="slide">
+          <img
+            src="assets/images/giad-bg8.jpg"
+            className="mx-auto"
+            width={"100%"}
+            alt="video"
+          />
+          <div className="caption" dir={`${Languages[language].dir}`}>
+            <h2>{Languages[language].Home.slide1[0]}</h2>
+            <p>{Languages[language].Home.slide1[1]}</p>
+            <a
+              href="#services-section"
+              className="btn btn-outline-primary page-scroll"
+            >
+              <i className="fa fa-angle-left"></i>
+              {Languages[language].Home.slide1[2]}{" "}
+            </a>
           </div>
         </div>
-      </div> */}
+        <div className="slide">
+          <img
+            src="assets/images/giad-bg7.jpg"
+            className="mx-auto"
+            width={"100%"}
+            alt="video"
+          />
+          <div className="caption" dir={`${Languages[language].dir}`}>
+            <h2> {Languages[language].Home.slide2[0]}</h2>
+            <p>{Languages[language].Home.slide2[1]}</p>
+            <a
+              href="#services-section"
+              className="btn btn-outline-primary page-scroll"
+            >
+              <i className="fa fa-angle-left"></i>
+              {Languages[language].Home.slide2[2]}
+            </a>
+          </div>
+        </div>
+      </Slider>
       {/* inside section */}
       <HomeAbout />
       <HomeServices />
@@ -156,12 +85,14 @@ const Home = () => {
           />
           <h2> {Languages[language].Home.HomeBanner.Text[0]}</h2>
           <div className="iso">
-            <p className="ms-1">ISO 9001:2015</p> <p className="ms-1">ISO 14001:2015</p> 
-            <p className="ms-1">ISO 14001:2018</p> <p className="ms-1">ISO 45001:2018</p>
+            <p className="ms-1">ISO 9001:2015</p>{" "}
+            <p className="ms-1">ISO 14001:2015</p>
+            <p className="ms-1">ISO 14001:2018</p>{" "}
+            <p className="ms-1">ISO 45001:2018</p>
           </div>
-          <Link to="/contact" className="btn main-btn">
+          <a href="/contact" className="btn main-btn">
             {Languages[language].Home.HomeBanner.Text[1]}{" "}
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -178,9 +109,9 @@ const Home = () => {
             <h4> {Languages[language].Home.HomeClients[0]} </h4>
           </div>
           <div className="aos-init col-lg-7 col-md-12" data-aos="fade-right">
-            <Link to="/services-centers" className="btn mr-5">
+            <a href="/services-centers" className="btn mr-5">
               {Languages[language].Home.HomeClients[1]}
-            </Link>
+            </a>
             <img src="assets/images/sami.png" width="220px" alt="" />
           </div>
         </div>

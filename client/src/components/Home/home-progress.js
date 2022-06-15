@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
+import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
-
 const HomeProgress = () => {
   const { language } = useContext(LangContext);
 
@@ -15,9 +15,14 @@ const HomeProgress = () => {
                 className="aos-init progress-box-layout1 d-flex align-items-center flex-column justify-content-center"
                 data-aos="fade-left"
               >
-                <div><i style={{fontSize: '50px'}} className='bx bx-hard-hat'></i></div>
+                <div>
+                  <i
+                    style={{ fontSize: "50px" }}
+                    className="bx bx-hard-hat"
+                  ></i>
+                </div>
                 <h2 className="item-title">
-                  كل المتخصصين لدينا يمتلكون أعلى درجات الخبرة والتدريب
+                  {Languages[language].Home.HomeProgress[0]}
                 </h2>
               </div>
             </div>
