@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import Footer from "../footer";
 import HomeAbout from "./home-about";
 import HomeProgress from "./home-progress";
@@ -12,10 +11,7 @@ import Slider from "react-slick";
 
 const Home = () => {
   const { language } = useContext(LangContext);
-  // const afterChange = (index) => {
-  //   let element = document.querySelector('.caption');
-  //   element.style.css.backgroundColor = '#fff';
-  // };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -23,9 +19,9 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    // afterChange,
     autoplaySpeed: 3500,
   };
+
   return (
     <div className="home" dir={`${Languages[language].dir}`}>
       <Slider {...settings}>
@@ -41,10 +37,10 @@ const Home = () => {
             <p>{Languages[language].Home.slide1[1]}</p>
             <a
               href="#services-section"
-              className="btn btn-outline-primary page-scroll"
+              className="btn btn-outline-light shadow-none page-scroll"
             >
-              <i className="fa fa-angle-left"></i>
               {Languages[language].Home.slide1[2]}{" "}
+             <i className={language === 'Ar'? "fa fa-angle-left mx-1" : "fa fa-angle-right mx-1"}></i>
             </a>
           </div>
         </div>
@@ -60,10 +56,10 @@ const Home = () => {
             <p>{Languages[language].Home.slide2[1]}</p>
             <a
               href="#services-section"
-              className="btn btn-outline-primary page-scroll"
+              className="btn btn-outline-light shadow-none page-scroll"
             >
-              <i className="fa fa-angle-left"></i>
               {Languages[language].Home.slide2[2]}
+            <i className={language === 'Ar'? "fa fa-angle-left mx-1" : "fa fa-angle-right mx-1"}></i>
             </a>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import ReactPlayer from "react-player"
 import { Link } from "react-router-dom";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
@@ -15,12 +15,11 @@ const HomeAbout = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 700,
-    height: 500,
-    bgcolor: "black",
-    border: "1px solid #000",
+    maxWidth: 700,
+    width: "100%",
+    height: 400,
+    bgcolor: "white",
     boxShadow: 24,
-    p: 4,
   };
   //modal state
   const [open, setOpen] = React.useState(false);
@@ -37,26 +36,14 @@ const HomeAbout = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              onClick={handleClose}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            {/* aspest ratio */}
-            <video
-              width="600"
-              height="400"
-              controls
-              id="videoTag"
-              onContextMenu={(e) => e.preventDefault()}
-            >
-              <source src="https://www.youtube.com/embed/hKCCJFLnh-8" />
-            </video>
-          </Typography>
+        <ReactPlayer
+          width={'100%'}
+          height={'100%'}
+            controls={true}
+            url={
+              language === 'Ar'? 'https://www.youtube.com/watch?v=rBuORKUvnC0':
+              'https://www.youtube.com/watch?v=rMBqRgH3rRw'}
+            />
         </Box>
       </Modal>
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
@@ -88,13 +75,12 @@ const HomeAbout = () => {
           </div>
           <div
             className="aos-init col-lg-6 col-md-12 px-0 mx-auto text-center"
-            data-aos="fade-right"
-          >
+            data-aos="fade-right">
             <div className="aboutus-img">
               <img src="assets/images/giad-family.png" alt="" />
               <div className="video-icon">
                 <a
-                  data-src="https://www.youtube.com/embed/hKCCJFLnh-8"
+                  data-src="https://www.youtube.com/watch?v=rMBqRgH3rRw"
                   onClick={handleOpen}
                 >
                   <i className="bx bx-play-circle"></i>

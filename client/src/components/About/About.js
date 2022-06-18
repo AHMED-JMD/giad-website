@@ -19,7 +19,6 @@ const About = () => {
             <div className="banner-title-outer">
               <div className="banner-title-name">
                 <h2 className="site-text-white">
-                  {" "}
                   {Languages[language].About.header[0]}
                 </h2>
               </div>

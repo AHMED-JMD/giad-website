@@ -16,14 +16,14 @@ function App() {
   const {language} = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
-  window.onload = (event) => {
-    setTimeout(()=>{
-      setLoading(false);
-    }, )
-  }
-  if (isLoading) {
-    return <Loader />;
-  }
+  // window.onload = (event) => {
+  //   setTimeout(()=>{
+  //     setLoading(false);
+  //   }, )
+  // }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     

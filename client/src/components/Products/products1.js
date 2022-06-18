@@ -20,10 +20,10 @@ const Products1 = () => {
         <h4 className="aos-init side-header text-center" data-aos="fade-left">
           {Languages[language].Products.body.oils.title[0]}
         </h4>
-        <p data-aos="fade-left" className="aos-init p-0 m-0 text-center">
+        <p data-aos="fade-left" className="aos-init p-0 m-0">
           {Languages[language].Products.body.oils.title[1]}
         </p>
-        <p data-aos="fade-left" className="aos-init text-center">
+        <p data-aos="fade-left" className="aos-init">
           {Languages[language].Products.body.oils.title[2]}
         </p>
         <div className="row mx-auto">
@@ -245,8 +245,8 @@ const Products1 = () => {
             </div>
           </div>
         </div>
-        <hr className="my-5" />
-        <h4 className="aos-init side-header" data-aos="fade-left">
+        <hr className="my-3" />
+        <h4 className="aos-init side-header mb-5" data-aos="fade-left">
           {Languages[language].Products.body.filters[0]}
         </h4>
         <div className="row mx-auto">
