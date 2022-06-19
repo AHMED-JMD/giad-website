@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
+
 const HomeProgress = () => {
   const { language } = useContext(LangContext);
 

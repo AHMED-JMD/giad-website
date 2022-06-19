@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const sendMail = require("./mail");
+const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 const url = require("url");
@@ -11,27 +12,13 @@ var quickemailverification = require("quickemailverification")
 const xssFilter = require("xss-filters");
 
 //middlewares
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static("client/build"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
-//routes to hide page extensions
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
-});
-app.get("/about", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/about.html"));
-});
-app.get("/products", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/products.html"));
-});
-app.get("/services-centers", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/services-centers.html"));
-});
-app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/contact.html"));
-});
 
 //post rout
 app.post("/email", async (req, res, next) => {
@@ -63,11 +50,10 @@ app.post("/email", async (req, res, next) => {
   }
 });
 
-app.use("/en", require("./routes/en-route"));
-
-app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, "./public/404.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
+
 //listening to port
 const port = process.env.PORT || 7892;
 app.listen(port, () => console.log(`server running on port ${port}`));

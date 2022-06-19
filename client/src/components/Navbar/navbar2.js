@@ -31,14 +31,14 @@ const Navbar2 = () => {
       className="navbar navbar-2 justify-content-between navbar-expand-md py-0"
     >
       <div className="container-fluid px-3">
-        <a className="navbar-brand" href="/">
+        <NavLink className="navbar-brand" to="/">
           <img
             src="assets/images/logo.png"
             className="white-logo"
             width="80px"
             alt="logo"
           />
-        </a>
+        </NavLink>
         <div className="nav-links">
           <ul
             className={toggle ? "navbar-nav toggled" : "navbar-nav"}
