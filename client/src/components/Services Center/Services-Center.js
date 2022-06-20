@@ -27,7 +27,7 @@ const ServicesCenter = () => {
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
                 <li>
-                  <Link to="/">{Languages.Ar.ServicesCenter.header[1]}</Link>
+                  <Link to="/">{Languages[language].ServicesCenter.header[1]}</Link>
                 </li>
                 <li>{Languages[language].ServicesCenter.header[0]}</li>
               </ul>

@@ -29,7 +29,8 @@ const HomeAbout = () => {
   return (
     <div className="home-about" dir={`${Languages[language].dir}`}>
       {/* <!-- Modal --> */}
-      <Modal
+     <div className="container">
+     <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -46,6 +47,7 @@ const HomeAbout = () => {
             />
         </Box>
       </Modal>
+     </div>
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
       <div className="aboutus-section container py-5" id="aboutus-section">
         <div className="text-center mb-3">
@@ -58,7 +60,7 @@ const HomeAbout = () => {
         <p className="main-text text-center mb-5">
           {Languages[language].Home.HomeAbout.header[2]}{" "}
         </p>
-        <div className="container-fluid row mx-auto">
+        <div className="row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
               <span>{Languages[language].Home.HomeAbout.body[0]}</span>
@@ -67,7 +69,7 @@ const HomeAbout = () => {
             <div className="text-center">
               <a
                 className="btn btn-effect mx-auto text-center mb-4"
-                href="/contact"
+                href="/about"
               >
                 {Languages[language].Home.HomeAbout.AboutBtn}
               </a>

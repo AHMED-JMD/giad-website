@@ -14,11 +14,11 @@ const HomeWhyUs = () => {
             <img src="assets/images/wheel.png" width="70px" alt="" />
           </div>
           <h2 className="main-header mx-auto text-center">
-            <span> {Languages[language].Home.HomeWhyUs.header[0]} </span>{" "}
-            {Languages[language].Home.HomeWhyUs.header[1]} <span>؟</span>
+            <span> {Languages[language].Home.HomeWhyUs.header[0]} </span>
+            {Languages[language].Home.HomeWhyUs.header[1]} <span>{language === 'Ar'? '؟' : '?'}</span>
           </h2>
           <p className="main-text text-center mb-5">
-            {Languages[language].Home.HomeWhyUs.header[2]}{" "}
+            {Languages[language].Home.HomeWhyUs.header[2]}
           </p>
           <div className="row gutters-3">
             <div className="col-lg-4 mb-4">
@@ -47,7 +47,7 @@ const HomeWhyUs = () => {
                 </div>
                 <div className="item-content">
                   <h3 className="item-title">
-                    {" "}
+                    
                     {Languages[language].Home.HomeWhyUs.body.reason2[0]}
                   </h3>
                   <p>{Languages[language].Home.HomeWhyUs.body.reason2[1]}</p>
@@ -64,7 +64,7 @@ const HomeWhyUs = () => {
                 </div>
                 <div className="item-content">
                   <h3 className="item-title">
-                    {" "}
+                    
                     {Languages[language].Home.HomeWhyUs.body.reason3[0]}
                   </h3>
                   <p> {Languages[language].Home.HomeWhyUs.body.reason3[1]}</p>

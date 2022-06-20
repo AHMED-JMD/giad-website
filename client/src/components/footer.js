@@ -42,7 +42,7 @@ const Footer = () => {
             <p> {Languages[language].Footer.content[7]}</p>
             <p>{Languages[language].Footer.content[8]}</p>
             <p>
-              {Languages[language].Footer.content[9]}:
+              {Languages[language].Footer.content[9]}
               info@giadmotorservices.com
             </p>
             <p>{Languages[language].Footer.content[10]}</p>

@@ -27,7 +27,7 @@ const HomeQuestions = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  {Languages[language].Home.HomeQuestions.body.quest1[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest1[0]}
                 </h5>
               </div>
               <div
@@ -63,7 +63,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  {Languages[language].Home.HomeQuestions.body.quest2[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest2[0]}
                 </h5>
               </div>
               <div
@@ -73,37 +73,36 @@ const HomeQuestions = () => {
                 data-parent="#accordion"
               >
                 <div className="card-body">
-                  {Languages[language].Home.HomeQuestions.body.quest2[1]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest2[1]}
                   <ul>
                     <li>
-                      {" "}
                       {
                         Languages[language].Home.HomeQuestions.body.quest2[2]
-                      }{" "}
+                      }
                     </li>
                     <li>
-                      {" "}
+                      
                       {
                         Languages[language].Home.HomeQuestions.body.quest2[3]
-                      }{" "}
+                      }
                     </li>
                     <li>
-                      {" "}
+                      
                       {
                         Languages[language].Home.HomeQuestions.body.quest2[4]
-                      }{" "}
+                      }
                     </li>
                     <li>
-                      {" "}
+                      
                       {
                         Languages[language].Home.HomeQuestions.body.quest2[5]
-                      }{" "}
+                      }
                     </li>
                     <li>
-                      {" "}
+                      
                       {
                         Languages[language].Home.HomeQuestions.body.quest2[6]
-                      }{" "}
+                      }
                     </li>
                   </ul>
                 </div>
@@ -118,7 +117,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  {Languages[language].Home.HomeQuestions.body.quest3[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest3[0]}
                 </h5>
               </div>
               <div
@@ -136,13 +135,13 @@ const HomeQuestions = () => {
                       {Languages[language].Home.HomeQuestions.body.quest3[2]}
                     </li>
                     <li>
-                      {Languages[language].Home.HomeQuestions.body.quest3[3]}{" "}
+                      {Languages[language].Home.HomeQuestions.body.quest3[3]}
                     </li>
                     <li>
                       {Languages[language].Home.HomeQuestions.body.quest3[4]}
                     </li>
                     <li>
-                      {" "}
+                      
                       {Languages[language].Home.HomeQuestions.body.quest3[5]}
                     </li>
                     <li>
@@ -161,7 +160,7 @@ const HomeQuestions = () => {
                   aria-expanded="false"
                   aria-controls="collapseFour"
                 >
-                  {Languages[language].Home.HomeQuestions.body.quest4[0]}{" "}
+                  {Languages[language].Home.HomeQuestions.body.quest4[0]}
                 </h5>
               </div>
               <div
@@ -172,7 +171,6 @@ const HomeQuestions = () => {
               >
                 <div className="card-body">
                   <p>
-                    {" "}
                     {Languages[language].Home.HomeQuestions.body.quest4[1]}
                   </p>
                 </div>

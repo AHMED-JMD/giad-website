@@ -168,6 +168,10 @@ li.social-media ul a:hover {
   background-color: var(--dark-color);
   color: #fff;
 }
+.navbar-1 .row, .navbar-2 .container-fluid{
+  max-width: 2000px;
+  margin: auto;
+}
 .navbar-1 small{
   color: #fff !important;
 }
@@ -722,7 +726,9 @@ li.social-media ul a:hover {
   transition: all 0.3s ease-out;
 }
 .en .service-faq .faq-box .accordion .card .card-header .heading-title:before {
+  content: "\f105" !important;
   right: calc(100% - 40px);
+  
   margin-right: 10px;
 }
 .service-faq .faq-box .accordion .card .card-header .heading-title.collapsed {
@@ -738,6 +744,7 @@ li.social-media ul a:hover {
   content: "\f104";
   color: #287ff9;
 }
+
 .service-faq .faq-box .accordion .card .card-body {
   padding: 25px 50px;
   position: relative;
@@ -1056,6 +1063,13 @@ footer a:hover {
   transform: translateY(-50%);
   left: -20px;
 }
+.en .breadcrumb-style-2 li{
+  margin: 0 10px;
+}
+.en .breadcrumb-style-2 li:after {
+  content: "\f101";
+  left: 50px;
+}
 /*====Button Effect====*/
 
 .btn-effect {
@@ -1240,7 +1254,7 @@ footer a:hover {
   background-color: #1a1e22;
   color: #ffffff;
   transition: color 0.5s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 5px;
   margin: 0;
 }
