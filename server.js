@@ -15,10 +15,7 @@ const xssFilter = require("xss-filters");
 app.use(express.static("client/build"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors({
-  origin: 'http://localhost:3000'
-}));
-
+app.use(cors());
 
 //post rout
 app.post("/email", async (req, res, next) => {

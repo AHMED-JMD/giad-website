@@ -17,14 +17,23 @@ function App() {
   const { language } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(()=> {
-    setLoading(false);
- }, [])
-  
-  
-  if (isLoading) {
-    return <Loader />;
-  }
+  // window.onload = (event) => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   });
+  // };
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
+
+  //use effect function for language on refresh
+  useEffect(() => {
+    if (language === " " || language === "Ar") {
+      localStorage.setItem("lang", "Ar");
+    } else {
+      localStorage.setItem("lang", "En");
+    }
+  }, []);
 
   return (
     <div className={language === "Ar" ? "App" : "App en"}>

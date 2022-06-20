@@ -4,12 +4,12 @@ import { LangContext } from "../../context/langContext";
 import { NavLink } from "react-router-dom";
 
 const Navbar2 = () => {
-  const { language, setLanguage } = useContext(LangContext);
+  const { language, ArFunc, EnFunc } = useContext(LangContext);
   const [toggle, setToggle] = useState(false);
   const node = useRef(null);
   //function to change the language of the App
   const HandleLanguage = (lang) => {
-    lang === "Ar" ? setLanguage("En") : setLanguage("Ar");
+    lang === "Ar" ? EnFunc() : ArFunc();
   };
 
   useEffect(() => {

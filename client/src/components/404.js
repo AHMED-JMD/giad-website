@@ -42,11 +42,11 @@ const ErrorPage = () => {
           <h2>
             <span className="dot"></span>
             {Languages[language].Page404.content[2]}
-            <span class="dot"></span>
+            <span className="dot"></span>
           </h2>
           <h1>{Languages[language].Page404.content[0]}</h1>
-          <p className="mb-3">{Languages.Ar.Page404.content[3]}</p>
-          <a href="/" class="btn main-btn">
+          <p className="mb-3">{Languages[language].Page404.content[3]}</p>
+          <a href="/" className="btn main-btn">
             {Languages[language].Page404.content[4]}
           </a>
         </div>
