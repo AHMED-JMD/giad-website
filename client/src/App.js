@@ -14,7 +14,7 @@ import { useContext } from "react";
 import ErrorPage from "./components/404";
 
 function App() {
-  const { language } = useContext(LangContext);
+  const { language, ArFunc, EnFunc } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
   // window.onload = (event) => {
@@ -28,7 +28,7 @@ function App() {
 
   //use effect function for language on refresh
   useEffect(() => {
-    if (language === " " || language === "Ar") {
+    if (language === "Ar") {
       localStorage.setItem("lang", "Ar");
     } else {
       localStorage.setItem("lang", "En");
