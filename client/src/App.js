@@ -26,15 +26,6 @@ function App() {
   //   return <Loader />;
   // }
 
-  //use effect function for language on refresh
-  useEffect(() => {
-    if (language === "Ar") {
-      localStorage.setItem("lang", "Ar");
-    } else {
-      localStorage.setItem("lang", "En");
-    }
-  }, []);
-
   return (
     <div className={language === "Ar" ? "App" : "App en"}>
       <Navbar1 />
