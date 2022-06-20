@@ -23,7 +23,7 @@ const Contact = () => {
                 </h2>
               </div>
             </div>
-            {/* <!-- BREADCRUMB ROW -->                             */}
+            {/* <!-- BREADCRUMB ROW --> */}
 
             <div>
               <ul className="wt-breadcrumb breadcrumb-style-2">
@@ -34,7 +34,7 @@ const Contact = () => {
               </ul>
             </div>
 
-            {/* <!-- BREADCRUMB ROW END -->                         */}
+            {/* <!-- BREADCRUMB ROW END --> */}
           </div>
         </div>
       </div>

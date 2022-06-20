@@ -26,12 +26,13 @@ const Home = () => {
     <div className="home" dir={`${Languages[language].dir}`}>
       <Slider {...settings}>
         <div className="slide">
-          <img
+          {/* <img
             src="assets/images/giad-bg8.jpg"
             className="mx-auto"
             width={"100%"}
             alt="video"
-          />
+          /> */}
+          <div className="img img-1"></div>
           <div className="caption" dir={`${Languages[language].dir}`}>
             <h2>{Languages[language].Home.slide1[0]}</h2>
             <p>{Languages[language].Home.slide1[1]}</p>
@@ -45,12 +46,13 @@ const Home = () => {
           </div>
         </div>
         <div className="slide">
-          <img
+          {/* <img
             src="assets/images/giad-bg7.jpg"
             className="mx-auto"
             width={"100%"}
             alt="video"
-          />
+          /> */}
+          <div className="img img-2"></div>
           <div className="caption" dir={`${Languages[language].dir}`}>
             <h2> {Languages[language].Home.slide2[0]}</h2>
             <p>{Languages[language].Home.slide2[1]}</p>
