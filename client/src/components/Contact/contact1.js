@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const Contact1 = () => {
   const { language } = useContext(LangContext);
@@ -13,22 +13,23 @@ const Contact1 = () => {
   const [text, setText] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
 
-  const [msg, setMsg] = useState('')
+  const [msg, setMsg] = useState("");
 
   //handle submit function
-  const handleSubmit = (e) =>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const data = {name, email, subject, text, phoneNum}
+    const data = { name, email, subject, text, phoneNum };
 
-    //post to server 
-    axios.post('http://localhost:7892/email',
-    data)
-     .then(res =>{
-       console.log(res.data)
-       setMsg(res.data)
-     }).catch(err => console.log(err))
-  }
+    //post to server
+    axios
+      .post("http://localhost:7892/email", data)
+      .then((res) => {
+        console.log(res.data);
+        setMsg(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="contact1" dir={`${Languages[language].dir}`}>
@@ -42,8 +43,11 @@ const Contact1 = () => {
           {Languages[language].Contact.header[3]}
         </h2>
         <form className="form" id="contact-form" onSubmit={handleSubmit}>
-
-          <div className="back-message back-message-anim">{msg}</div>
+          {msg ? (
+            <div className="alert alert-success back-message back-message-anim">
+              {msg}
+            </div>
+          ) : null}
 
           <div className="aos-init row" data-aos="fade-left">
             <div className="col-lg-6 col-sm-12">
@@ -51,10 +55,14 @@ const Contact1 = () => {
                 <span>*</span>
                 {Languages[language].Contact.body.form[0]}
               </label>
-              <input type="name" className="form-control" id="name"
-               value={name}
-                onChange={(e) => setName(e.target.value)} 
-                required />
+              <input
+                type="name"
+                className="form-control"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
             <div className="col-lg-6 col-sm-12">
               <label>
@@ -72,17 +80,23 @@ const Contact1 = () => {
             </div>
             <div className="col-lg-6 col-sm-12">
               <label> {Languages[language].Contact.body.form[2]}</label>
-              <input type="email" className="form-control"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              id="email" />
+              <input
+                type="email"
+                className="form-control"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+              />
             </div>
             <div className="col-lg-6 col-sm-12">
               <label>{Languages[language].Contact.body.form[3]}</label>
-              <input type="name" className="form-control"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}              
-              id="subject" />
+              <input
+                type="name"
+                className="form-control"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                id="subject"
+              />
             </div>
             <div className="col-12">
               <label>
