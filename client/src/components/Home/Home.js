@@ -11,15 +11,66 @@ import Slider from "react-slick";
 
 const Home = () => {
   const { language } = useContext(LangContext);
+  const afterChange = () => {
+    let captions = document.querySelectorAll('.caption');
+    let captionsBg = document.querySelectorAll('.caption-bg');
+    let titles = document.querySelectorAll('.caption-title');
+    let texts = document.querySelectorAll('.caption-text');
+    let btns = document.querySelectorAll('.caption-btn');
+    for (const caption of captions) {
+    caption.classList.add('slide-animation');
+    }
+    for (const captionBg of captionsBg) {
+      captionBg.classList.add('bg');
+    }
+    for (const title of titles) {
+    title.classList.add('title');
+    }
+    for (const text of texts) {
+    text.classList.add('text');
+    }
+    for (const btn of btns) {
+      btn.classList.add('btn-animation');
+      }
+  };
+  const beforeChange = () => {
+    let captions = document.querySelectorAll('.caption');
+    let captionsBg = document.querySelectorAll('.caption-bg');
+    let titles = document.querySelectorAll('.caption-title');
+    let texts = document.querySelectorAll('.caption-text');
+    let btns = document.querySelectorAll('.caption-btn');
+    for (const caption of captions) {
+    caption.classList.remove('slide-animation');
+    caption.classList.remove('bg');
+    }
+    for (const captionBg of captionsBg) {
+      captionBg.classList.remove('bg');
+    }
+    for (const title of titles) {
+      title.classList.remove('title');
+      }
+      for (const text of texts) {
+        text.classList.remove('text');
+        }
+        for (const btn of btns) {
+          btn.classList.remove('btn-animation');
+          }
+  };
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
+    pauseOnHover: false,
+    rtl: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3500,
+    afterChange,
+    beforeChange,
+    swipe: false,
+    arrows: true,
+    autoplaySpeed: 4000,
   };
 
   return (
@@ -33,12 +84,13 @@ const Home = () => {
             alt="video"
           /> */}
           <div className="img img-1"></div>
-          <div className="caption" dir={`${Languages[language].dir}`}>
-            <h2>{Languages[language].Home.slide1[0]}</h2>
-            <p>{Languages[language].Home.slide1[1]}</p>
+          <div className="caption slide-animation" dir={`${Languages[language].dir}`}>
+            <div className="caption-bg bg"></div>
+            <h2 className="caption-title title">{Languages[language].Home.slide1[0]}</h2>
+            <p className="caption-text text">{Languages[language].Home.slide1[1]}</p>
             <a
               href="#services-section"
-              className="btn btn-outline-light shadow-none page-scroll"
+              className="btn btn-outline-light shadow-none page-scroll caption-btn btn-animation"
             >
               {Languages[language].Home.slide1[2]}{" "}
              <i className={language === 'Ar'? "fa fa-angle-left mx-1" : "fa fa-angle-right mx-1"}></i>
@@ -53,12 +105,13 @@ const Home = () => {
             alt="video"
           /> */}
           <div className="img img-2"></div>
-          <div className="caption" dir={`${Languages[language].dir}`}>
-            <h2> {Languages[language].Home.slide2[0]}</h2>
-            <p>{Languages[language].Home.slide2[1]}</p>
+          <div className="caption slide-animation" dir={`${Languages[language].dir}`}>
+          <div className="caption-bg bg"></div>
+            <h2 className="caption-title title"> {Languages[language].Home.slide2[0]}</h2>
+            <p className="caption-text text">{Languages[language].Home.slide2[1]}</p>
             <a
-              href="#services-section"
-              className="btn btn-outline-light shadow-none page-scroll"
+              href="#aboutus-section"
+              className="btn btn-outline-light shadow-none page-scroll caption-btn btn-animation"
             >
               {Languages[language].Home.slide2[2]}
             <i className={language === 'Ar'? "fa fa-angle-left mx-1" : "fa fa-angle-right mx-1"}></i>

@@ -141,7 +141,6 @@ const HomeQuestions = () => {
                       {Languages[language].Home.HomeQuestions.body.quest3[4]}
                     </li>
                     <li>
-                      
                       {Languages[language].Home.HomeQuestions.body.quest3[5]}
                     </li>
                     <li>
@@ -167,8 +166,7 @@ const HomeQuestions = () => {
                 id="collapseFour"
                 className="collapse"
                 aria-labelledby="headingFour"
-                data-parent="#accordion"
-              >
+                data-parent="#accordion">
                 <div className="card-body">
                   <p>
                     {Languages[language].Home.HomeQuestions.body.quest4[1]}

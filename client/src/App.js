@@ -17,15 +17,15 @@ function App() {
   const { language, ArFunc, EnFunc } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
-  // window.onload = (event) => {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   });
-  // };
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  useEffect(()=> {
+    // setTimeout( ()=> {
+      setLoading(false);
+    // }, 4000)
+  }, []);
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className={language === "Ar" ? "App" : "App en"}>
       <Navbar1 />

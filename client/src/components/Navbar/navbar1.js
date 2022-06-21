@@ -36,7 +36,7 @@ const Navbar1 = () => {
             </div>
             <div className={language === 'Ar'? "col-md-2 px-5 text-start" : "col-md-2 px-5 text-end"}>
                 <div className="h-100 d-inline-flex align-items-center mx-n2">
-                    <a style={{backgroundColor: '#fff', color: '#001d5c'}} className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i className="fab fa-facebook-f"></i></a>
+                    <a style={{backgroundColor: '#fff', color: '#001d5c'}} className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" target="_blank" href="https://www.facebook.com/giadmsco/"><i className="fab fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>

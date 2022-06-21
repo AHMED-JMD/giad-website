@@ -293,12 +293,12 @@ li.social-media ul a:hover {
   height: 100vh;
 }
 .slide .img-1{
-  background: url('../images/giad-bg7.jpg');
+  background: linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%), url('../images/giad-bg7.jpg');
   background-size: cover;
   background-position: center center;
 }
 .slide .img-2{
-  background: url('../images/giad-bg8.jpg');
+  background: linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%), url('../images/giad-bg8.jpg');
   background-size: cover;
   background-position: center center;
 }
@@ -306,29 +306,117 @@ li.social-media ul a:hover {
 .slide .caption{
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 0%;
   transform: translate(0%,-50%);
   height: 100%;
-  background-color: #1a1a1adc;
+  background-color: rgba(0, 29, 92, 0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 100;
   padding: 20px;
+  opacity: 0;
+  z-index: 1;
 }
-
+.slide .caption-bg{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background-color: #1a1a1adc;
+  z-index: -1;
+}
 .slide .caption h2{
+  position: relative;
   color: #fff;
+  opacity: 0;
+  top: -100px;
+}
+.caption-btn{
+  opacity: 0;
 }
 
 .slide .caption p{
+  position: relative;
   color: rgb(227, 227, 227);
+  opacity: 0;
+  right: -60px;
+}
+.color{
+  background-color: #001d5c !important;
+}
+
+.slide-animation{
+  animation: slide 0.7s ease-in-out forwards;
+}
+
+.bg{
+  animation: bg 0.7s 0.6s ease-in-out forwards;
+}
+.title{
+  animation: title 1s 0.5s ease-in-out forwards;
+}
+.text{
+  animation: text 0.7s 0.6s ease-in-out forwards;
+}
+
+.btn-animation{
+  animation: btn 1s 1s ease-in-out forwards;
+}
+
+@keyframes slide{
+  from{
+  left: 0%;
+  opacity: 0;
+  }
+  to{
+  left: 10%;
+  opacity: 1;
+  }
+}
+@keyframes bg{
+  from{
+  height: 0%;
+  }
+  to{
+    height: 100%;
+  }
+}
+@keyframes title{
+  from{
+  top: -100px;
+  opacity: 0;
+  }
+  to{
+  top: 0;
+  opacity: 1;
+  }
+}
+@keyframes text{
+  from{
+  right: -60px;
+  opacity: 0;
+  }
+  to{
+  right: 0;
+  opacity: 1;
+  }
+}
+@keyframes btn{
+  from{
+  opacity: 0;
+  }
+  to{
+  opacity: 1;
+  }
 }
 
 @media(max-width: 768px){
   .slide .caption{
-    top: 50%;
+    bottom: 0%;
     left: 0%;
     height: 200px;
     width: 100%;
@@ -338,6 +426,15 @@ li.social-media ul a:hover {
   }
   .slide img{
     min-width: 150%;
+  }
+  @keyframes slide{
+    from{
+    top: 0%;
+    opacity: 0;
+    }
+    to{
+    opacity: 1;
+    }
   }
 }
 
@@ -440,6 +537,7 @@ li.social-media ul a:hover {
 
 .services-card {
   position: relative;
+  background-color: var(--dark-color) !important;
   max-width: 450px;
   min-height: 150px;
   border: 0 !important;
@@ -457,7 +555,7 @@ li.social-media ul a:hover {
   right: 0;
   height: 0%;
   width: 100%;
-  background-color: var(--dark-color);
+  background-color: var(--black-color);
   -webkit-transition: all 0.4s ease !important;
   -moz-transition: all 0.4s ease !important;
   -ms-transition: all 0.4s ease !important;
@@ -469,12 +567,15 @@ li.social-media ul a:hover {
 .services-card:hover:before{
   height: 100%;
 }
+.services-card:hover .card-icon{
+  background-color: var(--black-color) !important;
+}
 .services-card:hover .card-title{
   color: #fff !important;
 }
 
 .services-card:hover .card-text{
-  color: rgb(235, 235, 235) !important;
+  color: rgb(235, 235, 235);
 }
 
 .services-section .card-body {
@@ -482,7 +583,7 @@ li.social-media ul a:hover {
 }
 
 .services-section .services-card .card-title {
-  color: var(--dark-color);
+  color: #fff;
   font-family: 'poppins', 'bkufi';
   transition: color 0.5s;
   font-size: 18px;
@@ -506,6 +607,7 @@ li.social-media ul a:hover {
 }
 .services-section .services-card .card-text {
   text-align: center;
+  color: rgb(235, 235, 235);
 }
 
 /*------------------- 5.12 Progress -------------------*/
@@ -643,11 +745,11 @@ li.social-media ul a:hover {
 
 .bannar-section p {
   font-weight: 500;
-  border: 1px solid #fff;
-  /* background-color: rgba(255, 255, 255, 0.689); */
+  /* border: 1px solid #fff; */
+  background-color: rgba(0, 0, 0, 0.689);
   font-size: 13px;
   color: #fff;
-  padding: 5px;
+  padding: 10px 5px;
 }
 .bannar-section .main-btn {
   color: #fff !important;
@@ -697,11 +799,6 @@ li.social-media ul a:hover {
   font-size: 18px;
   color: #ffffff;
   background-color: #2964b4;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
 }
 .en .service-faq .faq-box .accordion .card .card-header .heading-title {
   text-align: left;
@@ -718,11 +815,6 @@ li.social-media ul a:hover {
   top: 33px;
   right: 25px;
   transform: translateY(-50%);
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
 }
 .en .service-faq .faq-box .accordion .card .card-header .heading-title:before {
   content: "\f105" !important;
@@ -733,6 +825,13 @@ li.social-media ul a:hover {
 .service-faq .faq-box .accordion .card .card-header .heading-title.collapsed {
   background-color: #f8f8f8;
   color: #444444;
+}
+.collapsed{
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .service-faq
   .faq-box
@@ -745,8 +844,13 @@ li.social-media ul a:hover {
 }
 
 .service-faq .faq-box .accordion .card .card-body {
-  padding: 25px 50px;
   position: relative;
+  padding: 25px 50px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .en .service-faq .faq-box .accordion .card .card-body {
   text-align: left;
@@ -1235,6 +1339,7 @@ footer a:hover {
 }
 .products-section .inner-info li {
   font-size: 15px;
+  list-style-type: none;
 }
 .products-section .inner-info p {
   font-size: 15px;
@@ -1253,7 +1358,7 @@ footer a:hover {
   background-color: #1a1e22;
   color: #ffffff;
   transition: color 0.5s;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
   margin: 0;
 }
