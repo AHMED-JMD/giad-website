@@ -7,6 +7,7 @@ const Navbar2 = () => {
   const { language, ArFunc, EnFunc } = useContext(LangContext);
   const [toggle, setToggle] = useState(false);
   const node = useRef(null);
+
   //function to change the language of the App
   const HandleLanguage = (lang) => {
     lang === "Ar" ? EnFunc() : ArFunc();
@@ -111,13 +112,12 @@ const Navbar2 = () => {
               </NavLink>
             </li>
             <li className="nav-item m-0">
-              <a
+              <button
                 className="nav-link english-btn"
-                href="#"
                 onClick={() => HandleLanguage(language)}
               >
                 {Languages[language].Navbar.content[7]}
-              </a>
+              </button>
             </li>
           </ul>
         </div>

@@ -43,12 +43,6 @@ const Contact1 = () => {
           {Languages[language].Contact.header[3]}
         </h2>
         <form className="form" id="contact-form" onSubmit={handleSubmit}>
-          {msg ? (
-            <div className="alert alert-success back-message back-message-anim">
-              {msg}
-            </div>
-          ) : null}
-
           <div className="aos-init row" data-aos="fade-left">
             <div className="col-lg-6 col-sm-12">
               <label>
@@ -116,7 +110,11 @@ const Contact1 = () => {
               {Languages[language].Contact.body.form[5]}
             </button>
           </div>
-          <div id="back-message" className="back-message text-center"></div>
+          {msg ? (
+            <div id="back-message" className=" back-message  text-center">
+              {msg}
+            </div>
+          ) : null}
         </form>
       </div>
       <div className="contact-methods">

@@ -17,9 +17,9 @@ function App() {
   const { language, ArFunc, EnFunc } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(()=> {
+  useEffect(() => {
     // setTimeout( ()=> {
-      setLoading(false);
+    setLoading(false);
     // }, 4000)
   }, []);
 
