@@ -58,7 +58,7 @@ const Navbar2 = () => {
                 to="/"
                 onClick={() => setToggle(!toggle)}
               >
-                <i className="bx bx-home-alt-2"></i>{" "}
+                <i className="bx bx-home-alt-2"></i>
                 {Languages[language].Navbar.content[1]}
               </NavLink>
             </li>
@@ -69,7 +69,7 @@ const Navbar2 = () => {
                 to="/about"
                 onClick={() => setToggle(!toggle)}
               >
-                <i className="bx bx-bookmark"></i>{" "}
+                <i className="bx bx-bookmark"></i>
                 {Languages[language].Navbar.content[2]}
               </NavLink>
             </li>
@@ -78,9 +78,8 @@ const Navbar2 = () => {
                 className="nav-link"
                 activeclassname="active"
                 to="/products"
-                onClick={() => setToggle(!toggle)}
-              >
-                <i className="bx bx-purchase-tag-alt"></i>{" "}
+                onClick={() => setToggle(!toggle)}>
+                <i className="bx bx-purchase-tag-alt"></i>
                 {Languages[language].Navbar.content[3]}
               </NavLink>
             </li>
@@ -89,11 +88,10 @@ const Navbar2 = () => {
                 className="nav-link"
                 activeclassname="active"
                 to="/services-centers"
-                onClick={() => setToggle(!toggle)}
-              >
-                <i className="bx bx-spreadsheet"></i>{" "}
-                <span className="mr-1">
-                  {" "}
+                onClick={() => setToggle(!toggle)}>
+                <i className="bx bx-spreadsheet"></i>
+                <span className="">
+                  
                   {Languages[language].Navbar.content[4]}
                 </span>
                 {Languages[language].Navbar.content[5]}
@@ -106,7 +104,7 @@ const Navbar2 = () => {
                 to="/contact"
                 onClick={() => setToggle(!toggle)}
               >
-                <i className="bx bx-message-dots"></i>{" "}
+                <i className="bx bx-message-dots"></i>
                 {Languages[language].Navbar.content[6]}
               </NavLink>
             </li>
@@ -114,8 +112,7 @@ const Navbar2 = () => {
               <a
                 className="nav-link english-btn"
                 href="#"
-                onClick={() => HandleLanguage(language)}
-              >
+                onClick={() => HandleLanguage(language)}>
                 {Languages[language].Navbar.content[7]}
               </a>
             </li>
@@ -127,88 +124,6 @@ const Navbar2 = () => {
           onClick={() => setToggle(!toggle)}
         ></i>
       </div>
-      {/* <Link className="navbar-brand ml-5" to="/">
-        <img
-          src="./assets/images/white-logo.png"
-          className="white-logo"
-          width="50px"
-          alt="logo"
-        />
-        <img
-          src="./assets/images/logo.png"
-          className="colored-logo"
-          width="65px"
-          alt="logo"
-        />
-      </Link>
-      <a className="tel-icon ml-auto" href="tel:00249183463543">
-        <i className="fas fa-phone"></i>
-      </a>
-
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span className="">
-          <i className="fa fa-bars"></i>
-        </span>
-      </button>
-      <div className="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul className="navbar-nav">
-          <li className="nav-item ">
-            <Link className="nav-link active" to="/">
-              {Languages[language].Navbar.content[1]}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/about">
-              {Languages[language].Navbar.content[2]}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/products">
-              {Languages[language].Navbar.content[3]}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/services-centers">
-              <span className="mr-1">
-                {" "}
-                {Languages[language].Navbar.content[4]}
-              </span>
-              {Languages[language].Navbar.content[5]}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/contact">
-              {Languages[language].Navbar.content[6]}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link english-btn"
-              href="#"
-              onClick={() => HandleLanguage(language)}
-            >
-              {Languages[language].Navbar.content[7]}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <li className="social-media">
-        {" "}
-        <div className="header-topbar-layout1">
-          <ul className="header-top-left">
-            <li className="nav-item">
-              <a href="https://www.facebook.com/giadmsco/">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li> */}
     </nav>
   );
 };

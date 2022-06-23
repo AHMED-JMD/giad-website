@@ -35,19 +35,20 @@ const About1 = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <ReactPlayer
-          width={'100%'}
-          height={'100%'}
+          <ReactPlayer
+            width={'100%'}
+            height={'100%'}
             controls={true}
             url={
-              language === 'Ar'? 'https://www.youtube.com/watch?v=rBuORKUvnC0':
-              'https://www.youtube.com/watch?v=rMBqRgH3rRw'}
-            />
+              language === 'Ar' ? 'https://www.youtube.com/watch?v=rBuORKUvnC0' :
+                'https://www.youtube.com/watch?v=rMBqRgH3rRw'}
+          />
         </Box>
       </Modal>
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
-      <div className="aboutus-section container py-5" id="aboutus-section">
-        <div className="text-center mb-3">
+      <div className="aboutus-section py-5" id="aboutus-section">
+       <div className="container">
+       <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
@@ -57,14 +58,13 @@ const About1 = () => {
         <p className="main-text text-center mb-5">
           {Languages[language].Home.HomeAbout.header[2]}{" "}
         </p>
-        <div className="container-fluid row mx-auto">
+        <div className="row mx-auto">
           <div className="aos-init col-lg-6 col-md-12" data-aos="fade-left">
             <p>
               <span>{Languages[language].Home.HomeAbout.body[0]}</span>
             </p>
             <p>{Languages[language].Home.HomeAbout.body[1]}</p>
-            <div className="text-center">
-            </div>
+         
           </div>
           <div
             className="aos-init col-lg-6 col-md-12 px-0 mx-auto text-center"
@@ -83,6 +83,7 @@ const About1 = () => {
           </div>
         </div>
       </div>
+       </div>
     </div>
   );
 };

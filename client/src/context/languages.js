@@ -273,7 +273,7 @@ export const Languages = {
         "تابعنا على مواقع التواصل",
         " لديك أي أسئلة؟",
         "الأحد - الخميس:  3pm - 7am",
-        "كل الحقوق محفوظة",
+        "كل الحقوق محفوظة ©",
         "جياد لخدمات للسيارات",
       ],
     },
@@ -307,7 +307,7 @@ export const Languages = {
       ],
       HomeProgress: ["All of Our specialists ar fully trained and equiped"],
       HomeAbout: {
-        header: ["Who Are", "ًWe?", "Learn more about Giad Motor Services"],
+        header: ["Who Are", "We?", "Learn more about Giad Motor Services"],
         body: [
           "GIAD MOTOR SERVICES Co.Ltd, is a leading company working in the field of car maintenance and after-sales services, it’s an extension of GIAD Automotive industry company-the pride of industry in Sudan- established in 2004 and located in Khartoum, Southwest of the horse racing area, it also has agents in various cities. ",
           "The company owns in its headquarters, advanced workshops for mechanical maintenance and car electrical works, as well as workshop for bodywork and paints, which provides integrated services for cars, in addition to an integrated services workshop for periodic maintenance services, cleaning, oil spare parts, and flats.",

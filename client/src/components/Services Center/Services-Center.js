@@ -18,6 +18,7 @@ const ServicesCenter = () => {
             <div className="banner-title-outer">
               <div className="banner-title-name">
                 <h2 className="site-text-white">
+                <i className="bx bx-spreadsheet"></i>
                   {Languages[language].ServicesCenter.header[0]}
                 </h2>
               </div>

@@ -38,7 +38,7 @@ const ErrorPage = () => {
       {/* <!-- 404 SECTION --> */}
       <div className="error-section-container">
         <div className="error-section text-center mx-auto my-5">
-          <img src="/assets/images/wheel.png" width="100px" alt="" />
+          <img src="/assets/images/wheel.png" width="80px" alt="" />
           <h2>
             <span className="dot"></span>
             {Languages[language].Page404.content[2]}

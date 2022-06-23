@@ -29,7 +29,6 @@ const Footer = () => {
             </p>
             <p>
               <a href="/services-centers">
-                {" "}
                 {Languages[language].Footer.content[4]}
               </a>
             </p>
@@ -58,7 +57,7 @@ const Footer = () => {
                 </li>
               </ul>
             </li>
-            <a className="btn btn-effect mb-4" href="/contact">
+            <a className="btn btn-effect shadow-none mb-4" href="/contact">
               {Languages[language].Footer.content[12]}
             </a>
             <li className="nav-item opening-hour ">

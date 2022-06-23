@@ -17,6 +17,7 @@ const Products = () => {
             <div className="banner-title-outer">
               <div className="banner-title-name">
                 <h2 className="site-text-white">
+                  <i className="bx bx-purchase-tag-alt"></i>
                   {Languages[language].Products.header[0]}
                 </h2>
               </div>

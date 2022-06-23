@@ -36,6 +36,7 @@ const HomeServices = () => {
                     {Languages[language].Home.HomeServices.body.service1[1]}{" "}
                   </p>
                 </div>
+            <i className='bx bxs-shopping-bag bg-icon'></i>
             </div>
           </div>
 
@@ -55,6 +56,7 @@ const HomeServices = () => {
                     {Languages[language].Home.HomeServices.body.service2[1]}{" "}
                   </p>
                 </div>
+            <i className='bx bxs-cog bg-icon'></i>
             </div>
           </div>
 
@@ -74,6 +76,7 @@ const HomeServices = () => {
                     {Languages[language].Home.HomeServices.body.service3[1]}{" "}
                   </p>
                 </div>
+              <i className='bx bxs-droplet bg-icon'></i>
               </div>
           </div>
 
@@ -93,7 +96,9 @@ const HomeServices = () => {
                     {Languages[language].Home.HomeServices.body.service4[1]}{" "}
                   </p>
                 </div>
+                <i className='bx bxs-shield-alt-2 bg-icon'></i>
               </div>
+              
           </div>
           <div
             className="aos-init col-lg-4 col-md-6 col-xs-12 mb-5 mx-auto"
@@ -111,6 +116,7 @@ const HomeServices = () => {
                     {Languages[language].Home.HomeServices.body.service5[1]}{" "}
                   </p>
                 </div>
+                <i className='bx bxs-car-garage bg-icon'></i>
               </div>
             </div>
         </div>

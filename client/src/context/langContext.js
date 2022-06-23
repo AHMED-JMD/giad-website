@@ -7,7 +7,6 @@ const LangContextProvider = (props) => {
     localStorage.setItem("lang", "Ar");
   }
   let lang = localStorage.getItem("lang");
-  console.log(lang);
   const [language, setLanguage] = useState(lang);
 
   const ArFunc = () => {

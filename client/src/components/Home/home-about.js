@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ReactPlayer from "react-player"
-import { Link } from "react-router-dom";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
 
@@ -49,8 +47,9 @@ const HomeAbout = () => {
       </Modal>
      </div>
       {/* <!-- ABOUT US SECTION STARTS HERE --> */}
-      <div className="aboutus-section container py-5" id="aboutus-section">
-        <div className="text-center mb-3">
+      <div className="aboutus-section py-5" id="aboutus-section">
+       <div className="container">
+       <div className="text-center mb-3">
           <img src="assets/images/wheel.png" width="70px" alt="" />
         </div>
         <h2 className="main-header mx-auto text-center">
@@ -68,7 +67,7 @@ const HomeAbout = () => {
             <p>{Languages[language].Home.HomeAbout.body[1]}</p>
             <div className="text-center">
               <a
-                className="btn btn-effect mx-auto text-center mb-4"
+                className="btn btn-effect shadow-none mx-auto text-center mb-4"
                 href="/about"
               >
                 {Languages[language].Home.HomeAbout.AboutBtn}
@@ -92,6 +91,7 @@ const HomeAbout = () => {
           </div>
         </div>
       </div>
+       </div>
     </div>
   );
 };
