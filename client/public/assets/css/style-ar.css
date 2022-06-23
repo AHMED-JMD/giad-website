@@ -248,6 +248,12 @@ li.social-media ul a:hover {
 .english-btn {
   background-color: var(--light-color);
   color: #fff !important;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus, .english-btn:focus {
+  outline: none !important;
 }
 
 .english-btn:hover {
@@ -889,9 +895,6 @@ li.social-media ul a:hover {
   padding: 5px;
 }
 
-.bannar-section .main-btn:hover {
-  /* border-color: #2964b4 !important; */
-}
 
 /*------------------- 5.17 Testimonial -------------------*/
 
@@ -1688,10 +1691,12 @@ footer a:hover {
   top: 50%;
   z-index: 10;
   width: 100%;
-  height: 250px;
+  height: 130px;
   padding: 40px;
+  background-color: lightgreen;
   color: #fff;
   border-radius: 12px;
+  animation: message-fade 7s ease-in-out forwards;
 }
 
 .back-message-anim {

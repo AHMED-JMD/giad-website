@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import Footer from "./components/footer";
 import Home from "./components/Home/Home";
 import Loader from "./components/Loader";
 import Navbar1 from "./components/Navbar/navbar1";

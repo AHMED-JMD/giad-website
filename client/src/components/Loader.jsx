@@ -1,5 +1,5 @@
 import React from 'react'
-import { animate, motion } from "framer-motion";
+import { animate, motion } from 'framer-motion';
 
 const Loader = () => {
   const darkColor = "#001d5c";
