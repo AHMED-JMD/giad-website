@@ -895,6 +895,23 @@ li.social-media ul a:hover {
   padding: 5px;
 }
 
+.certifs{
+  /* background: linear-gradient(90deg, #001d5c 80%, #1a1a1a) !important; */
+  background-color: #00aece;
+}
+
+.certifs .slick-slide div{
+  height: auto;
+}
+
+.ant-image-preview-switch-left, .ant-image-preview-switch-right {
+}
+
+.ant-image-preview-switch-left {
+  left: 10px !important;
+  right: unset !important;
+}
+
 
 /*------------------- 5.17 Testimonial -------------------*/
 
