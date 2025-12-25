@@ -3,7 +3,6 @@ import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
 import Box from "@mui/material/Box";
 import ReactPlayer from "react-player"
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const About1 = () => {
@@ -73,6 +72,7 @@ const About1 = () => {
               <img src="assets/images/giad-family.png" alt="" />
               <div className="video-icon">
                 <a
+                  href="#!"
                   data-src="https://www.youtube.com/watch?v=rMBqRgH3rRw"
                   onClick={handleOpen}
                 >

@@ -159,6 +159,7 @@ const Contact1 = () => {
       </div>
       <div className="aos-init container-fluid map" data-aos="fade-top">
         <iframe
+          title="Main_Map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.6314494381836!2d32.519782714330766!3d15.557875757071814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e8fc58db521bb%3A0x89275a10276d5060!2sGiad%20Motor%20Services!5e0!3m2!1sen!2sus!4v1631518398198!5m2!1sen!2sus"
           width="100%"
           height="500"

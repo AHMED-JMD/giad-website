@@ -23,62 +23,136 @@ const ServicesCenter1 = () => {
           <table className="table table-striped table-hover thead-dark text-center table-borderless">
             <thead>
               <tr>
-                <th>{Languages[language].ServicesCenter.body.tr1[0]}</th>
-                <th>{Languages[language].ServicesCenter.body.tr1[1]}</th>
-                <th>{Languages[language].ServicesCenter.body.tr1[2]}</th>
-                <th>{Languages[language].ServicesCenter.body.tr1[3]}</th>
-                <th>{Languages[language].ServicesCenter.body.tr1[4]}</th>
+                <th>{Languages[language].ServicesCenter.table.thead[0]}</th>
+                <th>{Languages[language].ServicesCenter.table.thead[1]}</th>
+                <th>{Languages[language].ServicesCenter.table.thead[2]}</th>
+                <th>{Languages[language].ServicesCenter.table.thead[3]}</th>
+                <th>{Languages[language].ServicesCenter.table.thead[4]}</th>
               </tr>
             </thead>
+            
             <tbody>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr2[0]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr2[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr2[2]}</td>
-                <td>0123205061 0123205068</td>
-                <td>0157807334</td>
+                <th colSpan="5" className="table-active">
+                  {Languages[language].ServicesCenter.table.thead2[0]}
+                </th>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr3[0]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr3[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr3[2]}</td>
-                <td>0183463533</td>
-                <td>018348630</td>
+                <td>{Languages[language].ServicesCenter.table.trC1[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC1[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC1[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC1[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC1[4]}</td>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr4[0]} </td>
-                <td>{Languages[language].ServicesCenter.body.tr4[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr4[2]}</td>
-                <td>0183485191</td>
-                <td>-</td>
+                <td>{Languages[language].ServicesCenter.table.trC2[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC2[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC2[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC2[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC2[4]}</td>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr5[0]} </td>
-                <td>{Languages[language].ServicesCenter.body.tr5[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr5[2]}</td>
-                <td>0185210176 0185212840</td>
-                <td>-</td>
+                <td>{Languages[language].ServicesCenter.table.trC3[0]} </td>
+                <td>{Languages[language].ServicesCenter.table.trC3[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC3[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC3[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC3[4]}</td>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr6[0]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr6[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr6[2]}</td>
-                <td>0155119090 0912391792</td>
-                <td>0155123000</td>
+                <td>{Languages[language].ServicesCenter.table.trC4[0]} </td>
+                <td>{Languages[language].ServicesCenter.table.trC4[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC4[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC4[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC4[4]}</td>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr7[0]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr7[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr7[2]}</td>
-                <td>0912987194</td>
-                <td>0211827177</td>
+                <td>{Languages[language].ServicesCenter.table.trC5[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC5[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC5[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC5[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trC5[4]}</td>
               </tr>
               <tr>
-                <td>{Languages[language].ServicesCenter.body.tr8[0]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr8[1]}</td>
-                <td>{Languages[language].ServicesCenter.body.tr8[2]}</td>
-                <td>0912310460</td>
-                <td>-</td>
+                <th colSpan="5" className="table-active">
+                  {Languages[language].ServicesCenter.table.thead2[1]}
+                </th>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA1[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA1[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA1[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA1[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA1[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA2[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA2[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA2[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA2[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA2[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA3[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA3[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA3[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA3[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA3[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA4[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA4[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA4[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA4[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA4[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA5[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA5[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA5[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA5[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA5[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA6[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA6[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA6[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA6[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA6[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA7[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA7[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA7[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA7[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA7[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA8[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA8[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA8[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA8[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA8[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA9[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA9[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA9[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA9[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA9[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA10[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA10[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA10[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA10[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA10[4]}</td>
+              </tr>
+              <tr>
+                <td>{Languages[language].ServicesCenter.table.trA11[0]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA11[1]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA11[2]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA11[3]}</td>
+                <td>{Languages[language].ServicesCenter.table.trA11[4]}</td>
               </tr>
             </tbody>
           </table>

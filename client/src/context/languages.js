@@ -7,8 +7,8 @@ export const Languages = {
         "الرئيسية",
         "من نحن",
         "المنتجات",
-        "مراكز",
-        "الخدمات",
+        "الفروع ",
+        "والوكلاء",
         "التواصل",
         "English",
         "الخرطوم, جنوب غرب سباق الخيل",
@@ -30,35 +30,51 @@ export const Languages = {
       HomeAbout: {
         header: ["من", "نحن؟", "اعرف المزيد عن جياد لخدمات السيارات"],
         body: [
-          "شركة جياد لخدمات السيارات المحدودة , شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق الخيل كما أن لها وكلاء بمختلف المدن",
+          "شركة جياد لخدمات السيارات المحدودة , شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق الخيل كما أن لها فروع و وكلاء بمختلف المدن",
           "تمتلك الشركة في مقرها الرئيس ورشاً متطورة لأعمال الصيانة الميكانيكية وكهرباء السيارات ،كما تمتلك ورشة لأعمال السمكرة والطلاء والتي تقوم بتقديم خدمات تكاملية للسيارات ، بالإضافة لورشة متكاملة لخدمات الصيانة الدورية والنظافة وغيار الزيت والفلاتر",
         ],
         AboutBtn: "عرض المزيد",
       },
       HomeServices: {
         header: ["باقة", "خدماتنا", "تشكيلة من بعض الخدمات التي نقدمها"],
-        body: {
-          service1: [
-            "البيع المباشر",
-            "خدمات البيع المباشر بمقر الشركة ومعارضها المختلفة",
-          ],
-          service2: [
-            "قطع الغيار الأصلية",
-            "توفير قطع الغيار الأصلية (نيسان ، BYD ،هونداي، شاحنات سينو، شيري وهاو).",
-          ],
-          service3: [
-            "زيوت ماكينة لوب",
-            "توفير زيوت MAKINALUBE وكل متعلقاتها (تروس، فرامل، شحوم وجربوكس).",
-          ],
-          service4: [
-            "خدمات الضمان",
-            "توفير خدمات الضمان لكل منتجات جياد من السيارات والشاحنات وفقا لشروط الضمان الخاصة بالمنتج المعني",
-          ],
-          service5: [
-            "الصيانة",
-            "الصيانة بمعايير عالية الجودة ومتوافقة مع شهادات ال ذلك بواسطة الورش المتخصصة",
-          ],
-        },
+        body: [
+          {
+            title : "البيع المباشر",
+            description : "خدمات البيع المباشر بمقر الشركة ومعارضها المختلفة",
+            aos_dir : "fade-left",
+            iconClass : "bx bxs-shopping-bag"
+          },
+          {
+            title : "قطع الغيار الأصلية",
+            description : "توفير قطع الغيار الأصلية (نيسان ، BYD ،هونداي، شاحنات سينو، شيري وهاو).",
+            aos_dir : "fade-top",
+            iconClass : "bx bxs-cog"
+          },
+          {
+            title : "زيوت شركة جياد",
+            description : "توفير زيوت شركة جياد وكل متعلقاتها (تروس، فرامل، شحوم وجربوكس).",
+            aos_dir : "fade-right",
+            iconClass : "bx bxs-droplet"
+          },
+          {
+            title : "خدمات الضمان",
+            description : "توفير خدمات الضمان لكل منتجات جياد من السيارات والشاحنات وفقا لشروط الضمان الخاصة بالمنتج المعني",
+            aos_dir : "fade-left",
+            iconClass : "bx bxs-shield-alt-2"
+          },
+          {
+            title : "الصيانة",
+            description : "الصيانة بمعايير عالية الجودة ومتوافقة مع شهادات ال iso ذلك بواسطة الورش المتخصصة",
+            aos_dir : "fade-right",
+            iconClass : "bx bxs-car-garage"
+          },
+          {
+            title : "الاطارات",
+            description : "توفير جميع أنواع الاطارات للسيارات والشاحنات بمختلف المقاسات",
+            aos_dir : "fade-right",
+            iconClass : "bx bxs-disc"
+          },
+        ],
       },
       HomeWhyUs: {
         header: [
@@ -86,41 +102,57 @@ export const Languages = {
       },
       HomeQuestions: {
         header: ["الأسئلة", "الشائعة"],
-        body: {
-          quest1: [
-            "ما هي الخدمات والمنتجات التي تقدمها شركة جياد لخدمات السيارات",
-            " خدمة الضمان والصيانة لمنتجات جياد لخدمات السيارات وجياد للشاحنات",
-            "خدمة الصيانة",
-            "مبيعات قطع الغيار",
-            "مبيعات الزيوت والشحوم",
-          ],
-          quest2: [
-            "من هم وكلاء الصيانة لدينا",
-            "يوجد 5 وكلاء بالولايات الآتية",
-            "بورتسودان",
-            "الأبيض",
-            "مدني",
-            "القضارف",
-            "كوستي",
-          ],
-          quest3: [
-            "ما هى أنواع الإسبيرات المتوفرة لدى الشركة",
-            "هونداي",
-            "BYD",
-            "سانق يونق",
-            "هاو",
-            "دونق فينق",
-            "شيري",
-          ],
-          quest4: [
-            "ما هى أنواع الزيوت المتوفرة من ماكينة لوب",
-            "زيوت محركات البنزين - زيوت الديزل - زيوت التروس - زيوت هايدرولك - شحوم - زيوت الفرامل - سوائل تبريد - اي زيوت خاصة اخرى",
-          ],
-        },
+        body: [
+          {
+            id : "headingOne",
+            target : "collapseOne",
+            title : "ما هي الخدمات والمنتجات التي تقدمها شركة جياد لخدمات السيارات",
+            questions : [
+              " خدمة الضمان والصيانة لمنتجات جياد لخدمات السيارات وجياد للشاحنات",
+              "خدمة الصيانة",
+              "مبيعات قطع الغيار",
+              "مبيعات الزيوت والشحوم",
+            ],
+          },
+          {
+            id : "headingTwo",
+            target : "collapseTwo",
+            title : "من هم وكلاء الصيانة لدينا",
+            questions : [
+              "يوجد 5 وكلاء بالولايات الآتية",
+              "بورتسودان",
+              "الأبيض",
+              "مدني",
+              "القضارف",
+              "كوستي",
+            ],
+          },
+          {
+            id : "headingThree",
+            target : "collapseThree",
+            title : "ما هى أنواع الإسبيرات المتوفرة لدى الشركة",
+            questions : [
+              "هونداي",
+              "BYD",
+              "سانق يونق",
+              "هاو",
+              "دونق فينق",
+              "شيري",
+            ],
+          },
+          {
+            id : "headingFour",
+            target : "collapseFour",
+            title : "ما هى أنواع الزيوت المتوفرة من ماكينة لوب",
+            questions : [
+              "زيوت محركات البنزين - زيوت الديزل - زيوت التروس - زيوت هايدرولك - شحوم - زيوت الفرامل - سوائل تبريد - اي زيوت خاصة اخرى",
+            ],
+          },
+        ],
       },
       HomeClients: [
-        "وكلائنا المعتمدون موجودون في جميع انحاء السودان",
-        "ابحث عن وكيل",
+        " فروعنا المختلفة ووكلائنا المعتمدون موجودون في عدد من ولايات السودان",
+        "ابحث عن فرع",
       ],
     },
     About: {
@@ -128,7 +160,7 @@ export const Languages = {
       body1: {
         header: ["من", "نحن؟", "اعرف المزيد عن جياد لخدمات السيارات"],
         body: [
-          "شركة جياد لخدمات السيارات المحدودة , شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق الخيل كما أن لها وكلاء بمختلف المدن",
+          "شركة جياد لخدمات السيارات المحدودة , شركة رائدة تعمل في مجال خدمات صيانة السيارات وخدمات ما بعد البيع وهي امتداد لشركة جياد لصناعة السيارات - فخر الصناعة في السودان تأسست في عام 2004 ويقع مقرها بمدينة الخرطوم جنوب غرب منطقة سباق الخيل كما أن له فروع وا وكلاء بمختلف المدن",
           "تمتلك الشركة في مقرها الرئيس ورشاً متطورة لأعمال الصيانة الميكانيكية وكهرباء السيارات ،كما تمتلك ورشة لأعمال السمكرة والطلاء والتي تقوم بتقديم خدمات تكاملية للسيارات ، بالإضافة لورشة متكاملة لخدمات الصيانة الدورية والنظافة وغيار الزيت والفلاتر",
         ],
       },
@@ -159,8 +191,8 @@ export const Languages = {
         accomplishments: [
           "الإنجازات",
           " قامت الشركة بشراكات ذكية مع  MAN الألمانية و RENAULT الفرنسية وشركات سيارات مثل هونداي و BYD الصيني",
-          " لشركة جياد شراكات تشغيلية واستثمارية مع القوات المسلحة في ورشة الشجرة لصيانة الشاحنات العسكرية وإعادة تأهيل عربات الدفع  الرباعي، وورشة كافوري لصيانة العربات القيادية والوظيفية ، وأيضا هنالك شراكة استثمارية بشركة المسلحة",
-          "ساهمت في دعم الأسر الفقيرة وتأهيل البنية التحتية ودعم النوادي والمنتديات الثقافية في محيط الشركة",
+          " لشركة جياد شراكات تشغيلية واستثمارية مع القوات المسلحة في ورشة الشجرة لصيانة الشاحنات العسكرية وإعادة تأهيل عربات الدفع  الرباعي، وورشة كافوري لصيانة العربات القيادية والوظيفية.",
+          "ساهمت الشركة في دعم الأسر الفقيرة وتأهيل البنية التحتية ودعم النوادي والمنتديات الثقافية في محيط الشركة",
         ],
       },
     },
@@ -170,7 +202,7 @@ export const Languages = {
         header: ["منتجاتنا", "المميزة"],
         oils: {
           title: [
-            " زيوت MAKKINALUBE",
+            " زيوت جياد",
             "زيوت ماكينة هي زيوت وشحوم معدنية في الشارقة دولة الإمارات المتحدة  الوكيل الحصري في السودان شركة جياد لخدمات السيارات المحدودة 2020، وهي زيوت ذات جودة عالية بتقنية إنجلزية ومواءمة لأجواء السودان تناسب  المواصفات العالمية والمواصفات السودانية خصيصا",
             "يمكنك الحصول على كل هذه المنتجات من خلال المقر الرئيسي لجياد أو موزعيها في الخرطوم أو الولايات المتحدة كما يتضمن خدمات التوصيل  لزبائننا الكرام",
           ],
@@ -204,28 +236,74 @@ export const Languages = {
       },
     },
     ServicesCenter: {
-      header: ["مراكز الخدمات", "الرئيسية", "وكلائنا", "المعتمدين"],
-      body: {
-        tr1: ["الوكيل", "المدينة", "العنوان", "الهاتف", "الفاكس"],
-        tr2: [
-          "مركز قطع الغيار",
-          "الخرطوم",
-          "الخرطوم جنوب، غرب مجمع ساريا الصناعي",
+      header: ["الفروع و الوكلاء", "الرئيسية", "الفروع", "ووكلاء الشركة"],
+      table: {
+        thead: ["الرقم", "الولاية", "الاسم", "الموقع", "رقم الهاتف"],
+        thead2: ["المراكز", " الوكلاء"],
+        trC1: [
+          "1", "ولاية البحر الاحمر", "مركز الموانئ الهندسية",
+          "بورتسودان", "123112582",
         ],
-        tr3: [
-          "الورشة الرئيسية (مركز تبيان)",
-          "الخرطوم",
-          "الخرطوم جنوب، غرب مجمع ساريا الصناعي",
+        trC2: [
+          "2", "ولاية نهر النيل", "مركز وادي النيل",
+          "عطبرة", "123044053",
         ],
-        tr4: [
-          "البربري الهندسية",
-          "الخرطوم",
-          "الخرطوم جنوب، جنوب صينية إبراهيم شمس الدين",
+        trC3: [
+         "3", "ولاية الخرطوم", "مركز تبيان",
+          "الخرطوم", "123205083",
         ],
-        tr5: ["البربري الهندسية", "بحري", "شارع مستشفى الأمل شمال س للغلال"],
-        tr6: ["شركة البحرالأحمر", "الخرطوم", "الطريق السريع غرب الميناء البري"],
-        tr7: ["جامعة وادي النيل", "عطبرة", "عطبرة جوار المطاحن الجديدة"],
-        tr8: ["أوسيام", "بورتسودان", "بورتسودان جوار مطاحن غلال عبدربه"],
+        trC4: [
+          "4", "ولاية الجزيرة", "مركز مدني",
+          "ودمدني", "123205095",
+        ],
+        trC5: [
+          "5", "دولة جنوب السودان", "مركز هاي كوالتي",
+          "جوبا", "-",
+        ],
+        trA1: [
+          "1", "ولاية نهر النيل", "محمد شمس الدين",
+          "عطبرة", "123462434",    
+        ],
+        trA2: [
+          "2", "ولاية كسلا", "يوسف محمد ابكر",
+          "كسلا", "126274627",        
+        ],
+        trA3: [
+          "3", "الولاية الشمالية", "اولاد محمد علي فضل",
+          "دنقلا", "912343353", 
+        ],
+        trA4: [
+          "4", "الولاية الشمالية", "اعمال بيكانتو",
+          "الدبة", "122444990", 
+        ],
+        trA5: [
+          "5", "الولاية الشمالية", "اعمال بشائر الخير",
+          "حلفا الجديدة", "123500666", 
+        ],
+        trA6: [
+          "6", "ولاية الخرطوم", "مركز الفخامة",
+          "امدرمان", "115978704", 
+        ],
+        trA7: [
+          "7", "ولاية النيل الازرق", "احمد الريح",
+          "الدمازين", "121183290",
+        ],
+        trA8: [
+          "8", "ولاية النيل الابيض", "فائز سيد احمد",
+          "سنجة", "912640231",
+        ],
+        trA9: [
+          "9", "ولاية النيل الابيض", "عادل عبدالرحيم المتعشي",
+          "سنار", "123669926",
+        ],
+        trA10: [
+          "10", "ولاية الجزيرة", "اولاد سليمان للاطارات والبطاريات",
+          "ودمدني", "912316380",
+        ],
+        trA11: [
+         "11", "ولاية الجزيرة", "اعمال الخانجي",
+          "ودمدني", "127090002",
+        ],
       },
     },
     Contact: {
@@ -263,11 +341,11 @@ export const Languages = {
         "روابط سريعة",
         "من نحن",
         "المنتجات",
-        "مراكز الخدمات",
+        "الفروع و الخدمات",
         "تواصل معنا",
         "التواصل",
-        "الهاتف : 2605",
-        "فاكس: 1831476981",
+        "الهاتف : 0120102120",
+        "",
         "البريد الإلكتروني: ",
         "الخرطوم, جنوب غرب سباق الخيل",
         "تابعنا على مواقع التواصل",
@@ -286,8 +364,8 @@ export const Languages = {
         "Home",
         "About",
         "Products",
-        "Services",
-        "Centers",
+        "Branches",
+        " & Agents",
         "Contact",
         "العربية",
         "Khartoum, Southwest of the horse racing area",
@@ -309,35 +387,51 @@ export const Languages = {
       HomeAbout: {
         header: ["Who Are", "We?", "Learn more about Giad Motor Services"],
         body: [
-          "GIAD MOTOR SERVICES Co.Ltd, is a leading company working in the field of car maintenance and after-sales services, it’s an extension of GIAD Automotive industry company-the pride of industry in Sudan- established in 2004 and located in Khartoum, Southwest of the horse racing area, it also has agents in various cities. ",
+          "GIAD MOTOR SERVICES Co.Ltd, is a leading company working in the field of car maintenance and after-sales services, it’s an extension of GIAD Automotive industry company-the pride of industry in Sudan- established in 2004 and located in Khartoum, Southwest of the horse racing area, it also has branches and agents in various cities. ",
           "The company owns in its headquarters, advanced workshops for mechanical maintenance and car electrical works, as well as workshop for bodywork and paints, which provides integrated services for cars, in addition to an integrated services workshop for periodic maintenance services, cleaning, oil spare parts, and flats.",
         ],
         AboutBtn: "Read more",
       },
       HomeServices: {
         header: ["Our", "Services", "Here are some of our main services"],
-        body: {
-          service1: [
-            "Direct selling",
-            "Direct selling services at the company’s headquarters and its various exhibitions.",
-          ],
-          service2: [
-            "Spares Parts",
-            "Providing original spares parts (NISSAN, BYD, HYUNDAI, SINO, SHERI and HOW trucks).",
-          ],
-          service3: [
-            "MAKINALUBE oil",
-            "Providing MAKINALUBE oils and all its accessories (gears,brakes, lubricants, and gearboxes).",
-          ],
-          service4: [
-            "Warranty",
-            " providing warranty services for all GIAD products of cars and trucks by the warranty terms of the relevant product.",
-          ],
-          service5: [
-            "Maintenance",
-            " Maintenance with the highest quality standards compatible with ISO certificates and is done by specialized workshops.",
-          ],
-        },
+        body: [
+          {
+            title : "Direct selling",
+            description: "Direct selling services at the company’s headquarters and its various exhibitions.",
+            aos_dir : "fade-left",
+            iconClass : "bx bxs-shopping-bag"
+          },
+          {
+            title : "Spares Parts",
+            description: "Providing original spares parts (NISSAN, BYD, HYUNDAI, SINO, SHERI and HOW trucks).",
+            aos_dir : "fade-top",
+            iconClass : "bx bxs-cog"
+          },
+          {
+            title : "Giad oil",
+            description: "Providing Giad oils and all its accessories (gears,brakes, lubricants, and gearboxes).",
+            aos_dir : "fade-right",
+            iconClass : "bx bxs-droplet"
+          },
+          {
+            title : "Warranty",
+            description: " providing warranty services for all Giad products cars and trucks by the warranty terms of the relevant product.",
+            aos_dir : "fade-left",
+            iconClass : "bx bxs-shield-alt-2"
+          },
+          {
+            title : "Maintainance",
+            description: " providing Maintainance services with High Standard and corresponding with ISO certificate.",
+            aos_dir : "fade-left",
+            iconClass : "bx bxs-car-garage"
+          },
+          {
+            title : "Wheels",
+            description: " Provide All types of Wheels for Cars Vans Trucks, etc with all possible Sizes.",
+            aos_dir : "fade-bottom",
+            iconClass : "bx bxs-disc"
+          },
+        ],
       },
       HomeWhyUs: {
         header: [
@@ -365,25 +459,36 @@ export const Languages = {
       },
       HomeQuestions: {
         header: ["Questions", "Frequently Asked"],
-        body: {
-          quest1: [
-            "What are the services and products we offer?",
+        body: [
+          {
+            id : "headingOne",
+            target : "collapseOne",
+            title : "What are the services and products we offer?",
+            questions : [
             "Warranty and maintenance service for Giad products and Giad trucks",
             "maintenance service",
             "Spare parts sales",
             "Sales of oils and greases",
-          ],
-          quest2: [
-            "Who are our maintenance agents?",
+            ],
+          },
+          {
+            id : "headingTwo",
+            target : "collapseTwo",
+            title : "Who are our maintenance agents?",
+            questions : [
             "There are 5 Agents in these States",
             "Port Sudan",
             "El Obeid",
             "Madani",
             "Al Qadarif",
             "Kosti",
-          ],
-          quest3: [
-            "What types of Spare Parts are available in the company?",
+            ]
+          },
+          {
+            id : "headingThree",
+            target : "collapseThree",
+            title : "What types of Spare Parts are available in the company?",
+            questions : [ 
             "Hyundai",
             "BYD",
             "Ssangyong ",
@@ -391,15 +496,20 @@ export const Languages = {
             "Dongfeng",
             "chery",
           ],
-          quest4: [
-            "What types of oils are available from MAKKINAlube company?",
+        },
+        {
+          id : "headingFour",
+          target : "collapseFour",
+          title : "What types of oils are available from MAKKINAlube company?",
+          questions : [
             "Gasoline engine oils - diesel oils - gear oils - hydraulic oils - greases - brake oils - coolant fluids - any other special oils.",
           ],
         },
+      ]
       },
       HomeClients: [
-        "Our authorized agents are all over Sudan",
-        "Find an agent",
+        "Our Different barnches and authorized agents are in various states in Sudan",
+        "Find a Branch",
       ],
     },
     About: {
@@ -407,7 +517,7 @@ export const Languages = {
       body1: {
         header: ["Who Are", "ًWe?", "Learn more about Giad Motor Services"],
         body: [
-          "GIAD MOTOR SERVICES Co.Ltd, is a leading company working in the field of car maintenance and after-sales services, it’s an extension of GIAD Automotive industry company-the pride of industry in Sudan- established in 2004 and located in Khartoum, Southwest of the horse racing area, it also has agents in various cities. ",
+          "GIAD MOTOR SERVICES Co.Ltd, is a leading company working in the field of car maintenance and after-sales services, it’s an extension of GIAD Automotive industry company-the pride of industry in Sudan- established in 2004 and located in Khartoum, Southwest of the horse racing area, it also has branches and agents in various cities. ",
           "The company owns in its headquarters, advanced workshops for mechanical maintenance and car electrical works, as well as workshop for bodywork and paints, which provides integrated services for cars, in addition to an integrated services workshop for periodic maintenance services, cleaning, oil spare parts, and flats.",
         ],
       },
@@ -438,7 +548,7 @@ export const Languages = {
         accomplishments: [
           "Achievements",
           "The company has made smart partnerships with German MAN, French RENAULT, and car companies such as HYUNDAI and China’s BYD.",
-          "GIAD company has operational and investment partnerships with armed forces in the ALSHAGARA workshop for the maintenance of the military trucks and the rehabilitation of four-wheel-drive vehicles, and the KAFOURY workshop for the maintenance of leadership and functional vehicle, and there is also an investment partnership in NTC for vehicle maintenance with the armed forces.",
+          "GIAD company has operational and investment partnerships with armed forces in the ALSHAGARA workshop for the maintenance of the military trucks and the rehabilitation of four-wheel-drive vehicles. and the KAFOURY workshop for the maintenance of leadership and functional vehicle.",
           "contributed to supporting poor families, rehabilitating infrastructure, and supporting cultural clubs and forums in the company’s vicinity.",
         ],
       },
@@ -449,7 +559,7 @@ export const Languages = {
         header: ["Our", "Featured Products"],
         oils: {
           title: [
-            "MAKKINALUBE Oils: ",
+            "GIAD Oils: ",
             "Makkina oils are mineral oils and greases in Sharjah, United Arab Emirates, the exclusive agent in Sudan, Giad Auto Services Company Ltd. 2020, oils of high quality with English technology and adapted to the atmosphere of Sudan, suiting international specifications and Sudanese specifications specifically.",
             "You can get all these products through Giad's headquarters or its distributors in Khartoum or the United States, and it also includes delivery services to our valued customers.",
           ],
@@ -483,24 +593,74 @@ export const Languages = {
       },
     },
     ServicesCenter: {
-      header: ["Service Centers", "Home", "Agents", "Our Authorized"],
-      body: {
-        tr1: ["Agent", "City", "Address", "Tel", "Fax"],
-        tr2: [
-          "Giad Motor Services Company Spare Parts Center",
-          "Khartoum",
-          "Khartoum Southwest Saria Industrial",
+      header: ["Branches & Agents", "Home", "Branches", "& Agents"],
+      table: {
+        thead: ["number", "State", "Name", "Location", "Phone"],
+        thead2: ["Centers", "Agents"],
+        trC1: [
+          "1","Red Sea State","Engineering ports Center",
+          "Port Sudan", "123112582",
         ],
-        tr3: [
-          "Giad Motor Services Company Maintinance(Tibyan Center)",
-          "Khartoum",
-          "Khartoum Southwest Saria Industrial",
+        trC2: [
+          "2","River Nile State","Wadi-Alneel University Center",
+          "Atbara", "123044053",
         ],
-        tr4: ["Elbarbary Engineering", "Khartoum", "Karthoum South"],
-        tr5: ["Elbarbary Engineering", "Bahri", "Al-Amal Hospital St"],
-        tr6: ["Red Sea Co", "Khartoum", "High Way St"],
-        tr7: ["Wadi Alniel University", "Atbara", "Atbara Near New Mills"],
-        tr8: ["Osiam", "Portsudan", "Near Abd Rabbo Mills"],
+        trC3: [
+          "3","Khartoum State","Tybian Center",
+          "Khartoum", "123205083",
+        ],
+        trC4: [
+          "4","AlJazeera State","Madani Center",
+          "Wd Madani", "123205095",
+        ],
+        trC5: [
+          "5","South Sudan Country","High Quality Center",
+          "Juba", "-",
+        ],
+        trA1: [
+          "1","River Nile State","Mohamed Shams Eldin",
+          "Atbara", "123462434",
+        ],
+        trA2: [
+          "2","Kassala State","Yousif Mohamed Abkar",
+          "Kassala", "126274627",
+        ],
+        trA3: [
+          "3","North State","Mohamed Ali Fadul Sons",
+          "Dongla", "912343353",
+        ],
+        trA4: [
+          "4","North State","PICCANTO Works",
+          "AlDabba", "122444990",
+        ],
+        trA5: [
+          "5","North State","Bashayer AlKheir Works",
+          "New Halfa", "123500666",
+        ],
+        trA6: [
+          "6","Khartoum State","Alfakhama Center",
+          "Omdurman", "115978704",
+        ],
+        trA7: [
+          "7","Blue Nile State","Ahmed AlRayah",
+          "AlDamazeen", "121183290",
+        ],
+        trA8: [
+          "8","White Nile State","Faiz Syed Ahmed",
+          "Sinja", "912640231",
+        ],
+        trA9: [
+          "9","White Nile State","Adel Abdelrahim AlMutaashi",
+          "Sinnar", "123669926",
+        ],
+        trA10: [
+          "10","AlJazeera State","Suleiman's Sons for Tires & Batteries",
+          "Wd Madani", "912316380",
+        ],
+        trA11: [
+          "11","Aljazeera State","Alkhanji Works",
+          "Wd Madani", "127090002",
+        ],
       },
     },
     Contact: {
@@ -519,11 +679,11 @@ export const Languages = {
         "Quick Links",
         "About",
         "Products",
-        "Services Centers",
+        "Branches & Agents",
         "Contact",
         "Contact",
-        "Phone: 2605",
-        "Fax: 1831476981",
+        "Phone: 0120102120",
+        "",
         "Email: ",
         "Khartoum, Southwest of the horse racing area.",
         "Follow Us on Social Media",

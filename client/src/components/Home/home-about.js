@@ -81,6 +81,7 @@ const HomeAbout = () => {
               <img src="assets/images/giad-family.png" alt="" />
               <div className="video-icon">
                 <a
+                  href="#!"
                   data-src="https://www.youtube.com/watch?v=rMBqRgH3rRw"
                   onClick={handleOpen}
                 >

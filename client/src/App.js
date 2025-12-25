@@ -13,7 +13,7 @@ import { useContext } from "react";
 import ErrorPage from "./components/404";
 
 function App() {
-  const { language, ArFunc, EnFunc } = useContext(LangContext);
+  const { language } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(()=> {

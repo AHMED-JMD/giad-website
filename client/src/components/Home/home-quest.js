@@ -18,7 +18,44 @@ const HomeQuestions = () => {
         </h2>
         <div className="faq-box">
           <div id="accordion" className="accordion">
-            <div className="aos-init card" data-aos="fade-left">
+
+            {/* questions body here */}
+
+            {Languages[language].Home.HomeQuestions.body
+              && Languages[language].Home.HomeQuestions.body.map((quest, index) => {
+
+                return (
+                  <div className="aos-init card" data-aos="fade-left" key={index}>
+                    <div className="card-header" id={quest.id}>
+                      <h5
+                        className="heading-title"
+                        data-toggle="collapse"
+                        data-target={"#" + quest.target}
+                        aria-expanded="false"
+                        aria-controls={quest.target}
+                      >
+                        {quest.title}
+                      </h5>
+                    </div>
+                    <div
+                      id={quest.target}
+                      className={"collapse" + (quest.id === "headingOne" ? " show" : "")}
+                      aria-labelledby={quest.id}
+                      data-parent="#accordion"
+                    >
+                      <div className="card-body">
+                        <ul>
+                          {quest.questions.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            }
+            {/* <div className="aos-init card" data-aos="fade-left">
               <div className="card-header" id="headingOne">
                 <h5
                   className="heading-title"
@@ -174,6 +211,7 @@ const HomeQuestions = () => {
                 </div>
               </div>
             </div>
+             */}
           </div>
         </div>
       </section>
