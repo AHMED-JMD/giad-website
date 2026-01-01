@@ -107,9 +107,9 @@ export const Languages = {
             id : "headingOne",
             target : "collapseOne",
             title : "ما هي الخدمات والمنتجات التي تقدمها شركة جياد لخدمات السيارات",
-            questions : [
+            answers : [
               " خدمة الضمان والصيانة لمنتجات جياد لخدمات السيارات وجياد للشاحنات",
-              "خدمة الصيانة",
+              "خدمة الصيانة لجميع السيارات",
               "مبيعات قطع الغيار",
               "مبيعات الزيوت والشحوم",
             ],
@@ -118,7 +118,7 @@ export const Languages = {
             id : "headingTwo",
             target : "collapseTwo",
             title : "من هم وكلاء الصيانة لدينا",
-            questions : [
+            answers : [
               "يوجد 5 وكلاء بالولايات الآتية",
               "بورتسودان",
               "الأبيض",
@@ -131,7 +131,7 @@ export const Languages = {
             id : "headingThree",
             target : "collapseThree",
             title : "ما هى أنواع الإسبيرات المتوفرة لدى الشركة",
-            questions : [
+            answers : [
               "هونداي",
               "BYD",
               "سانق يونق",
@@ -144,7 +144,7 @@ export const Languages = {
             id : "headingFour",
             target : "collapseFour",
             title : "ما هى أنواع الزيوت المتوفرة من ماكينة لوب",
-            questions : [
+            answers : [
               "زيوت محركات البنزين - زيوت الديزل - زيوت التروس - زيوت هايدرولك - شحوم - زيوت الفرامل - سوائل تبريد - اي زيوت خاصة اخرى",
             ],
           },
@@ -152,7 +152,7 @@ export const Languages = {
       },
       HomeClients: [
         " فروعنا المختلفة ووكلائنا المعتمدون موجودون في عدد من ولايات السودان",
-        "ابحث عن فرع",
+        "ابحث الان",
       ],
     },
     About: {
@@ -415,7 +415,7 @@ export const Languages = {
           },
           {
             title : "Warranty",
-            description: " providing warranty services for all Giad products cars and trucks by the warranty terms of the relevant product.",
+            description: " providing warranty services for all Giad products by the warranty terms of the relevant product.",
             aos_dir : "fade-left",
             iconClass : "bx bxs-shield-alt-2"
           },
@@ -442,7 +442,7 @@ export const Languages = {
         body: {
           reason1: [
             "Trusted Workers",
-            " We have reliable, persevering workers who complete their work in the shortest possible period of time. Rehabilitation workshops are held for them, which makes them efficient.",
+            " We have reliable, persevering workers who complete their work in the shortest possible period of time. Rehabilitation are held for them, which makes them efficient.",
           ],
           reason2: [
             "Cost Effective",
@@ -464,9 +464,9 @@ export const Languages = {
             id : "headingOne",
             target : "collapseOne",
             title : "What are the services and products we offer?",
-            questions : [
+            answers : [
             "Warranty and maintenance service for Giad products and Giad trucks",
-            "maintenance service",
+            "maintenance service for all cars",
             "Spare parts sales",
             "Sales of oils and greases",
             ],
@@ -475,7 +475,7 @@ export const Languages = {
             id : "headingTwo",
             target : "collapseTwo",
             title : "Who are our maintenance agents?",
-            questions : [
+            answers : [
             "There are 5 Agents in these States",
             "Port Sudan",
             "El Obeid",
@@ -488,7 +488,7 @@ export const Languages = {
             id : "headingThree",
             target : "collapseThree",
             title : "What types of Spare Parts are available in the company?",
-            questions : [ 
+            answers : [ 
             "Hyundai",
             "BYD",
             "Ssangyong ",
@@ -501,7 +501,7 @@ export const Languages = {
           id : "headingFour",
           target : "collapseFour",
           title : "What types of oils are available from MAKKINAlube company?",
-          questions : [
+          answers : [
             "Gasoline engine oils - diesel oils - gear oils - hydraulic oils - greases - brake oils - coolant fluids - any other special oils.",
           ],
         },
@@ -509,7 +509,7 @@ export const Languages = {
       },
       HomeClients: [
         "Our Different barnches and authorized agents are in various states in Sudan",
-        "Find a Branch",
+        "Find One",
       ],
     },
     About: {

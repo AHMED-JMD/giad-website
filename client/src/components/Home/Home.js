@@ -194,13 +194,13 @@ const Home = () => {
           <Image.PreviewGroup>
           <Slider {...certifs}>
             <div className=" mb-2">
-              <Image width={170} src="assets/images/cer1.png" />
+              <Image width={200} src="assets/images/cer1.png" />
             </div>
             <div className="mb-2">
-              <Image width={170} src="assets/images/cer2.png" />
+              <Image width={200} src="assets/images/cer2.png" />
             </div>
             <div className="mb-2">
-              <Image width={170} src="assets/images/cer3.png" />
+              <Image width={200} src="assets/images/cer3.png" />
             </div>
             </Slider>
           </Image.PreviewGroup>

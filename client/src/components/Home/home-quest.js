@@ -28,10 +28,10 @@ const HomeQuestions = () => {
                   <div className="aos-init card" data-aos="fade-left" key={index}>
                     <div className="card-header" id={quest.id}>
                       <h5
-                        className="heading-title"
+                        className={"heading-title" + (quest.id === "headingOne" ? "" : " collapsed")}
                         data-toggle="collapse"
                         data-target={"#" + quest.target}
-                        aria-expanded="false"
+                        aria-expanded={quest.id === "headingOne" ? "true" : "false"}
                         aria-controls={quest.target}
                       >
                         {quest.title}
@@ -45,7 +45,7 @@ const HomeQuestions = () => {
                     >
                       <div className="card-body">
                         <ul>
-                          {quest.questions.map((item, index) => (
+                          {quest.answers.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}
                         </ul>
