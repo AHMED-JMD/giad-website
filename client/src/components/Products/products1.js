@@ -6,7 +6,10 @@ const Products1 = () => {
   const { language } = useContext(LangContext);
 
   return (
-    <div className="product1 container-fluid" dir={`${Languages[language].dir}`}>
+    <div
+      className="product1 container-fluid"
+      dir={`${Languages[language].dir}`}
+    >
       {/* <!-- Products SECTION --> */}
       <div className="products-section container-fluid py-5">
         <div className="text-center mb-3">
@@ -16,436 +19,151 @@ const Products1 = () => {
           <span>{Languages[language].Products.body.header[0]}</span>{" "}
           {Languages[language].Products.body.header[1]}
         </h2>
+        <div className="row">
+          <div className="col-lg-6 col-xs-12 ">
+            <div className="container mb-5">
+              <p data-aos="fade-left" className="aos-init">
+                {Languages[language].Products.body.header2.title[0]}
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-6 col-xs-12 ">
+            <div className="container mb-5 aos-init" data-aos="fade-up">
+              <input
+                type="text"
+                className="form-control"
+                id="search-input"
+                placeholder={Languages[language].Products.body.header2.title[1]}
+                onKeyUp={() => {
+                  const input = document.getElementById("search-input");
+                  const filter = input.value.toUpperCase();
+                  const cards = document.getElementsByClassName("filter-card");
+                  const header = document.getElementsByClassName("side-header");
+                  //hide headers if filter applied
+                  if (filter.length > 0) {
+                    for (let i = 0; i < header.length; i++) {
+                      header[i].style.display = "none";
+                    }
+                  } else {
+                    for (let i = 0; i < header.length; i++) {
+                      header[i].style.display = "block";
+                    }
+                  }
 
-        <h4 className="aos-init side-header text-center" data-aos="fade-left">
-          {Languages[language].Products.body.oils.title[0]}
-        </h4>
-        <p data-aos="fade-left" className="aos-init p-0 m-0">
-          {Languages[language].Products.body.oils.title[1]}
-        </p>
-        <p data-aos="fade-left" className="aos-init">
-          {Languages[language].Products.body.oils.title[2]}
-        </p>
-        <div className="row mx-auto">
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div className="d-flex">
-                  <div>
-                    <ul>
-                      <li>Rally</li>
-                      <li>Rally HP</li>
-                      <li>Rally HP PLUS</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Unimex</li>
-                      <li>Unimex HP</li>
-                      <li>Unimex HP PLUS</li>
-                    </ul>
-                  </div>
-                </div>
-                <h4>Grade</h4>
-                <p> 40/50/60/5w30/5w40/10w30/10w40/10w50</p>
-              </div>
-              <img
-                src="assets/images/2.png"
-                alt=""
-                className="card-img-top mx-auto"
+                  //filter cards
+                  for (let i = 0; i < cards.length; i++) {
+                    const titleElement = cards[i].getElementsByClassName(
+                      "card-title"
+                    )[0];
+                    const txtValue =
+                      titleElement.textContent || titleElement.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                      cards[i].style.display = "";
+                    } else {
+                      cards[i].style.display = "none";
+                    }
+                  }
+                }}
               />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[0]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div className="d-flex">
-                  <div>
-                    <ul>
-                      <li>Super</li>
-                      <li>Super HP</li>
-                      <li>Super HP PLUS</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Ultra</li>
-                      <li>Ultra HP</li>
-                      <li>Ultra HP PLUS</li>
-                    </ul>
-                  </div>
-                </div>
-                <h4>Grade</h4>
-                <p> 40/50/60/10w40/15w40/20w50/20w60</p>
-              </div>
-              <img
-                src="assets/images/7.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[1]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div className="d-flex">
-                  <div>
-                    <ul>
-                      <li>Tridon Gear</li>
-                      <li>Tridon Super Gear </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Tridon Super Gear HP</li>
-                    </ul>
-                  </div>
-                </div>
-                <h4>Grade</h4>
-                <p> 90/140/80w90/75w80/75w90/75w140/85w140</p>
-              </div>
-              <img
-                src="assets/images/5.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[2]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div>
-                  <ul>
-                    <li>Tridon Coolant</li>
-                  </ul>
-                  <ul>
-                    <li>30%/40%/50%/100%</li>
-                  </ul>
-                </div>
-              </div>
-              <img
-                src="assets/images/15.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[3]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div>
-                  <ul>
-                    <li>Tridon H</li>
-                  </ul>
-                  <ul>
-                    <li>10w/32/64/68/100/150/220</li>
-                  </ul>
-                </div>
-              </div>
-              <img
-                src="assets/images/17.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[4]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div>
-                  <ul>
-                    <li>Tridon</li>
-                  </ul>
-                </div>
-                <div className="d-flex">
-                  <div>
-                    <ul>
-                      <li>BF-3</li>
-                      <li>BF-4</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>BF-5</li>
-                      <li>BF-6</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <img
-                src="assets/images/19.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[5]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card">
-              <div className="inner-info">
-                <div>
-                  <ul>
-                    <li>Tridon</li>
-                  </ul>
-                  <div className="d-flex">
-                    <div>
-                      <ul>
-                        <li>Ep-2</li>
-                        <li>Ep-3</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul>
-                        <li>MP-2</li>
-                        <li>MP-3</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img
-                src="assets/images/1.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.oils.oil[6]}
-                </h4>
-              </div>
             </div>
           </div>
         </div>
-        <hr className="my-3" />
+
+        {/* //-- Giad Oils SECTION --// */}
+        {/* <div className="inner-info">
+          <div className="d-flex">
+            <div>
+              <ul>
+                <li>Tridon Gear</li>
+                <li>Tridon Super Gear </li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Tridon Super Gear HP</li>
+              </ul>
+            </div>
+          </div>
+          <h4>Grade</h4>
+          <p> 90/140/80w90/75w80/75w90/75w140/85w140</p>
+        </div> */}
         <h4 className="aos-init side-header mb-5" data-aos="fade-left">
-          {Languages[language].Products.body.filters[0]}
+          {Languages[language].Products.body.giadOils.title}
         </h4>
         <div className="row mx-auto">
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-1.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[1]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-2.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[2]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-3.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[3]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-4.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[4]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-5.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[5]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-6.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[6]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-7.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[7]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-8.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[8]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-9.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[9]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-10.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[10]}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-11.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[11]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-14.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[12]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-15.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[13]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6 col-xs-12 mb-3">
-            <div className="card products-card filter-card">
-              <img
-                src="assets/images/f-16.png"
-                alt=""
-                className="card-img-top mx-auto"
-              />
-              <div className="card-body text-center">
-                <h4 className="card-title">
-                  {Languages[language].Products.body.filters[14]}{" "}
-                </h4>
-              </div>
-            </div>
-          </div>
+          {Languages[language].Products.body.giadOils.products &&
+            Languages[language].Products.body.giadOils.products.map(
+              (oil, index) => {
+                return (
+                  <div className="col-lg-3 col-sm-6 col-xs-12 mb-3" key={index}>
+                    <div className="card products-card filter-card">
+                      <img
+                        src={`assets/images/${oil.image}`}
+                        alt=""
+                        className="card-img-top mx-auto"
+                      />
+                      <div className="card-body text-center">
+                        <h4 className="card-title">{oil.title}</h4>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            )}
+        </div>
+
+        {/* //-- Batteries SECTION --// */}
+        <hr className="my-3" />
+        <h4 className="aos-init side-header mb-5" data-aos="fade-left">
+          {Languages[language].Products.body.batteries.title}
+        </h4>
+        <div className="row mx-auto">
+          {Languages[language].Products.body.batteries.products &&
+            Languages[language].Products.body.batteries.products.map(
+              (battery, index) => {
+                return (
+                  <div className="col-lg-3 col-sm-6 col-xs-12 mb-3" key={index}>
+                    <div className="card products-card filter-card">
+                      <img
+                        src={`assets/images/${battery.image}`}
+                        alt=""
+                        className="card-img-top mx-auto"
+                      />
+                      <div className="card-body text-center">
+                        <h4 className="card-title">{battery.title}</h4>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            )}
+        </div>
+
+        {/* //-- Filters SECTION --// */}
+        <hr className="my-3" />
+        <h4 className="aos-init side-header mb-5" data-aos="fade-left">
+          {Languages[language].Products.body.filters.title}
+        </h4>
+        <div className="row mx-auto">
+          {Languages[language].Products.body.filters.products &&
+            Languages[language].Products.body.filters.products.map(
+              (filter, index) => {
+                return (
+                  <div className="col-lg-3 col-sm-6 col-xs-12 mb-3" key={index}>
+                    <div className="card products-card filter-card">
+                      <img
+                        src={`assets/images/${filter.image}`}
+                        alt=""
+                        className="card-img-top mx-auto"
+                      />
+                      <div className="card-body text-center">
+                        <h4 className="card-title">{filter.title}</h4>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            )}
         </div>
       </div>
     </div>
