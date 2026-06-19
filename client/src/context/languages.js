@@ -255,10 +255,14 @@ export const Languages = {
         batteries: {
           title: "بطاريات جياد",
           products: [
-            { title: "90 AH 12V", image: "batt-1.png" },
-            { title: "100 AH 12V", image: "batt-2.png" },
-            { title: "120 AH 12V", image: "batt-3.png" },
-            { title: "200 AH 12V", image: "batt-4.png" },
+            { title: "42 AH 12V", image: "42Ah.jpeg" },
+            { title: "55 AH 12V", image: "55Ah.jpeg" },
+            { title: "60 AH 12V", image: "60Ah.jpeg" },
+            { title: "72 AH 12V", image: "72Ah.jpeg" },
+            { title: "90 AH 12V", image: "90Ah.jpeg" },
+            { title: "100 AH 12V", image: "100Ah.jpeg" },
+            { title: "120 AH 12V", image: "120Ah.jpeg" },
+            { title: "200 AH 12V", image: "200Ah.jpeg" },
           ],
         },
       },
@@ -607,10 +611,14 @@ export const Languages = {
         batteries: {
           title: "Giad Batteries",
           products: [
-            { title: "90 AH 12V", image: "batt-1.png" },
-            { title: "100 AH 12V", image: "batt-2.png" },
-            { title: "120 AH 12V", image: "batt-3.png" },
-            { title: "200 AH 12V", image: "batt-4.png" },
+            { title: "42 AH 12V", image: "42Ah.png" },
+            { title: "55 AH 12V", image: "55Ah.png" },
+            { title: "60 AH 12V", image: "60Ah.png" },
+            { title: "72 AH 12V", image: "72Ah.png" },
+            { title: "90 AH 12V", image: "90Ah.png" },
+            { title: "100 AH 12V", image: "100Ah.png" },
+            { title: "120 AH 12V", image: "120Ah.png" },
+            { title: "200 AH 12V", image: "200Ah.png" },
           ],
         },
         filters: {

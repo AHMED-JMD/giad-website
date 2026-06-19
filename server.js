@@ -4,10 +4,6 @@ const sendMail = require("./mail");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
-const url = require("url");
-var quickemailverification = require("quickemailverification")
-  .client(process.env.VERIFIER_KEY)
-  .quickemailverification();
 
 const xssFilter = require("xss-filters");
 
