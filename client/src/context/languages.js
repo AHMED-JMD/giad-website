@@ -142,7 +142,7 @@ export const Languages = {
           {
             id: "headingFour",
             target: "collapseFour",
-            title: "ما هى أنواع الزيوت المتوفرة من ماكينة لوب",
+            title: "ما هى أنواع الزيوت المتوفرة لدى الشركة",
             answers: [
               "زيوت محركات البنزين - زيوت الديزل - زيوت التروس - زيوت هايدرولك - شحوم - زيوت الفرامل - سوائل تبريد - اي زيوت خاصة اخرى",
             ],
@@ -255,14 +255,14 @@ export const Languages = {
         batteries: {
           title: "بطاريات جياد",
           products: [
-            { title: "42 AH 12V", image: "42Ah.jpeg" },
-            { title: "55 AH 12V", image: "55Ah.jpeg" },
-            { title: "60 AH 12V", image: "60Ah.jpeg" },
-            { title: "72 AH 12V", image: "72Ah.jpeg" },
-            { title: "90 AH 12V", image: "90Ah.jpeg" },
-            { title: "100 AH 12V", image: "100Ah.jpeg" },
-            { title: "120 AH 12V", image: "120Ah.jpeg" },
-            { title: "200 AH 12V", image: "200Ah.jpeg" },
+            { title: "42 AH 12V", image: "42Ah.png" },
+            { title: "55 AH 12V", image: "55Ah.png" },
+            { title: "60 AH 12V", image: "60Ah.png" },
+            { title: "72 AH 12V", image: "72Ah.png" },
+            { title: "90 AH 12V", image: "90Ah.png" },
+            { title: "100 AH 12V", image: "100Ah.png" },
+            { title: "120 AH 12V", image: "120Ah.png" },
+            { title: "200 AH 12V", image: "200Ah.png" },
           ],
         },
       },
@@ -526,7 +526,7 @@ export const Languages = {
           {
             id: "headingFour",
             target: "collapseFour",
-            title: "What types of oils are available from MAKKINAlube company?",
+            title: "What types of oils are available from the company?",
             answers: [
               "Gasoline engine oils - diesel oils - gear oils - hydraulic oils - greases - brake oils - coolant fluids - any other special oils.",
             ],
