@@ -11,6 +11,7 @@ import ServicesCenter from "./components/Services Center/Services-Center";
 import { LangContext } from "./context/langContext";
 import { useContext } from "react";
 import ErrorPage from "./components/404";
+import Login from "./components/Auth/Login";
 
 function App() {
   const { language } = useContext(LangContext);
@@ -39,6 +40,8 @@ function App() {
         <Route path="/services-centers" element={<ServicesCenter />} />
 
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/login" element={<Login />} />
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>

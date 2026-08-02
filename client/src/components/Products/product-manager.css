@@ -1,0 +1,230 @@
+.product-manager {
+  font-family: "Poppins", "Cairo", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(
+      circle at 14% 18%,
+      rgba(0, 174, 206, 0.12),
+      transparent 38%
+    ),
+    radial-gradient(circle at 90% 74%, rgba(0, 29, 92, 0.1), transparent 42%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(232, 242, 250, 0.5)),
+    #f4f7fb;
+  border-radius: 14px;
+  border: 1px solid #d9e7f4;
+}
+
+.pm-subtitle {
+  color: #3f5770;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.pm-toolbar {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  border: 1px solid #e2ebf4;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 14px 32px rgba(0, 29, 92, 0.08);
+}
+
+.pm-toolbar-title {
+  color: #173a61;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.pm-admin-hint {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #55708b;
+}
+
+.pm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pm-select {
+  min-width: 170px;
+  border-radius: 10px;
+  border: 1px solid #cdd9e6;
+  background-color: #fbfdff;
+  min-height: 42px;
+}
+
+.pm-select:focus {
+  border-color: #00aece;
+  box-shadow: 0 0 0 3px rgba(0, 174, 206, 0.18);
+}
+
+.pm-add-btn {
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(90deg, #00aece 0%, #0f4f88 100%);
+  font-weight: 700;
+  padding: 9px 16px;
+}
+
+.pm-add-btn:hover {
+  color: #fff;
+  filter: brightness(1.04);
+}
+
+.pm-card {
+  border: 1px solid #dce7f2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 29, 92, 0.08);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.pm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(0, 29, 92, 0.14);
+}
+
+.pm-card .card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #e6eff7;
+}
+
+.pm-card .card-body {
+  padding: 16px;
+}
+
+.pm-card .card-title {
+  color: #16395f;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  min-height: 2.5em;
+}
+
+.pm-category-pill {
+  background-color: #0f3c6b;
+  color: #fff;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-weight: 600;
+}
+
+.pm-price {
+  color: #0e3f71;
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+.pm-actions-row {
+  margin-top: 12px;
+}
+
+.pm-action-btn {
+  min-width: 90px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.pm-edit-btn {
+  border: 1px solid #1976d2;
+  color: #1976d2;
+  background: #fff;
+}
+
+.pm-edit-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+.pm-delete-btn {
+  border: 1px solid #d32f2f;
+  color: #d32f2f;
+  background: #fff;
+}
+
+.pm-delete-btn:hover {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.pm-save-btn {
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(90deg, #00aece 0%, #0f4f88 100%);
+  font-weight: 700;
+  padding: 10px 16px;
+}
+
+.pm-save-btn:hover:not(:disabled) {
+  color: #fff;
+  filter: brightness(1.04);
+}
+
+.pm-modal-box {
+  border: 1px solid #d9e9f6;
+}
+
+.pm-modal-title {
+  color: #14375c;
+  font-weight: 700;
+}
+
+.pm-form-grid {
+  margin-bottom: 2px;
+}
+
+.pm-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #244a70;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.pm-input {
+  border-radius: 10px;
+  border: 1px solid #cfe0ef;
+  background: #ffffff;
+  min-height: 42px;
+}
+
+.pm-input:focus {
+  border-color: #00aece;
+  box-shadow: 0 0 0 3px rgba(0, 174, 206, 0.14);
+}
+
+.pm-field-hint {
+  display: block;
+  margin-top: 6px;
+  color: #5c7390;
+}
+
+@media (max-width: 575px) {
+  .pm-toolbar {
+    padding: 12px;
+  }
+
+  .pm-select {
+    width: 100%;
+  }
+
+  .pm-add-btn {
+    width: 100%;
+  }
+
+  .pm-card .card-img-top {
+    height: 200px;
+  }
+}

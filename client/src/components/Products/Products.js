@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../footer";
 import Products1 from "./products1";
+import ProductManager from "./ProductManager";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
 
@@ -38,6 +39,8 @@ const Products = () => {
         </div>
       </div>
       <Products1 />
+      <hr className="my-3" />
+      <ProductManager />
       <Footer />
     </div>
   );

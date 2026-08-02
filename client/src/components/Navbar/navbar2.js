@@ -1,12 +1,20 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
-import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar2 = () => {
   const { language, ArFunc, EnFunc } = useContext(LangContext);
+  const { isAuthenticated, user, logout } = useContext(AuthContext);
   const [toggle, setToggle] = useState(false);
   const node = useRef(null);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   //function to change the language of the App
   const HandleLanguage = (lang) => {
@@ -108,6 +116,29 @@ const Navbar2 = () => {
                 <i className="bx bx-message-dots"></i>
                 {Languages[language].Navbar.content[6]}
               </NavLink>
+            </li>
+            <li className="nav-item m-0 mx-2">
+              {isAuthenticated ? (
+                <button
+                  className="nav-link english-btn shadow-none"
+                  onClick={() => {
+                    setToggle(!toggle);
+                    handleLogout();
+                  }}
+                >
+                  <i className="bx bx-log-out"></i> {user?.name}
+                </button>
+              ) : (
+                <NavLink
+                  className="nav-link"
+                  activeclassname="active"
+                  to="/login"
+                  onClick={() => setToggle(!toggle)}
+                >
+                  <i className="bx bx-lock-alt"></i>
+                  {language === "Ar" ? "دخول" : "Login"}
+                </NavLink>
+              )}
             </li>
             <li className="nav-item m-0">
               <button
