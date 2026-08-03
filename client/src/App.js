@@ -12,15 +12,16 @@ import { LangContext } from "./context/langContext";
 import { useContext } from "react";
 import ErrorPage from "./components/404";
 import Login from "./components/Auth/Login";
+import AdminProfile from "./components/Admin/AdminProfile";
 
 function App() {
   const { language } = useContext(LangContext);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(()=> {
-    setTimeout( ()=> {
+  useEffect(() => {
+    setTimeout(() => {
       setLoading(false);
-    }, 4200)
+    }, 4200);
   }, []);
 
   if (isLoading) {
@@ -42,6 +43,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/admin/profile" element={<AdminProfile />} />
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>

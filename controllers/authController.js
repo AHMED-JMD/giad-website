@@ -101,3 +101,40 @@ exports.getMe = async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 };
+
+// @desc   Change current user password
+// @route  PUT /api/auth/change-password
+// @access Private
+exports.changePassword = async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ msg: "Please enter all fields" });
+    }
+
+    if (newPassword.length < 6) {
+      return res
+        .status(400)
+        .json({ msg: "New password must be at least 6 characters" });
+    }
+
+    const user = await User.findById(req.user.id).select("+password");
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    const isMatch = await user.matchPassword(currentPassword);
+    if (!isMatch) {
+      return res.status(400).json({ msg: "Current password is incorrect" });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    return res.json({ msg: "Password updated successfully" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ msg: "Server error" });
+  }
+};

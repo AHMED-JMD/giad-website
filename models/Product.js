@@ -12,16 +12,6 @@ const ProductSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
-    categoryAr: {
-      type: String,
-      trim: true,
-      default: "",
-    },
-    categoryEn: {
-      type: String,
-      trim: true,
-      default: "",
-    },
     name: {
       type: String,
       required: [true, "Please add a product name"],
@@ -29,8 +19,13 @@ const ProductSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      required: [true, "Please add a category"],
       trim: true,
+      default: "",
+    },
+    categoryRef: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: [true, "Please add a category"],
     },
     imgLink: {
       type: String,
@@ -43,7 +38,7 @@ const ProductSchema = new mongoose.Schema(
       min: [0, "Price cannot be negative"],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Product", ProductSchema);

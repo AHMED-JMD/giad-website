@@ -9,6 +9,7 @@ const xssFilter = require("xss-filters");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
 
 //connect to MongoDB
 connectDB();
@@ -23,6 +24,7 @@ app.use(cors());
 //api routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/categories", categoryRoutes);
 
 // Handle multer and general API errors consistently
 app.use((err, req, res, next) => {

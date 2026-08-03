@@ -87,7 +87,8 @@ const Navbar2 = () => {
                 className="nav-link"
                 activeclassname="active"
                 to="/products"
-                onClick={() => setToggle(!toggle)}>
+                onClick={() => setToggle(!toggle)}
+              >
                 <i className="bx bx-purchase-tag-alt"></i>
                 {Languages[language].Navbar.content[3]}
               </NavLink>
@@ -97,10 +98,10 @@ const Navbar2 = () => {
                 className="nav-link"
                 activeclassname="active"
                 to="/services-centers"
-                onClick={() => setToggle(!toggle)}>
+                onClick={() => setToggle(!toggle)}
+              >
                 <i className="bx bx-spreadsheet"></i>
                 <span className="">
-                  
                   {Languages[language].Navbar.content[4]}
                 </span>
                 {Languages[language].Navbar.content[5]}
@@ -117,6 +118,19 @@ const Navbar2 = () => {
                 {Languages[language].Navbar.content[6]}
               </NavLink>
             </li>
+            {isAuthenticated && user?.role === "admin" ? (
+              <li className="nav-item m-0 mx-2">
+                <NavLink
+                  className="nav-link"
+                  activeclassname="active"
+                  to="/admin/profile"
+                  onClick={() => setToggle(!toggle)}
+                >
+                  <i className="bx bx-cog"></i>
+                  {language === "Ar" ? "لوحة المدير" : "Admin Profile"}
+                </NavLink>
+              </li>
+            ) : null}
             <li className="nav-item m-0 mx-2">
               {isAuthenticated ? (
                 <button

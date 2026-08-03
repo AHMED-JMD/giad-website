@@ -1,5 +1,6 @@
 const xssFilter = require("xss-filters");
 const Product = require("../models/Product");
+const Category = require("../models/Category");
 
 // @desc   Get all products (optionally filter by category or search by name)
 // @route  GET /api/products
@@ -8,13 +9,7 @@ exports.getProducts = async (req, res) => {
   try {
     const filterParts = [];
     if (req.query.category) {
-      filterParts.push({
-        $or: [
-          { category: req.query.category },
-          { categoryEn: req.query.category },
-          { categoryAr: req.query.category },
-        ],
-      });
+      filterParts.push({ categoryRef: req.query.category });
     }
     if (req.query.search) {
       filterParts.push({
@@ -28,7 +23,12 @@ exports.getProducts = async (req, res) => {
 
     const filter = filterParts.length > 0 ? { $and: filterParts } : {};
 
-    const products = await Product.find(filter).sort({ createdAt: -1 });
+    const products = await Product.find(filter)
+      .populate(
+        "categoryRef",
+        "nameAr nameEn descriptionAr descriptionEn name description",
+      )
+      .sort({ createdAt: -1 });
     res.json(products);
   } catch (err) {
     console.log(err);
@@ -41,7 +41,10 @@ exports.getProducts = async (req, res) => {
 // @access Public
 exports.getProduct = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).populate(
+      "categoryRef",
+      "nameAr nameEn descriptionAr descriptionEn name description",
+    );
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
     }
@@ -60,16 +63,7 @@ exports.getProduct = async (req, res) => {
 // @access Private/Admin
 exports.createProduct = async (req, res) => {
   try {
-    let {
-      name,
-      nameAr,
-      nameEn,
-      category,
-      categoryAr,
-      categoryEn,
-      imgLink,
-      price,
-    } = req.body;
+    let { name, nameAr, nameEn, categoryId, price } = req.body;
     const uploadedImg = req.file
       ? `/uploads/products/${req.file.filename}`
       : null;
@@ -79,22 +73,23 @@ exports.createProduct = async (req, res) => {
 
     nameAr = sanitize(nameAr);
     nameEn = sanitize(nameEn);
-    categoryAr = sanitize(categoryAr);
-    categoryEn = sanitize(categoryEn);
+    categoryId = sanitize(categoryId);
     name = sanitize(name) || nameEn || nameAr;
-    category = sanitize(category) || categoryEn || categoryAr;
 
     if (
       !name ||
       !nameAr ||
       !nameEn ||
-      !category ||
-      !categoryAr ||
-      !categoryEn ||
-      (!imgLink && !uploadedImg) ||
+      !categoryId ||
+      !uploadedImg ||
       price === undefined
     ) {
       return res.status(400).json({ msg: "Please enter all fields" });
+    }
+
+    const category = await Category.findById(categoryId);
+    if (!category) {
+      return res.status(400).json({ msg: "Invalid category" });
     }
 
     const parsedPrice = Number(price);
@@ -102,19 +97,21 @@ exports.createProduct = async (req, res) => {
       return res.status(400).json({ msg: "Invalid price" });
     }
 
-    imgLink = uploadedImg || sanitize(imgLink);
-
     const product = await Product.create({
       name,
       nameAr,
       nameEn,
-      category,
-      categoryAr,
-      categoryEn,
-      imgLink,
+      category: category.nameEn || category.nameAr || category.name || "",
+      categoryRef: category._id,
+      imgLink: uploadedImg,
       price: parsedPrice,
     });
-    res.status(201).json(product);
+
+    const createdProduct = await Product.findById(product._id).populate(
+      "categoryRef",
+      "nameAr nameEn descriptionAr descriptionEn name description",
+    );
+    res.status(201).json(createdProduct);
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "Server error" });
@@ -131,16 +128,7 @@ exports.updateProduct = async (req, res) => {
       return res.status(404).json({ msg: "Product not found" });
     }
 
-    let {
-      name,
-      nameAr,
-      nameEn,
-      category,
-      categoryAr,
-      categoryEn,
-      imgLink,
-      price,
-    } = req.body;
+    let { name, nameAr, nameEn, categoryId, price } = req.body;
     const uploadedImg = req.file
       ? `/uploads/products/${req.file.filename}`
       : null;
@@ -150,31 +138,31 @@ exports.updateProduct = async (req, res) => {
 
     if (nameAr !== undefined) product.nameAr = sanitize(nameAr);
     if (nameEn !== undefined) product.nameEn = sanitize(nameEn);
-    if (categoryAr !== undefined) product.categoryAr = sanitize(categoryAr);
-    if (categoryEn !== undefined) product.categoryEn = sanitize(categoryEn);
 
     if (name !== undefined) product.name = sanitize(name);
-    if (category !== undefined) product.category = sanitize(category);
+
+    if (categoryId !== undefined) {
+      const normalizedCategoryId = sanitize(categoryId);
+      const category = await Category.findById(normalizedCategoryId);
+      if (!category) {
+        return res.status(400).json({ msg: "Invalid category" });
+      }
+      product.categoryRef = category._id;
+      product.category = category.nameEn || category.nameAr || category.name || "";
+    }
 
     product.name = product.name || product.nameEn || product.nameAr || "";
-    product.category =
-      product.category || product.categoryEn || product.categoryAr || "";
 
-    if (
-      !product.nameAr ||
-      !product.nameEn ||
-      !product.categoryAr ||
-      !product.categoryEn
-    ) {
+    if (!product.nameAr || !product.nameEn || !product.categoryRef) {
       return res
         .status(400)
-        .json({ msg: "Arabic and English name/category are required" });
+        .json({
+          msg: "Arabic and English product names and category are required",
+        });
     }
 
     if (uploadedImg) {
       product.imgLink = uploadedImg;
-    } else if (imgLink !== undefined) {
-      product.imgLink = sanitize(imgLink);
     }
     if (price !== undefined) {
       const parsedPrice = Number(price);
@@ -185,7 +173,11 @@ exports.updateProduct = async (req, res) => {
     }
 
     await product.save();
-    res.json(product);
+    const populatedProduct = await Product.findById(product._id).populate(
+      "categoryRef",
+      "nameAr nameEn descriptionAr descriptionEn name description",
+    );
+    res.json(populatedProduct);
   } catch (err) {
     console.log(err);
     if (err.kind === "ObjectId") {

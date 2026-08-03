@@ -44,12 +44,29 @@ const AuthContextProvider = (props) => {
     setUser(null);
   };
 
+  const changePassword = async (currentPassword, newPassword) => {
+    const res = await api.put("/auth/change-password", {
+      currentPassword,
+      newPassword,
+    });
+    return res.data;
+  };
+
   const isAuthenticated = Boolean(token && user);
   const isAdmin = Boolean(user && user.role === "admin");
 
   return (
     <AuthContext.Provider
-      value={{ user, token, loading, isAuthenticated, isAdmin, login, logout }}
+      value={{
+        user,
+        token,
+        loading,
+        isAuthenticated,
+        isAdmin,
+        login,
+        logout,
+        changePassword,
+      }}
     >
       {props.children}
     </AuthContext.Provider>
