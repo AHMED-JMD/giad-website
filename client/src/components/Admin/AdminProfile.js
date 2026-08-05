@@ -10,6 +10,7 @@ import {
   deleteCategory as deleteCategoryApi,
   getCategories,
 } from "../../services/categoryService";
+import Loader from "../Loader";
 import "./admin-profile.css";
 
 const labels = {
@@ -26,6 +27,8 @@ const labels = {
     addingCategory: "جار الإضافة...",
     categoriesListTitle: "الفئات الحالية",
     noCategories: "لا توجد فئات بعد",
+    loadingCategoriesTitle: "جار تحميل الفئات",
+    loadingCategoriesSubtitle: "نجهز بيانات الفئات في لوحة الإدارة",
     passwordTitle: "تغيير كلمة المرور",
     currentPassword: "كلمة المرور الحالية",
     newPassword: "كلمة المرور الجديدة",
@@ -61,6 +64,9 @@ const labels = {
     addingCategory: "Adding...",
     categoriesListTitle: "Existing Categories",
     noCategories: "No categories yet",
+    loadingCategoriesTitle: "Loading Categories",
+    loadingCategoriesSubtitle:
+      "Preparing category data in your admin dashboard",
     passwordTitle: "Change Password",
     currentPassword: "Current Password",
     newPassword: "New Password",
@@ -114,6 +120,7 @@ const AdminProfile = () => {
     descriptionEn: "",
   });
   const [categorySaving, setCategorySaving] = useState(false);
+  const [categoriesLoading, setCategoriesLoading] = useState(false);
   const [categoryError, setCategoryError] = useState("");
   const [categorySuccess, setCategorySuccess] = useState("");
   const [deleteTarget, setDeleteTarget] = useState(null);
@@ -141,6 +148,8 @@ const AdminProfile = () => {
 
   useEffect(() => {
     const loadCategories = async () => {
+      setCategoriesLoading(true);
+      setCategoryError("");
       try {
         const res = await getCategories();
         setCategories(res.data || []);
@@ -148,6 +157,8 @@ const AdminProfile = () => {
         setCategoryError(
           err.response?.data?.msg || "Failed to load categories",
         );
+      } finally {
+        setCategoriesLoading(false);
       }
     };
 
@@ -451,7 +462,15 @@ const AdminProfile = () => {
 
         <div className="ap-panel mt-4">
           <h4 className="ap-panel-title mb-3">{t.categoriesListTitle}</h4>
-          {categories.length === 0 ? (
+          {categoriesLoading ? (
+            <Loader
+              fullscreen={false}
+              compact
+              title={t.loadingCategoriesTitle}
+              subtitle={t.loadingCategoriesSubtitle}
+              className="ap-fetch-loader"
+            />
+          ) : categories.length === 0 ? (
             <p className="mb-0 ap-muted">{t.noCategories}</p>
           ) : (
             <div className="row g-3">

@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
-import { useState } from "react";
 import axios from "axios";
 
 const Contact1 = () => {
   const { language } = useContext(LangContext);
+  const apiBaseUrl = (process.env.REACT_APP_API_BASE_URL || "").replace(
+    /\/$/,
+    "",
+  );
   //state for post request to server
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,22 +16,46 @@ const Contact1 = () => {
   const [text, setText] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
 
-  const [msg, setMsg] = useState("");
+  const [status, setStatus] = useState({ type: "idle", message: "" });
+  const sending = status.type === "loading";
+
+  const resolveServerMessage = (payload, fallback) => {
+    if (typeof payload === "string") return payload;
+    if (payload?.msg) return payload.msg;
+    if (payload?.message) return payload.message;
+    return fallback;
+  };
 
   //handle submit function
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (sending) return;
+
+    setStatus({ type: "loading", message: "Sending your message..." });
 
     const data = { name, email, subject, text, phoneNum };
 
-    //post to server
-    axios
-      .post("http://localhost:7892/email", data)
-      .then((res) => {
-        console.log(res.data);
-        setMsg(res.data);
-      })
-      .catch((err) => console.log(err));
+    try {
+      const res = await axios.post(`${apiBaseUrl}/email`, data);
+      setStatus({
+        type: "success",
+        message: resolveServerMessage(res?.data, "Message sent successfully."),
+      });
+      setName("");
+      setEmail("");
+      setSubject("");
+      setText("");
+      setPhoneNum("");
+    } catch (err) {
+      console.log(err);
+      setStatus({
+        type: "error",
+        message: resolveServerMessage(
+          err?.response?.data,
+          "Failed to send message. Please try again.",
+        ),
+      });
+    }
   };
 
   return (
@@ -50,11 +77,12 @@ const Contact1 = () => {
                 {Languages[language].Contact.body.form[0]}
               </label>
               <input
-                type="name"
+                type="text"
                 className="form-control"
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                disabled={sending}
                 required
               />
             </div>
@@ -64,11 +92,12 @@ const Contact1 = () => {
                 {Languages[language].Contact.body.form[1]}
               </label>
               <input
-                type="phone"
+                type="tel"
                 className="form-control"
                 value={phoneNum}
                 onChange={(e) => setPhoneNum(e.target.value)}
                 id="phoneNum"
+                disabled={sending}
                 required
               />
             </div>
@@ -80,16 +109,18 @@ const Contact1 = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
+                disabled={sending}
               />
             </div>
             <div className="col-lg-6 col-sm-12">
               <label>{Languages[language].Contact.body.form[3]}</label>
               <input
-                type="name"
+                type="text"
                 className="form-control"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 id="subject"
+                disabled={sending}
               />
             </div>
             <div className="col-12">
@@ -103,16 +134,43 @@ const Contact1 = () => {
                 id="textarea"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
+                disabled={sending}
                 required
               ></textarea>
             </div>
-            <button className="btn contact-btn btn-effect">
-              {Languages[language].Contact.body.form[5]}
+            <button
+              className="btn contact-btn btn-effect"
+              type="submit"
+              disabled={sending}
+            >
+              {sending ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm mr-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Sending...
+                </>
+              ) : (
+                Languages[language].Contact.body.form[5]
+              )}
             </button>
           </div>
-          {msg ? (
-            <div id="back-message" className=" back-message  text-center">
-              {msg}
+          {status.type === "loading" ? (
+            <div className="alert alert-info mt-3 text-center" role="status">
+              {status.message}
+            </div>
+          ) : null}
+          {status.type === "success" || status.type === "error" ? (
+            <div
+              className={`alert mt-3 text-center ${
+                status.type === "success" ? "alert-success" : "alert-danger"
+              }`}
+              role="alert"
+              aria-live="polite"
+            >
+              {status.message}
             </div>
           ) : null}
         </form>

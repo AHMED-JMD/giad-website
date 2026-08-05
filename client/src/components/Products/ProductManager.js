@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Languages } from "../../context/languages";
 import { LangContext } from "../../context/langContext";
 import { AuthContext } from "../../context/authContext";
+import Loader from "../Loader";
 import "./product-manager.css";
 import { getCategories } from "../../services/categoryService";
 import {
@@ -44,6 +45,8 @@ const labels = {
     deleteAction: "حذف المنتج",
     confirmDelete: "هل أنت متأكد من حذف هذا المنتج؟",
     loadError: "حدث خطأ أثناء تحميل المنتجات",
+    loadingTitle: "جار تحميل المنتجات والفئات",
+    loadingSubtitle: "نجهز عرض المنتجات مع التصنيفات الآن",
     allCategories: "كل الفئات",
     adminTools: "اختر فئة معينة",
     adminHint: "سجل الدخول كمدير لإظهار خيارات الإضافة والتعديل والحذف",
@@ -77,6 +80,8 @@ const labels = {
     deleteAction: "Delete Product",
     confirmDelete: "Are you sure you want to delete this product?",
     loadError: "Failed to load products",
+    loadingTitle: "Loading products and categories",
+    loadingSubtitle: "Preparing product cards and category sections",
     allCategories: "All Categories",
     adminTools: "Choose a Category",
     adminHint: "Login as admin to show add, edit and delete actions",
@@ -446,7 +451,7 @@ const ProductManager = () => {
                   {getCategoryLabel(categoryItem)}
                 </option>
               ))}
-              <option value={UNCATEGORIZED_FILTER}>{t.uncategorized}</option>
+              {/* <option value={UNCATEGORIZED_FILTER}>{t.uncategorized}</option> */}
             </select>
 
             {isAdmin ? (
@@ -459,13 +464,13 @@ const ProductManager = () => {
       </div>
 
       {loading ? (
-        <div className="text-center py-5">
-          <span
-            className="spinner-border"
-            role="status"
-            aria-hidden="true"
-          ></span>
-        </div>
+        <Loader
+          fullscreen={false}
+          compact
+          title={t.loadingTitle}
+          subtitle={t.loadingSubtitle}
+          className="pm-fetch-loader"
+        />
       ) : loadError ? (
         <div className="alert alert-danger text-center">{loadError}</div>
       ) : categories.length === 0 && products.length === 0 ? (

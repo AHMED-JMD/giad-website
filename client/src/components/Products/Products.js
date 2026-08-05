@@ -38,8 +38,8 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <Products1 />
-      <hr className="my-3" />
+      {/* <Products1 />
+      <hr className="my-3" /> */}
       <ProductManager />
       <Footer />
     </div>

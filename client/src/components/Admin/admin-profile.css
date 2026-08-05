@@ -25,6 +25,7 @@
 
 .ap-title {
   font-weight: 700;
+  color: #fff;
   letter-spacing: 0.3px;
 }
 
@@ -93,6 +94,10 @@
 
 .ap-muted {
   color: #6f859b;
+}
+
+.ap-fetch-loader {
+  min-height: 270px;
 }
 
 .ap-category-card {

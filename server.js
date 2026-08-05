@@ -20,6 +20,16 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
+//url validation middleware to catch malformed URLs and return a 400 error
+app.use((req, res, next) => {
+  const rawPath = (req.originalUrl || req.url || "").split("?")[0];
+  try {
+    decodeURIComponent(rawPath);
+    return next();
+  } catch (e) {
+    return res.status(400).json({ msg: "Malformed URL" });
+  }
+});
 
 //api routes
 app.use("/api/auth", authRoutes);
@@ -45,9 +55,13 @@ app.use((err, req, res, next) => {
 app.post("/email", async (req, res, next) => {
   let { name, email, subject, text, phoneNum } = req.body;
 
-  if (!name || !email || !subject || !text || !phoneNum) {
+  if (!name || !text || !phoneNum) {
     return res.status(400).json({ msg: "please enter all feilds" });
   }
+
+  email = email || "";
+  subject = subject || "Contact Form Message";
+
   //filter input feilds
   ((name = xssFilter.inHTMLData(name)),
     (email = xssFilter.inHTMLData(email)),
@@ -67,12 +81,17 @@ app.post("/email", async (req, res, next) => {
       }
     });
   } catch (e) {
-    console.log("error in mailgun ", e);
+    console.log("error sending email", e);
   }
 });
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+app.use((err, req, res, next) => {
+  if (!err) return next();
+  return res.status(500).json({ msg: "Server error" });
 });
 
 //listening to port

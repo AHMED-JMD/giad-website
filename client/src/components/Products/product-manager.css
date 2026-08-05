@@ -74,6 +74,11 @@
   color: #fff;
 }
 
+.pm-fetch-loader {
+  margin-bottom: 12px;
+  min-height: 270px;
+}
+
 .pm-category-section {
   margin-top: 24px;
 }

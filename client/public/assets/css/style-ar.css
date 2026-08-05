@@ -68,8 +68,76 @@ i {
   overflow: none;
 }
 
+.loader-container-inline {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  padding: 22px 16px;
+  border-radius: 20px;
+  border: 1px solid #d7e7f5;
+  background:
+    radial-gradient(
+      circle at 16% 18%,
+      rgba(0, 174, 206, 0.16),
+      transparent 44%
+    ),
+    radial-gradient(circle at 84% 80%, rgba(0, 29, 92, 0.12), transparent 44%),
+    linear-gradient(140deg, #f9fcff 0%, #eef5ff 100%);
+  box-shadow: 0 14px 32px rgba(0, 29, 92, 0.1);
+  overflow: hidden;
+  z-index: 1 !important;
+}
+
+.loader-container-inline::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -25%;
+  width: 55%;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(8deg);
+  animation: loader-shimmer 3.2s linear infinite;
+  pointer-events: none;
+}
+
+.loader-container-inline svg,
+.loader-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.loader-copy {
+  max-width: 460px;
+}
+
+.loader-title {
+  font-size: 1.06rem;
+  color: #0f426f;
+  font-weight: 700;
+}
+
+.loader-subtitle {
+  font-size: 0.93rem;
+  color: #5b7590;
+}
+
+@keyframes loader-shimmer {
+  0% {
+    transform: translateX(0) rotate(8deg);
+  }
+
+  100% {
+    transform: translateX(300%) rotate(8deg);
+  }
+}
+
 .main-header {
-  font-family: "bkufi", 'poppins';
+  font-family: "bkufi", "poppins";
   color: var(--light-color);
   position: relative;
   font-size: 25px;
@@ -194,7 +262,6 @@ li.social-media ul a:hover {
   color: #fff !important;
 }
 
-
 /* SECOND NAVBAR STARTS HERE */
 .navbar-2 {
   background-color: #fcfcfc;
@@ -214,7 +281,7 @@ li.social-media ul a:hover {
 }
 
 .navbar-2 .nav-link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -252,7 +319,8 @@ li.social-media ul a:hover {
   cursor: pointer;
 }
 
-.btn:focus, .english-btn:focus {
+.btn:focus,
+.english-btn:focus {
   outline: none !important;
 }
 
@@ -272,14 +340,14 @@ li.social-media ul a:hover {
   }
 }
 
-@media(min-width: 867px) {
+@media (min-width: 867px) {
   .navbar-expand-md .navbar-nav {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
   }
 }
 
-@media(max-width: 867px) {
+@media (max-width: 867px) {
   .navbar-2 ul {
     position: fixed;
     left: -100%;
@@ -332,13 +400,17 @@ li.social-media ul a:hover {
 }
 
 .slide .img-1 {
-  background: linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%), url('../images/giad-bg7.jpg');
+  background:
+    linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%),
+    url("../images/giad-bg7.jpg");
   background-size: cover;
   background-position: center center;
 }
 
 .slide .img-2 {
-  background: linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%), url('../images/giad-bg8.jpg');
+  background:
+    linear-gradient(90deg, rgba(0, 29, 92, 0.5) 100%, #000 0%),
+    url("../images/giad-bg8.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -362,7 +434,7 @@ li.social-media ul a:hover {
 
 .slide .caption-bg {
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   top: 0;
   width: 100%;
@@ -404,24 +476,24 @@ li.social-media ul a:hover {
   z-index: 1;
 }
 
-[dir=rtl] .slick-next:before {
-  content: '→' !important;
+[dir="rtl"] .slick-next:before {
+  content: "→" !important;
 }
 
 .slick-prev:before {
-  content: '←' !important;
+  content: "←" !important;
 }
 
-.slick-next:before, .slick-prev:before {
+.slick-next:before,
+.slick-prev:before {
   font-size: 30px !important;
   line-height: 1;
-  opacity: .3 !important;
+  opacity: 0.3 !important;
 }
 .slick-prev:hover:before,
 .slick-prev:active:before,
 .slick-next:hover:before,
-.slick-next:active:before
-{
+.slick-next:active:before {
   opacity: 1 !important;
 }
 
@@ -505,7 +577,7 @@ li.social-media ul a:hover {
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .slide .caption {
     bottom: 0%;
     left: 0%;
@@ -667,7 +739,7 @@ li.social-media ul a:hover {
 }
 
 .services-card:before {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   bottom: 0;
@@ -706,7 +778,7 @@ li.social-media ul a:hover {
 
 .services-section .services-card .card-title {
   color: #fff;
-  font-family: 'poppins', 'bkufi';
+  font-family: "poppins", "bkufi";
   transition: color 0.5s;
   font-size: 18px;
 }
@@ -738,9 +810,8 @@ li.social-media ul a:hover {
 /*------------------- 5.12 Progress -------------------*/
 .progress-wrap-layout1 {
   margin: auto;
-  background: linear-gradient(-90deg,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0.7) 50%),
+  background:
+    linear-gradient(-90deg, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.7) 50%),
     url("../images/workers2.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -775,7 +846,7 @@ li.social-media ul a:hover {
 
 .progress-box-layout1 .item-title {
   color: #fff;
-  font-family: 'kufi', 'poppins';
+  font-family: "kufi", "poppins";
   font-size: 25px;
 }
 
@@ -853,11 +924,10 @@ li.social-media ul a:hover {
 }
 
 /* Bannar Section Starts Here */
-.bannar-section{
+.bannar-section {
   height: 500px;
-  background: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.5) 40%,
-      rgba(0, 29, 92, 0.9)),
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 40%, rgba(0, 29, 92, 0.9)),
     url(../images/manager.png);
   background-size: cover;
   background-attachment: fixed;
@@ -872,7 +942,7 @@ li.social-media ul a:hover {
   transform: translate(-50%, -50%);
 }
 
-.bannar-section i{
+.bannar-section i {
   color: #fff;
   font-size: 60px;
 }
@@ -895,23 +965,23 @@ li.social-media ul a:hover {
   padding: 5px;
 }
 
-.certifs{
+.certifs {
   /* background: linear-gradient(90deg, #001d5c 80%, #1a1a1a) !important; */
   background-color: #00aece;
 }
 
-.certifs .slick-slide div{
+.certifs .slick-slide div {
   height: auto;
 }
 
-.ant-image-preview-switch-left, .ant-image-preview-switch-right {
-}
+/* .ant-image-preview-switch-left,
+.ant-image-preview-switch-right {
+} */
 
 .ant-image-preview-switch-left {
   left: 10px !important;
   right: unset !important;
 }
-
 
 /*------------------- 5.17 Testimonial -------------------*/
 
@@ -999,7 +1069,12 @@ li.social-media ul a:hover {
   transition: all 0.3s ease-out;
 }
 
-.service-faq .faq-box .accordion .card .card-header .heading-title.collapsed:before {
+.service-faq
+  .faq-box
+  .accordion
+  .card
+  .card-header
+  .heading-title.collapsed:before {
   content: "\f104";
   color: #287ff9;
 }
@@ -1116,7 +1191,7 @@ li.social-media ul a:hover {
   color: rgb(219, 58, 58);
   font-size: 20px;
 }
-.contactus-section label{
+.contactus-section label {
   margin: 0;
 }
 
@@ -1261,7 +1336,9 @@ footer a:hover {
 .wt-bnr-inr {
   background-size: cover;
   color: #001d5c;
-  background-image: linear-gradient(90deg, rgba(0, 29, 92, 0.4) 50%, rgba(0, 29, 92, 0.4) 50%), url(../images/hyundai.png);
+  background-image:
+    linear-gradient(90deg, rgba(0, 29, 92, 0.4) 50%, rgba(0, 29, 92, 0.4) 50%),
+    url(../images/hyundai.png);
   background-position: center top;
 }
 
@@ -1308,7 +1385,6 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 991px) {
-
   .wt-bnr-inr-entry .banner-title-name h1,
   .wt-bnr-inr-entry .banner-title-name h2,
   .wt-bnr-inr-entry .banner-title-name h3 {
@@ -1318,7 +1394,6 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 540px) {
-
   .wt-bnr-inr-entry .banner-title-name h1,
   .wt-bnr-inr-entry .banner-title-name h2,
   .wt-bnr-inr-entry .banner-title-name h3 {
@@ -1397,18 +1472,21 @@ footer a:hover {
 .btn-effect {
   color: rgba(0, 0, 0, 0) !important;
   transition: all 0.3s ease !important;
-  text-shadow: 0 0 0 #fff, 400px 0 0 #fff;
+  text-shadow:
+    0 0 0 #fff,
+    400px 0 0 #fff;
 }
 
 .btn-effect:hover {
-  text-shadow: -400px 0 0 #fff, 0 0 0 #fff;
+  text-shadow:
+    -400px 0 0 #fff,
+    0 0 0 #fff;
 }
 
 /* About us Page */
 .another-about-section {
-  background: linear-gradient(-90deg,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.6) 50%),
+  background:
+    linear-gradient(-90deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%),
     url(../images/another-about.png);
   background-position: center;
   background-size: cover;
@@ -1541,7 +1619,7 @@ footer a:hover {
 
 /* PRODUCTS PAGE */
 /* PRODUCTS PAGE */
-.products{
+.products {
   background-color: #eee;
 }
 

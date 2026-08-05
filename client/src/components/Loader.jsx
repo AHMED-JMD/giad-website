@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
 
-const Loader = () => {
+const Loader = ({
+  fullscreen = true,
+  compact = false,
+  title = "",
+  subtitle = "",
+  className = "",
+}) => {
   const darkColor = "#001d5c";
   const lightColor = "#00aece";
+  const svgWidth = compact ? 340 : 500;
+  const containerClassName = `loader-container${
+    fullscreen ? "" : " loader-container-inline"
+  }${className ? ` ${className}` : ""}`;
   const loadervariants = {
     initial: {},
     animate: {
@@ -31,7 +41,7 @@ const Loader = () => {
     },
   };
   return (
-    <div className="loader-container">
+    <div className={containerClassName}>
       <motion.svg
         variants={loadervariants}
         initial="initial"
@@ -41,7 +51,8 @@ const Loader = () => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width={500}
+        width={svgWidth}
+        style={{ width: "100%", maxWidth: `${svgWidth}px`, height: "auto" }}
         viewBox="0 0 1280 1024"
       >
         <motion.path
@@ -110,6 +121,13 @@ const Loader = () => {
 	        C712.8,428.9,734.9,445.4,734.9,465.8z"
         />
       </motion.svg>
+
+      {title || subtitle ? (
+        <div className="loader-copy text-center mt-2">
+          {title ? <p className="loader-title mb-1">{title}</p> : null}
+          {subtitle ? <p className="loader-subtitle mb-0">{subtitle}</p> : null}
+        </div>
+      ) : null}
     </div>
   );
 };
