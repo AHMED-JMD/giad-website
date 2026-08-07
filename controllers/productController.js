@@ -1,35 +1,64 @@
 const xssFilter = require("xss-filters");
-const Product = require("../models/Product");
-const Category = require("../models/Category");
+const { Op } = require("sequelize");
+const { Product, Category } = require("../models");
+const { serializeProduct } = require("../utils/serializers");
+
+const parseId = (value) => {
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : null;
+};
 
 // @desc   Get all products (optionally filter by category or search by name)
 // @route  GET /api/products
 // @access Public
 exports.getProducts = async (req, res) => {
   try {
-    const filterParts = [];
+    const where = {};
+
     if (req.query.category) {
-      filterParts.push({ categoryRef: req.query.category });
+      const categoryId = parseId(req.query.category);
+      if (!categoryId) {
+        return res.json([]);
+      }
+      where.categoryRef = categoryId;
     }
+
     if (req.query.search) {
-      filterParts.push({
-        $or: [
-          { name: { $regex: req.query.search, $options: "i" } },
-          { nameEn: { $regex: req.query.search, $options: "i" } },
-          { nameAr: { $regex: req.query.search, $options: "i" } },
-        ],
-      });
+      const search = req.query.search.trim();
+      if (search) {
+        where[Op.or] = [
+          { name: { [Op.like]: `%${search}%` } },
+          { nameEn: { [Op.like]: `%${search}%` } },
+          { nameAr: { [Op.like]: `%${search}%` } },
+        ];
+      }
     }
 
-    const filter = filterParts.length > 0 ? { $and: filterParts } : {};
+    const products = await Product.findAll({
+      where,
+      include: [
+        {
+          model: Category,
+          as: "categoryDetails",
+          attributes: [
+            "id",
+            "nameAr",
+            "nameEn",
+            "descriptionAr",
+            "descriptionEn",
+            "name",
+            "description",
+            "createdBy",
+            "createdAt",
+            "updatedAt",
+          ],
+          required: false,
+        },
+      ],
+      order: [["createdAt", "DESC"]],
+    });
 
-    const products = await Product.find(filter)
-      .populate(
-        "categoryRef",
-        "nameAr nameEn descriptionAr descriptionEn name description",
-      )
-      .sort({ createdAt: -1 });
-    res.json(products);
+    res.json(products.map((product) => serializeProduct(product)));
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "Server error" });
@@ -41,19 +70,40 @@ exports.getProducts = async (req, res) => {
 // @access Public
 exports.getProduct = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id).populate(
-      "categoryRef",
-      "nameAr nameEn descriptionAr descriptionEn name description",
-    );
+    const productId = parseId(req.params.id);
+    if (!productId) {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    const product = await Product.findByPk(productId, {
+      include: [
+        {
+          model: Category,
+          as: "categoryDetails",
+          attributes: [
+            "id",
+            "nameAr",
+            "nameEn",
+            "descriptionAr",
+            "descriptionEn",
+            "name",
+            "description",
+            "createdBy",
+            "createdAt",
+            "updatedAt",
+          ],
+          required: false,
+        },
+      ],
+    });
+
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
     }
-    res.json(product);
+
+    res.json(serializeProduct(product));
   } catch (err) {
     console.log(err);
-    if (err.kind === "ObjectId") {
-      return res.status(404).json({ msg: "Product not found" });
-    }
     res.status(500).json({ msg: "Server error" });
   }
 };
@@ -87,7 +137,12 @@ exports.createProduct = async (req, res) => {
       return res.status(400).json({ msg: "Please enter all fields" });
     }
 
-    const category = await Category.findById(categoryId);
+    const categoryPk = parseId(categoryId);
+    if (!categoryPk) {
+      return res.status(400).json({ msg: "Invalid category" });
+    }
+
+    const category = await Category.findByPk(categoryPk);
     if (!category) {
       return res.status(400).json({ msg: "Invalid category" });
     }
@@ -102,16 +157,34 @@ exports.createProduct = async (req, res) => {
       nameAr,
       nameEn,
       category: category.nameEn || category.nameAr || category.name || "",
-      categoryRef: category._id,
+      categoryRef: category.id,
       imgLink: uploadedImg,
       price: parsedPrice,
     });
 
-    const createdProduct = await Product.findById(product._id).populate(
-      "categoryRef",
-      "nameAr nameEn descriptionAr descriptionEn name description",
-    );
-    res.status(201).json(createdProduct);
+    const createdProduct = await Product.findByPk(product.id, {
+      include: [
+        {
+          model: Category,
+          as: "categoryDetails",
+          attributes: [
+            "id",
+            "nameAr",
+            "nameEn",
+            "descriptionAr",
+            "descriptionEn",
+            "name",
+            "description",
+            "createdBy",
+            "createdAt",
+            "updatedAt",
+          ],
+          required: false,
+        },
+      ],
+    });
+
+    res.status(201).json(serializeProduct(createdProduct));
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "Server error" });
@@ -123,7 +196,12 @@ exports.createProduct = async (req, res) => {
 // @access Private/Admin
 exports.updateProduct = async (req, res) => {
   try {
-    let product = await Product.findById(req.params.id);
+    const productId = parseId(req.params.id);
+    if (!productId) {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    let product = await Product.findByPk(productId);
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
     }
@@ -143,22 +221,26 @@ exports.updateProduct = async (req, res) => {
 
     if (categoryId !== undefined) {
       const normalizedCategoryId = sanitize(categoryId);
-      const category = await Category.findById(normalizedCategoryId);
+      const categoryPk = parseId(normalizedCategoryId);
+      if (!categoryPk) {
+        return res.status(400).json({ msg: "Invalid category" });
+      }
+
+      const category = await Category.findByPk(categoryPk);
       if (!category) {
         return res.status(400).json({ msg: "Invalid category" });
       }
-      product.categoryRef = category._id;
-      product.category = category.nameEn || category.nameAr || category.name || "";
+      product.categoryRef = category.id;
+      product.category =
+        category.nameEn || category.nameAr || category.name || "";
     }
 
     product.name = product.name || product.nameEn || product.nameAr || "";
 
     if (!product.nameAr || !product.nameEn || !product.categoryRef) {
-      return res
-        .status(400)
-        .json({
-          msg: "Arabic and English product names and category are required",
-        });
+      return res.status(400).json({
+        msg: "Arabic and English product names and category are required",
+      });
     }
 
     if (uploadedImg) {
@@ -173,16 +255,32 @@ exports.updateProduct = async (req, res) => {
     }
 
     await product.save();
-    const populatedProduct = await Product.findById(product._id).populate(
-      "categoryRef",
-      "nameAr nameEn descriptionAr descriptionEn name description",
-    );
-    res.json(populatedProduct);
+
+    const updatedProduct = await Product.findByPk(product.id, {
+      include: [
+        {
+          model: Category,
+          as: "categoryDetails",
+          attributes: [
+            "id",
+            "nameAr",
+            "nameEn",
+            "descriptionAr",
+            "descriptionEn",
+            "name",
+            "description",
+            "createdBy",
+            "createdAt",
+            "updatedAt",
+          ],
+          required: false,
+        },
+      ],
+    });
+
+    res.json(serializeProduct(updatedProduct));
   } catch (err) {
     console.log(err);
-    if (err.kind === "ObjectId") {
-      return res.status(404).json({ msg: "Product not found" });
-    }
     res.status(500).json({ msg: "Server error" });
   }
 };
@@ -192,18 +290,20 @@ exports.updateProduct = async (req, res) => {
 // @access Private/Admin
 exports.deleteProduct = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const productId = parseId(req.params.id);
+    if (!productId) {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    const product = await Product.findByPk(productId);
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
     }
 
-    await product.deleteOne();
+    await product.destroy();
     res.json({ msg: "Product removed" });
   } catch (err) {
     console.log(err);
-    if (err.kind === "ObjectId") {
-      return res.status(404).json({ msg: "Product not found" });
-    }
     res.status(500).json({ msg: "Server error" });
   }
 };

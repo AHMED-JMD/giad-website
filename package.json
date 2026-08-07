@@ -23,16 +23,17 @@
     "express": "^4.17.1",
     "framer-motion": "^6.3.6",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.9.1",
+    "mysql2": "^3.11.3",
     "multer": "^2.2.0",
     "nodemailer": "^9.0.4",
     "nodemon": "^2.0.12",
     "quickemailverification": "^1.0.3",
     "react-material-ui-carousel": "^3.4.2",
     "react-slick": "^0.29.0",
+    "sequelize": "^6.37.3",
     "xss-filters": "^1.2.7"
   },
   "engines": {
-    "node": "14.15.1"
+    "node": ">=14.20.1"
   }
 }

@@ -1,36 +1,45 @@
 const xssFilter = require("xss-filters");
-const Category = require("../models/Category");
-const Product = require("../models/Product");
+const { Op } = require("sequelize");
+const { Category, Product } = require("../models");
+const { serializeCategory } = require("../utils/serializers");
+
+const parseId = (value) => {
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : null;
+};
 
 // @desc   Get all categories
 // @route  GET /api/categories
 // @access Public
 exports.getCategories = async (req, res) => {
   try {
-    const categories = await Category.find().sort({ createdAt: -1 });
+    const categories = await Category.findAll({
+      order: [["createdAt", "DESC"]],
+    });
 
     const categoriesWithCounts = await Promise.all(
       categories.map(async (category) => {
+        const plainCategory = category.get({ plain: true });
         const legacyCategoryNames = [
-          category.nameEn,
-          category.nameAr,
-          category.name,
+          plainCategory.nameEn,
+          plainCategory.nameAr,
+          plainCategory.name,
         ].filter(Boolean);
 
-        const countFilter = {
-          $or: [{ categoryRef: category._id }],
-        };
+        const countOr = [{ categoryRef: plainCategory.id }];
 
         if (legacyCategoryNames.length > 0) {
-          countFilter.$or.push({ category: { $in: legacyCategoryNames } });
+          countOr.push({ category: { [Op.in]: legacyCategoryNames } });
         }
 
-        const relatedProductsCount = await Product.countDocuments(countFilter);
+        const relatedProductsCount = await Product.count({
+          where: { [Op.or]: countOr },
+        });
 
-        return {
-          ...category.toObject(),
+        return serializeCategory({
+          ...plainCategory,
           relatedProductsCount,
-        };
+        });
       }),
     );
 
@@ -68,10 +77,9 @@ exports.createCategory = async (req, res) => {
     }
 
     const existing = await Category.findOne({
-      $or: [
-        { nameAr: { $regex: `^${nameAr}$`, $options: "i" } },
-        { nameEn: { $regex: `^${nameEn}$`, $options: "i" } },
-      ],
+      where: {
+        [Op.or]: [{ nameAr }, { nameEn }],
+      },
     });
     if (existing) {
       return res.status(400).json({ msg: "Category already exists" });
@@ -85,10 +93,10 @@ exports.createCategory = async (req, res) => {
       // Keep legacy values for old clients and product.category string fallback.
       name: nameEn,
       description: descriptionEn,
-      createdBy: req.user?._id || null,
+      createdBy: req.user?.id || null,
     });
 
-    res.status(201).json(category);
+    res.status(201).json(serializeCategory(category));
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "Server error" });
@@ -100,36 +108,40 @@ exports.createCategory = async (req, res) => {
 // @access Private/Admin
 exports.deleteCategory = async (req, res) => {
   try {
-    const category = await Category.findById(req.params.id);
+    const categoryId = parseId(req.params.id);
+    if (!categoryId) {
+      return res.status(404).json({ msg: "Category not found" });
+    }
+
+    const category = await Category.findByPk(categoryId);
     if (!category) {
       return res.status(404).json({ msg: "Category not found" });
     }
 
+    const plainCategory = category.get({ plain: true });
+
     const legacyCategoryNames = [
-      category.nameEn,
-      category.nameAr,
-      category.name,
+      plainCategory.nameEn,
+      plainCategory.nameAr,
+      plainCategory.name,
     ].filter(Boolean);
-    const deleteFilter = {
-      $or: [{ categoryRef: category._id }],
-    };
+    const deleteOr = [{ categoryRef: plainCategory.id }];
 
     if (legacyCategoryNames.length > 0) {
-      deleteFilter.$or.push({ category: { $in: legacyCategoryNames } });
+      deleteOr.push({ category: { [Op.in]: legacyCategoryNames } });
     }
 
-    const productDeleteResult = await Product.deleteMany(deleteFilter);
-    await category.deleteOne();
+    const deletedProducts = await Product.destroy({
+      where: { [Op.or]: deleteOr },
+    });
+    await category.destroy();
 
     return res.json({
       msg: "Category removed and related products deleted",
-      deletedProducts: productDeleteResult.deletedCount || 0,
+      deletedProducts,
     });
   } catch (err) {
     console.log(err);
-    if (err.kind === "ObjectId") {
-      return res.status(404).json({ msg: "Category not found" });
-    }
     return res.status(500).json({ msg: "Server error" });
   }
 };

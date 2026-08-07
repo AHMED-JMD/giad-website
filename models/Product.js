@@ -1,44 +1,83 @@
-const mongoose = require("mongoose");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/sequelize");
 
-const ProductSchema = new mongoose.Schema(
+const Product = sequelize.define(
+  "Product",
   {
+    id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     nameAr: {
-      type: String,
-      trim: true,
-      default: "",
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "",
+      set(value) {
+        this.setDataValue(
+          "nameAr",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     nameEn: {
-      type: String,
-      trim: true,
-      default: "",
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "",
+      set(value) {
+        this.setDataValue(
+          "nameEn",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     name: {
-      type: String,
-      required: [true, "Please add a product name"],
-      trim: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "name",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     category: {
-      type: String,
-      trim: true,
-      default: "",
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "",
+      set(value) {
+        this.setDataValue(
+          "category",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     categoryRef: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Category",
-      required: [true, "Please add a category"],
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
     },
     imgLink: {
-      type: String,
-      required: [true, "Please add an image link"],
-      trim: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "imgLink",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     price: {
-      type: Number,
-      required: [true, "Please add a price"],
-      min: [0, "Price cannot be negative"],
+      type: DataTypes.DECIMAL(12, 2),
+      allowNull: false,
+      validate: {
+        min: 0,
+      },
     },
   },
-  { timestamps: true },
+  {
+    tableName: "products",
+    timestamps: true,
+  },
 );
 
-module.exports = mongoose.model("Product", ProductSchema);
+module.exports = Product;

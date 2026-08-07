@@ -11,9 +11,6 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 
-//connect to MongoDB
-connectDB();
-
 //middlewares
 app.use(express.static("client/build"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -96,4 +93,17 @@ app.use((err, req, res, next) => {
 
 //listening to port
 const port = process.env.PORT || 7892;
-app.listen(port, () => console.log(`server running on port ${port}`));
+
+const startServer = async () => {
+  const dbConnected = await connectDB();
+
+  if (!dbConnected) {
+    console.warn(
+      "Server started without MySQL. Check MYSQL_* variables and database access.",
+    );
+  }
+
+  app.listen(port, () => console.log(`server running on port ${port}`));
+};
+
+startServer();

@@ -1,45 +1,85 @@
-const mongoose = require("mongoose");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/sequelize");
 
-const CategorySchema = new mongoose.Schema(
+const Category = sequelize.define(
+  "Category",
   {
+    id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     nameAr: {
-      type: String,
-      required: [true, "Please add an Arabic category name"],
-      trim: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "nameAr",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     nameEn: {
-      type: String,
-      required: [true, "Please add an English category name"],
-      trim: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "nameEn",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     descriptionAr: {
-      type: String,
-      required: [true, "Please add an Arabic category description"],
-      trim: true,
+      type: DataTypes.TEXT,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "descriptionAr",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     descriptionEn: {
-      type: String,
-      required: [true, "Please add an English category description"],
-      trim: true,
+      type: DataTypes.TEXT,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "descriptionEn",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
-    // Legacy fields retained temporarily for compatibility with old records/UI fallbacks.
     name: {
-      type: String,
-      trim: true,
-      default: "",
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "",
+      set(value) {
+        this.setDataValue(
+          "name",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     description: {
-      type: String,
-      trim: true,
-      default: "",
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: "",
+      set(value) {
+        this.setDataValue(
+          "description",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      default: null,
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: true,
     },
   },
-  { timestamps: true },
+  {
+    tableName: "categories",
+    timestamps: true,
+  },
 );
 
-module.exports = mongoose.model("Category", CategorySchema);
+module.exports = Category;

@@ -1,48 +1,77 @@
-const mongoose = require("mongoose");
+const { DataTypes } = require("sequelize");
 const bcrypt = require("bcryptjs");
+const sequelize = require("../config/sequelize");
 
-const UserSchema = new mongoose.Schema(
+const User = sequelize.define(
+  "User",
   {
+    id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     name: {
-      type: String,
-      required: [true, "Please add a name"],
-      trim: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value) {
+        this.setDataValue(
+          "name",
+          typeof value === "string" ? value.trim() : value,
+        );
+      },
     },
     email: {
-      type: String,
-      required: [true, "Please add an email"],
+      type: DataTypes.STRING,
+      allowNull: false,
       unique: true,
-      lowercase: true,
-      trim: true,
-      match: [/^\S+@\S+\.\S+$/, "Please add a valid email"],
+      validate: {
+        isEmail: true,
+      },
+      set(value) {
+        this.setDataValue(
+          "email",
+          typeof value === "string" ? value.toLowerCase().trim() : value,
+        );
+      },
     },
     password: {
-      type: String,
-      required: [true, "Please add a password"],
-      minlength: 6,
-      select: false,
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [6, 255],
+      },
     },
     role: {
-      type: String,
-      enum: ["user", "admin"],
-      default: "user",
+      type: DataTypes.ENUM("user", "admin"),
+      allowNull: false,
+      defaultValue: "user",
     },
   },
-  { timestamps: true },
+  {
+    tableName: "users",
+    timestamps: true,
+    defaultScope: {
+      attributes: { exclude: ["password"] },
+    },
+    scopes: {
+      withPassword: {
+        attributes: { include: ["password"] },
+      },
+    },
+  },
 );
 
-// Hash password before saving
-UserSchema.pre("save", async function () {
-  if (!this.isModified("password")) {
+User.beforeSave(async (user) => {
+  if (!user.changed("password")) {
     return;
   }
+
   const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  user.password = await bcrypt.hash(user.password, salt);
 });
 
-// Compare entered password with hashed password in DB
-UserSchema.methods.matchPassword = async function (enteredPassword) {
+User.prototype.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = User;

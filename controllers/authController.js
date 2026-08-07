@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const xssFilter = require("xss-filters");
-const User = require("../models/User");
+const { User } = require("../models");
+const { serializeUser } = require("../utils/serializers");
 
 // Sign a JWT for a given user id
 const signToken = (id) =>
@@ -19,24 +20,20 @@ exports.register = async (req, res) => {
       return res.status(400).json({ msg: "Please enter all fields" });
     }
 
-    name = xssFilter.inHTMLData(name);
-    email = xssFilter.inHTMLData(email);
+    name = xssFilter.inHTMLData(name).trim();
+    email = xssFilter.inHTMLData(email).trim().toLowerCase();
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       return res.status(400).json({ msg: "User already exists" });
     }
 
     const user = await User.create({ name, email, password });
+    const safeUser = serializeUser(user);
 
     res.status(201).json({
-      token: signToken(user._id),
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      token: signToken(safeUser.id),
+      user: safeUser,
     });
   } catch (err) {
     console.log(err);
@@ -55,9 +52,9 @@ exports.login = async (req, res) => {
       return res.status(400).json({ msg: "Please enter all fields" });
     }
 
-    email = xssFilter.inHTMLData(email);
+    email = xssFilter.inHTMLData(email).trim().toLowerCase();
 
-    const user = await User.findOne({ email }).select("+password");
+    const user = await User.scope("withPassword").findOne({ where: { email } });
     if (!user) {
       return res.status(401).json({ msg: "Invalid credentials" });
     }
@@ -67,14 +64,11 @@ exports.login = async (req, res) => {
       return res.status(401).json({ msg: "Invalid credentials" });
     }
 
+    const safeUser = serializeUser(user);
+
     res.json({
-      token: signToken(user._id),
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      token: signToken(safeUser.id),
+      user: safeUser,
     });
   } catch (err) {
     console.log(err);
@@ -87,14 +81,13 @@ exports.login = async (req, res) => {
 // @access Private
 exports.getMe = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await User.findByPk(req.user.id);
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
     res.json({
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      user: serializeUser(user),
     });
   } catch (err) {
     console.log(err);
@@ -119,7 +112,7 @@ exports.changePassword = async (req, res) => {
         .json({ msg: "New password must be at least 6 characters" });
     }
 
-    const user = await User.findById(req.user.id).select("+password");
+    const user = await User.scope("withPassword").findByPk(req.user.id);
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }
