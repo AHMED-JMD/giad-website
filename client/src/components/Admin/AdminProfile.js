@@ -314,6 +314,7 @@ const AdminProfile = () => {
                         nameAr: e.target.value,
                       }))
                     }
+                    maxLength={255}
                     required
                   />
                 </div>
@@ -330,6 +331,7 @@ const AdminProfile = () => {
                         nameEn: e.target.value,
                       }))
                     }
+                    maxLength={255}
                     required
                   />
                 </div>

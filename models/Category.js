@@ -12,6 +12,12 @@ const Category = sequelize.define(
     nameAr: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: {
+          args: [1, 255],
+          msg: "Category name must be 255 characters or less",
+        },
+      },
       set(value) {
         this.setDataValue(
           "nameAr",
@@ -22,6 +28,12 @@ const Category = sequelize.define(
     nameEn: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: {
+          args: [1, 255],
+          msg: "Category name must be 255 characters or less",
+        },
+      },
       set(value) {
         this.setDataValue(
           "nameEn",

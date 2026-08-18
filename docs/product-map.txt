@@ -1,0 +1,48 @@
+GIAD PRODUCT MAP
+Arabic name | English name | image file
+Source: client/src/context/languages.js
+Images: client/public/assets/images/
+
+== GIAD OILS (زيوت جياد / Giad Oils) — 8 items
+ARABIC                                ENGLISH                               IMAGE
+------------------------------------  ------------------------------------  ------------
+زيت محركات - SUPER HD PLUS - 1L       Engine Oil - SUPER HD PLUS - 1L       oil_1.png
+زيت محركات - SUPER HD PLUS - 4L       Engine Oil - SUPER HD PLUS - 4L       oil_2.png
+زيت محركات - UNIMAX HD PLUS - 1L      Engine Oil - UNIMAX HD PLUS - 1L      oil_3.png
+زيت محركات - ULTRA HD PLUS - 4L       Engine Oil - ULTRA HD PLUS - 4L       oil_4.png
+زيت تروس - Tridon SUPER HD PLUS - 1L  Gear Oil - Tridon SUPER HD PLUS - 1L  oil_5.png
+زيت تروس - Tridon SUPER HD PLUS - 4L  Gear Oil - Tridon SUPER HD PLUS - 4L  oil_6.png
+زيت تبريد - ANTIFREEZE TRIDON 40%     ANTIFREEZE TRIDON COOLANT 40%         oil_7.png
+زيت فرامل وكلتش                       BRAKE & CLUTCH FLUID                  oil_8.png
+
+== FILTERS (الفلاتر / Filters) — 14 items
+ARABIC                       ENGLISH                                 IMAGE
+---------------------------  --------------------------------------  ------------
+فلتر زيت شاحنة تراكتور       Tractor Oil Filter                      f-1.png
+فلتر زيت بوكسي ريتش          Rich truck Oil filter                   f-2.png
+فلتر زيت شاحنة ٣ طن          3 Ton's Truck Oil Filter                f-3.png
+فلتر زيت نيسان باترول        Nissan Patrol Oil Filter                f-4.png
+فلتر زيت Hyundai i10         Hyundai i10 Oil Filter                  f-5.png
+فلتر زيت بكاسي               Medium Trucks Oil Filter                f-6.png
+فلتر ميتسوبيشي لاندروفر جاز  Mitsubishi landrover (gasoline) filter  f-7.png
+فلتر زيت هيونداي سينتافي     Hyundai Sentafe Oil Filter              f-8.png
+فلتر زيت BYD                 BYD Oil Filter                          f-9.png
+فلتر زيت شاحنة بتفورد        Bitford Truck Oil Filter                f-10.png
+فلتر شاحنة بتفورد جاز        Bitford Truck (gasoline) Filter         f-11.png
+فلتر زيت BYD S7 جاز          BYD S7 (gasoline) Filter                f-14.png
+فلتر زيت بوكسي ريتش          Rich medium Truck oil filter            f-15.png
+فلتر زيت ميتسوبيشي لاندروفر  Mitsubishi landrover Oil Filter         f-16.png
+
+== BATTERIES (بطاريات جياد / Giad Batteries) — 8 items
+ARABIC        ENGLISH       IMAGE
+------------  ------------  ------------
+42 AH 12V     42 AH 12V     42Ah.png
+55 AH 12V     55 AH 12V     55Ah.png
+60 AH 12V     60 AH 12V     60Ah.png
+72 AH 12V     72 AH 12V     72Ah.png
+90 AH 12V     90 AH 12V     90Ah.png
+100 AH 12V    100 AH 12V    100Ah.png
+120 AH 12V    120 AH 12V    120Ah.png
+200 AH 12V    200 AH 12V    200Ah.png
+
+TOTAL: 30 products

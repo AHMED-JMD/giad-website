@@ -3,6 +3,8 @@ const { Op } = require("sequelize");
 const { Category, Product } = require("../models");
 const { serializeCategory } = require("../utils/serializers");
 
+const MAX_NAME_LENGTH = 255;
+
 const parseId = (value) => {
   const parsed = Number(value);
   return Number.isInteger(parsed) && parsed > 0 ? parsed : null;
@@ -76,6 +78,14 @@ exports.createCategory = async (req, res) => {
         .json({ msg: "Arabic/English name and description are required" });
     }
 
+    // nameAr/nameEn are VARCHAR(255); reject overlong values here so MySQL
+    // does not fail the insert with an opaque "Data too long" error.
+    if (nameAr.length > MAX_NAME_LENGTH || nameEn.length > MAX_NAME_LENGTH) {
+      return res.status(400).json({
+        msg: `Category name must be ${MAX_NAME_LENGTH} characters or less`,
+      });
+    }
+
     const existing = await Category.findOne({
       where: {
         [Op.or]: [{ nameAr }, { nameEn }],
@@ -98,6 +108,14 @@ exports.createCategory = async (req, res) => {
 
     res.status(201).json(serializeCategory(category));
   } catch (err) {
+    if (err?.name === "SequelizeValidationError") {
+      return res
+        .status(400)
+        .json({ msg: err.errors?.[0]?.message || "Invalid category data" });
+    }
+    if (err?.name === "SequelizeUniqueConstraintError") {
+      return res.status(400).json({ msg: "Category already exists" });
+    }
     console.log(err);
     res.status(500).json({ msg: "Server error" });
   }
