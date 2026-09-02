@@ -44,6 +44,24 @@ const AuthContextProvider = (props) => {
     setUser(null);
   };
 
+  // Ask the API to email a reset link. The reply is intentionally generic so
+  // it does not reveal whether the address has an account.
+  const forgotPassword = async (email) => {
+    const res = await api.post("/auth/forgot-password", { email });
+    return res.data;
+  };
+
+  // Check a reset token before rendering the new-password form.
+  const verifyResetToken = async (token) => {
+    const res = await api.get(`/auth/reset-password/${token}`);
+    return res.data;
+  };
+
+  const resetPassword = async (token, password) => {
+    const res = await api.put(`/auth/reset-password/${token}`, { password });
+    return res.data;
+  };
+
   const changePassword = async (currentPassword, newPassword) => {
     const res = await api.put("/auth/change-password", {
       currentPassword,
@@ -66,6 +84,9 @@ const AuthContextProvider = (props) => {
         login,
         logout,
         changePassword,
+        forgotPassword,
+        verifyResetToken,
+        resetPassword,
       }}
     >
       {props.children}

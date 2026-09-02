@@ -46,16 +46,33 @@ const User = sequelize.define(
       allowNull: false,
       defaultValue: "user",
     },
+    // SHA-256 hash of the password reset token. The raw token only ever lives
+    // in the emailed link, so a leaked database row cannot be used to reset.
+    resetPasswordToken: {
+      type: DataTypes.STRING(64),
+      allowNull: true,
+    },
+    resetPasswordExpire: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   },
   {
     tableName: "users",
     timestamps: true,
     defaultScope: {
-      attributes: { exclude: ["password"] },
+      attributes: {
+        exclude: ["password", "resetPasswordToken", "resetPasswordExpire"],
+      },
     },
     scopes: {
       withPassword: {
         attributes: { include: ["password"] },
+      },
+      withResetToken: {
+        attributes: {
+          include: ["password", "resetPasswordToken", "resetPasswordExpire"],
+        },
       },
     },
   },

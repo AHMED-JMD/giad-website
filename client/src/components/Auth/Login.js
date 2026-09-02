@@ -14,6 +14,7 @@ const labels = {
     submit: "تسجيل الدخول",
     submitting: "جار تسجيل الدخول...",
     error: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    forgot: "نسيت كلمة المرور؟",
   },
   En: {
     title: "Login",
@@ -23,6 +24,7 @@ const labels = {
     submit: "Login",
     submitting: "Logging in...",
     error: "Invalid email or password",
+    forgot: "Forgot your password?",
   },
 };
 
@@ -102,6 +104,11 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <div className="login-forgot-row">
+                  <Link className="login-link" to="/forgot-password">
+                    {t.forgot}
+                  </Link>
+                </div>
               </div>
               {error ? (
                 <div className="alert alert-danger py-2 login-error">

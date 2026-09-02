@@ -12,6 +12,8 @@ import { LangContext } from "./context/langContext";
 import { useContext } from "react";
 import ErrorPage from "./components/404";
 import Login from "./components/Auth/Login";
+import ForgotPassword from "./components/Auth/ForgotPassword";
+import ResetPassword from "./components/Auth/ResetPassword";
 import AdminProfile from "./components/Admin/AdminProfile";
 
 function App() {
@@ -43,6 +45,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
 
         <Route path="/admin/profile" element={<AdminProfile />} />
 

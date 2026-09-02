@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const sendMail = require("./mail");
+const { sendContactMail, verifyTransport } = require("./mail");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
@@ -69,7 +69,7 @@ app.post("/email", async (req, res, next) => {
   // I need to verify email address soon
 
   try {
-    sendMail(name, email, subject, text, phoneNum, (err, data) => {
+    sendContactMail(name, email, subject, text, phoneNum, (err, data) => {
       if (err) {
         console.log(err);
         res.status(500).json({ err1: "internal error" });
@@ -101,6 +101,14 @@ const startServer = async () => {
     console.warn(
       "Server started without MySQL. Check MYSQL_* variables and database access.",
     );
+  }
+
+  // Surface a bad mail setup at boot instead of when a user tries to send.
+  try {
+    await verifyTransport();
+    console.log("SMTP transporter ready");
+  } catch (mailErr) {
+    console.warn(`SMTP transporter unavailable: ${mailErr.message}`);
   }
 
   app.listen(port, () => console.log(`server running on port ${port}`));
